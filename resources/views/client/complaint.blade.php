@@ -4,12 +4,20 @@
 @section('title', 'Réclamations')
 
 @section('header', 'Espace Client')
+<style>
+    .custom-modal-width {
+        max-width: calc(70%) !important;
+    }
 
+    .fix_width {
+        width: 3vw;
+    }
+</style>
 @section('content')
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
-                <div class="d-flex justify-content-between" style="">
+                <div class="d-flex justify-content-between">
                     <div class="card-title">
                         <h5 class="card-title">Liste des réclamations</h5>
                     </div>
@@ -125,7 +133,7 @@
                                 <td>--</td>
                                 <td>--</td>
                                 <td>--</td>
-                                <td>
+                                <td class="fix_width">
                                     <div class="modal fade" id="modifier_réclamations_" tabindex="-1">
                                         <div class="modal-dialog modal-lg">3
                                             <form action="Admin_Add_ordre" method="post">
@@ -206,7 +214,7 @@
                                     <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
                                         data-bs-target="#modifier_réclamations_">Modifier</button>
                                 </td>
-                                <td>
+                                <td class="fix_width">
                                     <div class="modal fade" id="verticalycentered_" tabindex="-1">
                                         <div class="modal-dialog modal-dialog-centered">
                                             <div class="modal-content">
@@ -242,7 +250,7 @@
                                 <td>{{ $complaint->produit->nom_produit }}</td>
                                 <td>{{ $complaint->utilisateur->name }}</td>
                                 <td>{{ $complaint->utilisateur->statut }}</td>
-                                <td>
+                                <td class="fix_width">
                                     <div class="modal fade" id="modifier_réclamations_{{ $complaint->id }}" tabindex="-1">
                                         <div class="modal-dialog modal-lg">3
                                             <form action="Admin_Add_ordre" method="post">
@@ -329,7 +337,7 @@
                                     <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
                                         data-bs-target="#modifier_réclamations_{{ $complaint->id }}">Modifier</button>
                                 </td>
-                                <td>
+                                <td class="fix_width">
                                     <div class="modal fade" id="verticalycentered_{{ $complaint->id }}" tabindex="-1">
                                         <div class="modal-dialog modal-dialog-centered">
                                             <div class="modal-content">

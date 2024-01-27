@@ -4,7 +4,15 @@
 @section('title', 'Produit')
 
 @section('header', 'Espace Client')
+<style>
+    .custom-modal-width {
+        max-width: calc(70%) !important;
+    }
 
+    .fix_width {
+        width: 3vw;
+    }
+</style>
 @section('content')
 <div class="col-lg-12">
     <div class="card">
@@ -35,13 +43,227 @@
                         <td>-</td>
                         <td>-</td>
                         <td>-</td>
-                        <td>
+                        <td class="fix_width">
+                            <div class="modal fade" id="voir_produit_" tabindex="-1">
+                                <div class="modal-dialog modal-lg custom-modal-width">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Voir le produit</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row mb-3">
+                                                <label for="inputText" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Produit ID:</label>
+                                                <div class="col-sm-8 col-md-9 col-lg-10">
+                                                    <span id="product_name_id">Product A - 123</span>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <label for="inputText" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Anomalies:</label>
+                                                <div class="col-sm-8 col-md-9 col-lg-10">
+                                                    <ul>
+                                                        <li>Anomaly 1: Description of the first anomaly.</li>
+                                                        <li>Anomaly 2: Description of the second anomaly.</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <label for="inputText" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Status:</label>
+                                                <div class="col-sm-8 col-md-9 col-lg-10">
+                                                    <span id="product_name_id">Hors service</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 row mb-3">
+                                                <div class="row">
+                                                    <!-- Sales Card -->
+                                                    <div class="col-xxl-4 col-lg-6 col-md-6 col-sm-12">
+                                                        <div class="card info-card sales-card">
+
+                                                            <div class="filter">
+                                                                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                                                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                                                    <li class="dropdown-header text-start">
+                                                                        <h6>Filter</h6>
+                                                                    </li>
+
+                                                                    <li><a class="dropdown-item" href="#">Today</a></li>
+                                                                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                                                                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                                                                </ul>
+                                                            </div>
+
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">PLASTIQUE <span>| Ce mois</span></h5>
+
+                                                                <div class="d-flex align-items-center">
+                                                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                                        <i class="bi bi-suitcase2"></i>
+                                                                    </div>
+                                                                    <div class="ps-3">
+                                                                        <h6>145 </h6>
+                                                                        <span class="text-success small pt-1 fw-bold">28%</span> <span class="text-muted small pt-2 ps-1">Revenu</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xxl-4 col-lg-6 col-md-6 col-sm-12">
+                                                        <div class="card info-card revenue-card">
+
+                                                            <div class="filter">
+                                                                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                                                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                                                    <li class="dropdown-header text-start">
+                                                                        <h6>Filter</h6>
+                                                                    </li>
+
+                                                                    <li><a class="dropdown-item" href="#">Today</a></li>
+                                                                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                                                                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                                                                </ul>
+                                                            </div>
+
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">PAPIER <span>| Ce mois</span></h5>
+
+                                                                <div class="d-flex align-items-center">
+                                                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                                        <i class="bi bi-file-earmark-text"></i>
+                                                                    </div>
+                                                                    <div class="ps-3">
+                                                                        <h6>$3,264</h6>
+                                                                        <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">Revenu</span>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xxl-4 col-lg-6 col-md-6 col-sm-12">
+                                                        <div class="card info-card revenue-card">
+
+                                                            <div class="filter">
+                                                                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                                                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                                                    <li class="dropdown-header text-start">
+                                                                        <h6>Filter</h6>
+                                                                    </li>
+
+                                                                    <li><a class="dropdown-item" href="#">Today</a></li>
+                                                                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                                                                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                                                                </ul>
+                                                            </div>
+
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">VERRE <span>| Ce mois</span></h5>
+
+                                                                <div class="d-flex align-items-center">
+                                                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                                        <i class="bi bi-trash2"></i>
+                                                                    </div>
+                                                                    <div class="ps-3">
+                                                                        <h6>$3,264</h6>
+                                                                        <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">Revenu</span>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xxl-4 col-lg-6 col-md-6 col-sm-12">
+                                                        <div class="card info-card revenue-card">
+
+                                                            <div class="filter">
+                                                                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                                                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                                                    <li class="dropdown-header text-start">
+                                                                        <h6>Filter</h6>
+                                                                    </li>
+
+                                                                    <li><a class="dropdown-item" href="#">Today</a></li>
+                                                                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                                                                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                                                                </ul>
+                                                            </div>
+
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">MÉTAL <span>| Ce mois</span></h5>
+
+                                                                <div class="d-flex align-items-center">
+                                                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                                        <i class="bi bi-suitcase"></i>
+                                                                    </div>
+
+                                                                    <div class="ps-3">
+                                                                        <h6>$3,264</h6>
+                                                                        <span class="text-success small pt-1 fw-bold">17%</span> <span class="text-muted small pt-2 ps-1">Revenu</span>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xxl-6 col-xl-12">
+
+                                                        <div class="card info-card customers-card">
+
+                                                            <div class="filter">
+                                                                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                                                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                                                    <li class="dropdown-header text-start">
+                                                                        <h6>Filter</h6>
+                                                                    </li>
+
+                                                                    <li><a class="dropdown-item" href="#">Today</a></li>
+                                                                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                                                                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                                                                </ul>
+                                                            </div>
+
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">AUTRE <span>| Ce Mois </span></h5>
+
+                                                                <div class="d-flex align-items-center">
+                                                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+
+                                                                        <i class="bi bi-recycle"></i>
+                                                                    </div>
+                                                                    <div class="ps-3">
+                                                                        <h6>1244</h6>
+                                                                        <span class="text-danger small pt-1 fw-bold">25%</span> <span class="text-muted small pt-2 ps-1">Revenu</span>
+
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#voir_produit_">Voir</button>
+                        </td>
+                        <td class="fix_width">
                             <div class="modal fade" id="modifier_réclamations_" tabindex="-1">
                                 <div class="modal-dialog modal-lg">3
                                     <form action="Admin_Add_ordre" method="post">
                                         @csrf
                                         <div class="modal-content">
-       cp                                      <div class="modal-header">
+                                            <div class="modal-header">
                                                 <h5 class="modal-title">Modifier le produit
                                                 </h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -79,7 +301,7 @@
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
                                                 <button type="submit" class="btn btn-success">Modifer le produit</button>
                                             </div>
                                         </div>
@@ -88,7 +310,8 @@
                             </div><!-- End Large Modal-->
                             <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modifier_réclamations_">Modifier</button>
                         </td>
-                        <td>
+
+                        <td class="fix_width">
                             <div class="modal fade" id="verticalycentered_" tabindex="-1">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
@@ -100,7 +323,7 @@
                                             Vous voulez supprimer ce produit.
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
                                             <button type="button" class="btn btn-danger">Supprimer</button>
                                         </div>
                                     </div>
@@ -117,15 +340,6 @@
         </div>
     </div>
 </div>
-<h1>Products</h1>
-<h2>Afficher les anomalies signalées pour les produits.</h2>
-<h2>Planifier et suivre les actions correctives.</h2>
-
-<th>Produit</th>
-<th>Anomalie</th>
-<th>Statut</th>
-<th>Responsable</th>
-<th>Actions Correctives</th>
 
 @endsection
 
