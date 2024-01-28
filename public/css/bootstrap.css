@@ -1934,10 +1934,10 @@ select.form-control:focus::-ms-value {
   margin-bottom: 0;
   font-size: inherit;
   line-height: 1.5;
-<<<<<<< HEAD
-=======
+
+
   font-weight: 700;
->>>>>>> bfe1b02e8a856fd8ad2dc0b34610818e101409aa
+
 }
 
 .col-form-label-lg {
@@ -1945,10 +1945,10 @@ select.form-control:focus::-ms-value {
   padding-bottom: calc(0.5rem + 1px);
   font-size: 1.25rem;
   line-height: 1.5;
-<<<<<<< HEAD
-=======
+
+
   font-weight: 700;
->>>>>>> bfe1b02e8a856fd8ad2dc0b34610818e101409aa
+
 }
 
 .col-form-label-sm {
@@ -1956,10 +1956,10 @@ select.form-control:focus::-ms-value {
   padding-bottom: calc(0.25rem + 1px);
   font-size: 0.875rem;
   line-height: 1.5;
-<<<<<<< HEAD
-=======
+
+
   font-weight: 700;
->>>>>>> bfe1b02e8a856fd8ad2dc0b34610818e101409aa
+
 }
 
 .form-control-plaintext {
