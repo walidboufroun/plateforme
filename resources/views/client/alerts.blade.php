@@ -5,9 +5,9 @@
 @section('title', 'Alerts')
 
 @section('header', 'Espace Client')
-<<<<<<< HEAD
 
-=======
+
+
 <style>
     .custom-modal-width {
         max-width: calc(70%) !important;
@@ -17,16 +17,16 @@
         width: 3vw;
     }
 </style>
->>>>>>> bfe1b02e8a856fd8ad2dc0b34610818e101409aa
+
 @section('content')
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
-<<<<<<< HEAD
+
                 <div class="d-flex justify-content-between" style="">
-=======
+
                 <div class="d-flex justify-content-between">
->>>>>>> bfe1b02e8a856fd8ad2dc0b34610818e101409aa
+
                     <div class="card-title">
                         <h5 class="card-title">Liste des Alerts</h5>
                     </div>
@@ -114,11 +114,11 @@
                                 <td>-</td>
                                 <td>-</td>
                                 <td>-</td>
-<<<<<<< HEAD
+
                                 <td>
-=======
+
                                 <td class="fix_width">
->>>>>>> bfe1b02e8a856fd8ad2dc0b34610818e101409aa
+
                                     <div class="modal fade" id="modifier_réclamations_" tabindex="-1">
                                         <div class="modal-dialog modal-lg">3
                                             <form action="Admin_Add_ordre" method="post">
