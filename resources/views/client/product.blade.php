@@ -4,9 +4,8 @@
 @section('title', 'Produit')
 
 @section('header', 'Espace Client')
-<<<<<<< HEAD
 
-=======
+
 <style>
     .custom-modal-width {
         max-width: calc(70%) !important;
@@ -16,7 +15,7 @@
         width: 3vw;
     }
 </style>
->>>>>>> bfe1b02e8a856fd8ad2dc0b34610818e101409aa
+
 @section('content')
 <div class="col-lg-12">
     <div class="card">
@@ -47,9 +46,8 @@
                         <td>-</td>
                         <td>-</td>
                         <td>-</td>
-<<<<<<< HEAD
                         <td>
-=======
+
                         <td class="fix_width">
                             <div class="modal fade" id="voir_produit_" tabindex="-1">
                                 <div class="modal-dialog modal-lg custom-modal-width">
@@ -265,17 +263,16 @@
                             <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#voir_produit_">Voir</button>
                         </td>
                         <td class="fix_width">
->>>>>>> bfe1b02e8a856fd8ad2dc0b34610818e101409aa
+
                             <div class="modal fade" id="modifier_réclamations_" tabindex="-1">
                                 <div class="modal-dialog modal-lg">3
                                     <form action="Admin_Add_ordre" method="post">
                                         @csrf
                                         <div class="modal-content">
-<<<<<<< HEAD
        cp                                      <div class="modal-header">
-=======
+
                                             <div class="modal-header">
->>>>>>> bfe1b02e8a856fd8ad2dc0b34610818e101409aa
+
                                                 <h5 class="modal-title">Modifier le produit
                                                 </h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -313,11 +310,10 @@
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-<<<<<<< HEAD
                                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-=======
+
                                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
->>>>>>> bfe1b02e8a856fd8ad2dc0b34610818e101409aa
+
                                                 <button type="submit" class="btn btn-success">Modifer le produit</button>
                                             </div>
                                         </div>
@@ -326,12 +322,11 @@
                             </div><!-- End Large Modal-->
                             <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modifier_réclamations_">Modifier</button>
                         </td>
-<<<<<<< HEAD
                         <td>
-=======
+
 
                         <td class="fix_width">
->>>>>>> bfe1b02e8a856fd8ad2dc0b34610818e101409aa
+
                             <div class="modal fade" id="verticalycentered_" tabindex="-1">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
@@ -343,11 +338,10 @@
                                             Vous voulez supprimer ce produit.
                                         </div>
                                         <div class="modal-footer">
-<<<<<<< HEAD
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-=======
+
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
->>>>>>> bfe1b02e8a856fd8ad2dc0b34610818e101409aa
+
                                             <button type="button" class="btn btn-danger">Supprimer</button>
                                         </div>
                                     </div>
@@ -364,7 +358,6 @@
         </div>
     </div>
 </div>
-<<<<<<< HEAD
 <h1>Products</h1>
 <h2>Afficher les anomalies signalées pour les produits.</h2>
 <h2>Planifier et suivre les actions correctives.</h2>
@@ -374,8 +367,8 @@
 <th>Statut</th>
 <th>Responsable</th>
 <th>Actions Correctives</th>
-=======
->>>>>>> bfe1b02e8a856fd8ad2dc0b34610818e101409aa
+
+
 
 @endsection
 
