@@ -4,6 +4,8 @@
 @section('title', 'Employes')
 
 @section('header', 'Espace Client')
+
+
 <style>
     .custom-modal-width {
         max-width: calc(70%) !important;
@@ -13,6 +15,7 @@
         width: 3vw;
     }
 </style>
+
 @section('content')
 <div class="col-lg-12">
     <div class="card">
@@ -28,7 +31,11 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title">Ajouter un employe</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
                                 </div>
                                 <div class="modal-body">
                                     <div class="row mb-3">
@@ -77,7 +84,11 @@
                                     <div class="row mb-3">
                                         <label for="inputText" class="col-sm-2 col-form-label">Taches</label>
                                         <div class="col-sm-10">
+                                            <textarea name="plus" class="form-control" name="nombre_produit"
+                                                required></textarea>
+
                                             <textarea name="plus" class="form-control" name="nombre_produit" required></textarea>
+
                                         </div>
                                     </div>
                                 </div>
@@ -91,7 +102,11 @@
                 </div><!-- End Large Modal-->
 
                 <div class="card-title">
+                    <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
+                        data-bs-target="#largeModal">Ajouter un employe</button>
+
                     <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#largeModal">Ajouter un employe</button>
+
                 </div>
             </div>
 
@@ -121,7 +136,10 @@
                         <td>-</td>
                         <td>-</td>
                         <td>-to do do do do do</td>
+                        <td>
+
                         <td class="fix_width">
+
                             <div class="modal fade" id="modifier_commande_" tabindex="-1">
                                 <div class="modal-dialog modal-lg">3
                                     <form action="Admin_Add_ordre" method="post">
@@ -130,7 +148,11 @@
                                             <div class="modal-header">
                                                 <h5 class="modal-title">Modifier un employe
                                                 </h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
                                             </div>
                                             <div class="modal-body">
                                                 <div class="row mb-3">
@@ -140,7 +162,11 @@
                                                     </div>
                                                 </div>
                                                 <div class="row mb-3">
+                                                    <label for="inputText"
+                                                        class="col-sm-2 col-form-label">Prenom</label>
+
                                                     <label for="inputText" class="col-sm-2 col-form-label">Prenom</label>
+
                                                     <div class="col-sm-10">
                                                         <input type="text" class="form-control" name="prenom" value="">
                                                     </div>
@@ -160,7 +186,11 @@
                                                     </div>
                                                 </div>
                                                 <div class="row mb-3">
+                                                    <label for="inputText"
+                                                        class="col-sm-2 col-form-label">Adresse</label>
+
                                                     <label for="inputText" class="col-sm-2 col-form-label">Adresse</label>
+
                                                     <div class="col-sm-10">
                                                         <input type="text" class="form-control" name="Adresse" value="">
                                                     </div>
@@ -173,6 +203,20 @@
                                                     </div>
                                                 </div>
                                                 <div class="row mb-3">
+                                                    <label for="inputText"
+                                                        class="col-sm-2 col-form-label">Password</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="password" class="form-control" name="password"
+                                                            value="">
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <label for="inputText"
+                                                        class="col-sm-2 col-form-label">Taches</label>
+                                                    <div class="col-sm-10">
+                                                        <textarea name="plus" class="form-control" name="nombre_produit"
+                                                            value=""></textarea>
+
                                                     <label for="inputText" class="col-sm-2 col-form-label">Password</label>
                                                     <div class="col-sm-10">
                                                         <input type="password" class="form-control" name="password" value="">
@@ -182,38 +226,61 @@
                                                     <label for="inputText" class="col-sm-2 col-form-label">Taches</label>
                                                     <div class="col-sm-10">
                                                         <textarea name="plus" class="form-control" name="nombre_produit" value=""></textarea>
+
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger"
+                                                    data-bs-dismiss="modal">Cancel</button>
+
                                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+
                                                 <button type="submit" class="btn btn-success">Modifer l'employe</button>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                             </div><!-- End Large Modal-->
+                            <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#modifier_commande_">Modifier</button>
+                        </td>
+                        <td>
+
                             <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modifier_commande_">Modifier</button>
                         </td>
                         <td class="fix_width">
+
                             <div class="modal fade" id="verticalycentered_" tabindex="-1">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 class="modal-title">Supression</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
                                         </div>
                                         <div class="modal-body">
                                             Vous voulez supprimer cet employe.
                                         </div>
                                         <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Cancel</button>
+
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+
                                             <button type="button" class="btn btn-danger">Supprimer</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#verticalycentered_">
+
                             <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#verticalycentered_">
+
                                 Supprimer
                             </button>
                         </td>

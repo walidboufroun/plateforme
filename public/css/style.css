@@ -5,9 +5,13 @@ body {
   background-color: #ffffff;
   overflow-x: hidden;
 }
+
+
+
 .fix_width {
   width: 3vw;
 }
+
 .layout_padding {
   padding: 90px 0;
 }
