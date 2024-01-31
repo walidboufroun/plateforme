@@ -100,6 +100,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($alerts as $alert)
                             <tr>
                                 <td>-</td>
                                 <td>-</td>
@@ -169,7 +170,8 @@
                                         data-bs-target="#modifier_réclamations_">Modifier</button>
                                 </td>
                             </tr>
-                    </tbody>
+                        @endforeach
+                        </tbody>
                 </table>
                 <!-- End Table with stripped rows -->
 

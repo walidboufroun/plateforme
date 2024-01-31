@@ -8,11 +8,13 @@ namespace App\Http\Controllers\Client;
 namespace App\Http\Controllers\ClientControllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Alert;
 
 class AlertControllerClient extends Controller
 {
     public function index()
     {
-        return view('client.alerts');
+        $alerts = Alert::all();   
+        return view('client.alerts', compact('alerts'));
     }
 }
