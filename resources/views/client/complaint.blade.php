@@ -121,6 +121,8 @@
                             <th>Statut réclamation</th>
                             <th>Action prise</th>
                             <th>Date résolution</th>
+                            <th>Action</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>

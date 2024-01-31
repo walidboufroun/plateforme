@@ -32,10 +32,14 @@
                         <th>Photos</th>
                         <th>Description</th>
                         <th>prix</th>
+                        <th>Action</th>
+                        <th>Action</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <!-- Afficher products according to its client-->
+                    @foreach($produits as $produit)
                     <tr>
                         <td>-</td>
                         <td>-</td>
@@ -334,6 +338,7 @@
                             </button>
                         </td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
             <!-- End Table with stripped rows -->

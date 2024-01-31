@@ -96,6 +96,7 @@
                             <th>Nom Produit</th>
                             <th>Statut</th>
                             <th>Description</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>

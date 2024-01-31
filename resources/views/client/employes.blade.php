@@ -107,6 +107,8 @@
                         <th>Numero de telephone</th>
                         <th>Mot de passe</th>
                         <th>Taches</th>
+                        <th>Action</th>
+                        <th>Action </th>
                     </tr>
                 </thead>
                 <tbody>
