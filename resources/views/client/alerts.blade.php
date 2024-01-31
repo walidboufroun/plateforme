@@ -1,4 +1,3 @@
-
 <!-- views/home.blade.php -->
 @extends('client.layouts.app')
 
@@ -29,7 +28,7 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title">Ajouter une alerts</h5>
-                                        <button type="button" class="btn-close" 
+                                        <button type="button" class="btn-close"
                                             data-bs-dismiss="modal"aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
@@ -48,7 +47,7 @@
                                         <div class="row mb-3">
                                             <label for="inputText" class="col-sm-2 col-form-label">Client</label>
                                             <div class="col-sm-10">
-                                            <!-- select from list clients -->
+                                                <!-- select from list clients -->
                                                 <select class="form-control" id="idclient" name="client" required>
                                                     <option value="client1">client1</option>
                                                 </select>
@@ -58,7 +57,8 @@
                                             <label for="inputText" class="col-sm-2 col-form-label">Nom Produit</label>
                                             <div class="col-sm-10">
                                                 <!-- select from list produit de clients -->
-                                                <select class="form-control" id="id_produit_client" name="Nom_produit" required>
+                                                <select class="form-control" id="id_produit_client" name="Nom_produit"
+                                                    required>
                                                     <option value="produit1">produit1</option>
                                                 </select>
                                             </div>
@@ -73,7 +73,7 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger"
                                             data-bs-dismiss="modal">Cancel</button>
-                                        <button type="submit" class="btn btn-success">Ajouter l'alerte</button>
+                                        <button type="submit" class="btn btn-success">Ajouter lalerte</button>
                                     </div>
                                 </div>
                             </form>
@@ -90,24 +90,24 @@
                 <table class="table datatable">
                     <thead>
                         <tr>
-                            <th>Nom alerte</th>
+                            <th>Contenu</th>
                             <th>Date alerte</th>
-                            <th>ID Produit</th>
+                            <th>Produit</th>
+                            <th>Description</th>
                             <th>Nom Produit</th>
                             <th>Statut</th>
-                            <th>Description</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($alerts as $alert)
+                        @foreach ($alerts as $alert)
                             <tr>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
+                                <td>{{ $alert->name }}</td>
+                                <td>{{ $alert->date_et_heure }}</td>
+                                <td>{{ $alert->id_produit }}</td>
+                                <td>{{ $alert->description }}</td>
+                                <td>{{ $alert->lu == 0 ? 'Vu' : "Non vu" }}</td>
+                                <td>{{ $alert->id_client }}</td>
                                 <td class="fix_width">
                                     <div class="modal fade" id="modifier_réclamations_" tabindex="-1">
                                         <div class="modal-dialog modal-lg">3
@@ -121,37 +121,46 @@
                                                     </div>
                                                     <div class="modal-body">
                                                         <div class="row mb-3">
-                                                            <label for="inputText" class="col-sm-2 col-form-label">Nom alerte</label>
+                                                            <label for="inputText" class="col-sm-2 col-form-label">Nom
+                                                                alerte</label>
                                                             <div class="col-sm-10">
-                                                                <input type="text" class="form-control" name="nom_alerte" value="">
+                                                                <input type="text" class="form-control" name="nom_alerte"
+                                                                    value="">
                                                             </div>
                                                         </div>
                                                         <div class="row mb-3">
-                                                            <label for="inputText" class="col-sm-2 col-form-label">Date alerte</label>
+                                                            <label for="inputText" class="col-sm-2 col-form-label">Date
+                                                                alerte</label>
                                                             <div class="col-sm-10">
-                                                                <input type="date" class="form-control" name="date_alerte" value="">
+                                                                <input type="date" class="form-control"
+                                                                    name="date_alerte" value="">
                                                             </div>
                                                         </div>
                                                         <div class="row mb-3">
-                                                            <label for="inputText" class="col-sm-2 col-form-label">Client</label>
+                                                            <label for="inputText"
+                                                                class="col-sm-2 col-form-label">Client</label>
                                                             <div class="col-sm-10">
-                                                            <!-- select from list clients -->
-                                                                <select class="form-control" id="idclient" name="client" value="">
+                                                                <!-- select from list clients -->
+                                                                <select class="form-control" id="idclient"
+                                                                    name="client" value="">
                                                                     <option value="client1">client1</option>
                                                                 </select>
                                                             </div>
                                                         </div>
                                                         <div class="row mb-3">
-                                                            <label for="inputText" class="col-sm-2 col-form-label">Nom Produit</label>
+                                                            <label for="inputText" class="col-sm-2 col-form-label">Nom
+                                                                Produit</label>
                                                             <div class="col-sm-10">
                                                                 <!-- select from list produit de clients -->
-                                                                <select class="form-control" id="id_produit_client" name="Nom_produit">
+                                                                <select class="form-control" id="id_produit_client"
+                                                                    name="Nom_produit">
                                                                     <option value="produit1">produit1</option>
                                                                 </select>
                                                             </div>
                                                         </div>
                                                         <div class="row mb-3">
-                                                            <label for="inputText" class="col-sm-2 col-form-label">Description</label>
+                                                            <label for="inputText"
+                                                                class="col-sm-2 col-form-label">Description</label>
                                                             <div class="col-sm-10">
                                                                 <textarea class="form-control" name="description_alerte"></textarea>
                                                             </div>
@@ -160,7 +169,8 @@
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-danger"
                                                             data-bs-dismiss="modal">Cancel</button>
-                                                        <button type="submit" class="btn btn-success">Modifier l'alerte</button>
+                                                        <button type="submit" class="btn btn-success">Modifier
+                                                            l'alerte</button>
                                                     </div>
                                                 </div>
                                             </form>
@@ -171,7 +181,7 @@
                                 </td>
                             </tr>
                         @endforeach
-                        </tbody>
+                    </tbody>
                 </table>
                 <!-- End Table with stripped rows -->
 
@@ -180,4 +190,4 @@
     </div>
 @endsection
 
-@section('footer', '© 2023 Your Website')   
+@section('footer', '© 2023 Your Website')

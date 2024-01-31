@@ -41,12 +41,12 @@
                     <!-- Afficher products according to its client-->
                     @foreach($produits as $produit)
                     <tr>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
+                        <td>{{ $produit->name }}</td>
+                        <td>{{ $produit->code }}</td>
+                        <td>{{ $produit->descriptive }}</td>
+                        <td>{{ $produit->prix }}</td>
+                        <td>{{ $produit->id_client  }}</td>
+                        <td>{{ $produit->id_societe }}</td>
                         <td class="fix_width">
                             <div class="modal fade" id="voir_produit_" tabindex="-1">
                                 <div class="modal-dialog modal-lg custom-modal-width">
