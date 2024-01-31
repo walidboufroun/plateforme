@@ -4,6 +4,8 @@
 @section('title', 'Employes')
 
 @section('header', 'Espace Client')
+
+
 <style>
     .custom-modal-width {
         max-width: calc(70%) !important;
@@ -13,6 +15,7 @@
         width: 3vw;
     }
 </style>
+
 @section('content')
     <div class="col-lg-12">
         <div class="card">

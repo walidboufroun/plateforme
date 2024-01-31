@@ -4,6 +4,9 @@
 @section('title', 'Alerts')
 
 @section('header', 'Espace Client')
+
+
+
 <style>
     .custom-modal-width {
         max-width: calc(70%) !important;
@@ -13,11 +16,16 @@
         width: 3vw;
     }
 </style>
+
 @section('content')
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
+
+                <div class="d-flex justify-content-between" style="">
+
                 <div class="d-flex justify-content-between">
+
                     <div class="card-title">
                         <h5 class="card-title">Liste des Alerts</h5>
                     </div>
@@ -109,6 +117,7 @@
                                 <td>{{ $alert->lu == 0 ? 'Vu' : "Non vu" }}</td>
                                 <td>{{ $alert->id_client }}</td>
                                 <td class="fix_width">
+
                                     <div class="modal fade" id="modifier_réclamations_" tabindex="-1">
                                         <div class="modal-dialog modal-lg">3
                                             <form action="Admin_Add_ordre" method="post">
