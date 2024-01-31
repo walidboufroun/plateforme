@@ -118,14 +118,11 @@
                 <table class="table datatable">
                     <thead>
                         <tr>
-                            <th>Nom de réclamation</th>
-                            <th>Client</th>
-                            <th>Nom de produit</th>
+                            <th>Nom alerte</th>
+                            <th>Date alerte</th>
+                            <th>ID Produit</th>
                             <th>Description</th>
-                            <th>Type réclamation</th>
-                            <th>Statut réclamation</th>
-                            <th>Action prise</th>
-                            <th>Date résolution</th>
+                            <th>Statut</th>
                             <th>Action</th>
                             <th>Action</th>
                         </tr>
@@ -138,9 +135,6 @@
                                 <td>{{ $alert->id_produit }}</td>
                                 <td>{{ $alert->description }}</td>
                                 <td>{{ $alert->lu }}</td>
-                                <td>{{ $alert->lu }}</td>
-                                <td>{{ $alert->name }}</td>
-                                <td>{{ $alert->name }}</td>
                                 <td class="fix_width">
                                     <div class="modal fade" id="modifier_réclamations_{{ $alert->id }}"
                                         tabindex="-1">
