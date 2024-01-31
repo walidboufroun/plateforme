@@ -1,7 +1,7 @@
 <!-- views/home.blade.php -->
 @extends('client.layouts.app')
 
-@section('title', 'Réclamations')
+@section('title', 'Alerts')
 
 @section('header', 'Espace Client')
 <style>
