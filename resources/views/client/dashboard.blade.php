@@ -15,10 +15,7 @@
         <div class="row">
 
             <!-- Sales Card -->
-            <div class="col-xxl-4 col-md-6">
-
             <div class="col-xxl-4 col-lg-6 col-md-6 col-sm-12">
-
                 <div class="card info-card sales-card">
 
                     <div class="filter">
@@ -52,10 +49,7 @@
 
                 </div>
             </div>
-            <div class="col-xxl-4 col-md-6">
-
             <div class="col-xxl-4 col-lg-6 col-md-6 col-sm-12">
-
                 <div class="card info-card revenue-card">
 
                     <div class="filter">
@@ -88,10 +82,7 @@
 
                 </div>
             </div>
-            <div class="col-xxl-4 col-md-6">
-
             <div class="col-xxl-4 col-lg-6 col-md-6 col-sm-12">
-
                 <div class="card info-card revenue-card">
 
                     <div class="filter">
@@ -124,18 +115,7 @@
 
                 </div>
             </div>
-<<<<<<< HEAD
             <div class="col-xxl-6 col-lg-6 col-md-6 col-sm-12">
-=======
-<<<<<<< HEAD
-            <div class="col-xxl-6 col-lg-6 col-md-6 col-sm-12">
-=======
-            <div class="col-xxl-6 col-md-12">
-
-            <div class="col-xxl-4 col-lg-6 col-md-6 col-sm-12">
-
->>>>>>> d8ceb276340f20e7427dad0d897d0fbfd488e146
->>>>>>> bb98d4a79a22c4c0dd480e1f0ef16f35b6ac1f57
                 <div class="card info-card revenue-card">
 
                     <div class="filter">
