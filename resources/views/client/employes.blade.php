@@ -4,6 +4,8 @@
 @section('title', 'Employes')
 
 @section('header', 'Espace Client')
+
+
 <style>
     .custom-modal-width {
         max-width: calc(70%) !important;
@@ -13,6 +15,7 @@
         width: 3vw;
     }
 </style>
+
 @section('content')
     <div class="col-lg-12">
         <div class="card">
@@ -103,143 +106,145 @@
                     <thead>
                         <tr>
                             <th>Nom</th>
-                            <th>Prenom</th>
-                            <th>Date de naissance</th>
-                            <th>Lieu de naissance</th>
+                            <th>Username</th>
+                            <th>Societe</th>
+                            <th>Email</th>
                             <th>Adresse</th>
                             <th>Numero de telephone</th>
-                            <th>Mot de passe</th>
-                            <th>Taches</th>
+                            <th>Photo</th>
+                            <th>Type</th>
                             <th>Action</th>
                             <th>Action </th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($employes as $employe)
-                        <tr>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-to do do do do do</td>
-                            <td class="fix_width">
-                                <div class="modal fade" id="modifier_commande_" tabindex="-1">
-                                    <div class="modal-dialog modal-lg">3
-                                        <form action="Admin_Add_ordre" method="post">
-                                            @csrf
+                        @foreach ($employes as $employe)
+                            <tr>
+                                <td>{{ $employe->name }}</td>
+                                <td>{{ $employe->username }}</td>
+                                <td>{{ $employe->id_societe  }}</td>
+                                <td>{{ $employe->email  }}</td>
+                                <td>{{ $employe->adresse }}</td>
+                                <td>{{ $employe->phone_number }}</td>
+                                <td>{{ $employe->photo }}</td>
+                                <td>{{ $employe->type }}</td>
+                                <td class="fix_width">
+                                    <div class="modal fade" id="modifier_commande_" tabindex="-1">
+                                        <div class="modal-dialog modal-lg">3
+                                            <form action="Admin_Add_ordre" method="post">
+                                                @csrf
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Modifier un employe
+                                                        </h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="row mb-3">
+                                                            <label for="inputText"
+                                                                class="col-sm-2 col-form-label">Nom</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" name="nom"
+                                                                    value="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3">
+                                                            <label for="inputText"
+                                                                class="col-sm-2 col-form-label">Prenom</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" name="prenom"
+                                                                    value="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3">
+                                                            <label for="inputText" class="col-sm-2 col-form-label">Date de
+                                                                naissance</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="date" class="form-control" name="ddn"
+                                                                    value="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3">
+                                                            <label for="inputText" class="col-sm-2 col-form-label">Lieu de
+                                                                naissance</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" name="ldn"
+                                                                    value="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3">
+                                                            <label for="inputText"
+                                                                class="col-sm-2 col-form-label">Adresse</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" name="Adresse"
+                                                                    value="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3">
+                                                            <label for="inputText" class="col-sm-2 col-form-label">Numéro
+                                                                de
+                                                                téléphone</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="num" class="form-control" name="tel"
+                                                                    value="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3">
+                                                            <label for="inputText"
+                                                                class="col-sm-2 col-form-label">Password</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="password" class="form-control"
+                                                                    name="password" value="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3">
+                                                            <label for="inputText"
+                                                                class="col-sm-2 col-form-label">Taches</label>
+                                                            <div class="col-sm-10">
+                                                                <textarea name="plus" class="form-control" name="nombre_produit" value=""></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger"
+                                                            data-bs-dismiss="modal">Cancel</button>
+                                                        <button type="submit" class="btn btn-success">Modifer
+                                                            l'employe</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div><!-- End Large Modal-->
+                                    <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
+                                        data-bs-target="#modifier_commande_">Modifier</button>
+                                </td>
+                                <td class="fix_width">
+                                    <div class="modal fade" id="verticalycentered_" tabindex="-1">
+                                        <div class="modal-dialog modal-dialog-centered">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title">Modifier un employe
-                                                    </h5>
+                                                    <h5 class="modal-title">Supression</h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <div class="row mb-3">
-                                                        <label for="inputText" class="col-sm-2 col-form-label">Nom</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="text" class="form-control" name="nom"
-                                                                value="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mb-3">
-                                                        <label for="inputText"
-                                                            class="col-sm-2 col-form-label">Prenom</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="text" class="form-control" name="prenom"
-                                                                value="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mb-3">
-                                                        <label for="inputText" class="col-sm-2 col-form-label">Date de
-                                                            naissance</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="date" class="form-control" name="ddn"
-                                                                value="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mb-3">
-                                                        <label for="inputText" class="col-sm-2 col-form-label">Lieu de
-                                                            naissance</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="text" class="form-control" name="ldn"
-                                                                value="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mb-3">
-                                                        <label for="inputText"
-                                                            class="col-sm-2 col-form-label">Adresse</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="text" class="form-control" name="Adresse"
-                                                                value="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mb-3">
-                                                        <label for="inputText" class="col-sm-2 col-form-label">Numéro de
-                                                            téléphone</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="num" class="form-control" name="tel"
-                                                                value="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mb-3">
-                                                        <label for="inputText"
-                                                            class="col-sm-2 col-form-label">Password</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="password" class="form-control" name="password"
-                                                                value="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mb-3">
-                                                        <label for="inputText"
-                                                            class="col-sm-2 col-form-label">Taches</label>
-                                                        <div class="col-sm-10">
-                                                            <textarea name="plus" class="form-control" name="nombre_produit" value=""></textarea>
-                                                        </div>
-                                                    </div>
+                                                    Vous voulez supprimer cet employe.
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-danger"
+                                                    <button type="button" class="btn btn-secondary"
                                                         data-bs-dismiss="modal">Cancel</button>
-                                                    <button type="submit" class="btn btn-success">Modifer
-                                                        l'employe</button>
+                                                    <button type="button" class="btn btn-danger">Supprimer</button>
                                                 </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div><!-- End Large Modal-->
-                                <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
-                                    data-bs-target="#modifier_commande_">Modifier</button>
-                            </td>
-                            <td class="fix_width">
-                                <div class="modal fade" id="verticalycentered_" tabindex="-1">
-                                    <div class="modal-dialog modal-dialog-centered">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title">Supression</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                Vous voulez supprimer cet employe.
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">Cancel</button>
-                                                <button type="button" class="btn btn-danger">Supprimer</button>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
-                                    data-bs-target="#verticalycentered_">
-                                    Supprimer
-                                </button>
-                            </td>
-                        </tr>
+                                    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                                        data-bs-target="#verticalycentered_">
+                                        Supprimer
+                                    </button>
+                                </td>
+                            </tr>
                         @endforeach
 
                     </tbody>

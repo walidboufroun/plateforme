@@ -142,8 +142,7 @@
                                 <td>{{ $complaint->utilisateur->name }}</td>
                                 <td>{{ $complaint->utilisateur->statut }}</td>
                                 <td class="fix_width">
-                                    <div class="modal fade" id="modifier_réclamations_{{ $complaint->id }}"
-                                        tabindex="-1">
+                                    <div class="modal fade" id="modifier_réclamations_{{ $complaint->id }}" tabindex="-1">
                                         <div class="modal-dialog modal-lg">3
                                             <form action="Admin_Add_ordre" method="post">
                                                 @csrf
@@ -279,7 +278,6 @@
                                 </td>
                             </tr>
                         @endforeach
-
                     </tbody>
                 </table>
                 <!-- End Table with stripped rows -->
