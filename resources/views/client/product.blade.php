@@ -271,7 +271,7 @@
                                     <form action="Admin_Add_ordre" method="post">
                                         @csrf
                                         <div class="modal-content">
-       cp                                      <div class="modal-header">
+                                             <div class="modal-header">
 
                                             <div class="modal-header">
 
@@ -361,15 +361,6 @@
         </div>
     </div>
 </div>
-<h1>Products</h1>
-<h2>Afficher les anomalies signalées pour les produits.</h2>
-<h2>Planifier et suivre les actions correctives.</h2>
-
-<th>Produit</th>
-<th>Anomalie</th>
-<th>Statut</th>
-<th>Responsable</th>
-<th>Actions Correctives</th>
 
 
 
