@@ -9,8 +9,8 @@ use Illuminate\Database\Eloquent\Model;
 class Forfait extends Model
 {
     protected $fillable = [
-        'nom_forfait',
-        'duree_forfait',
+        'name',
+        'duration',
         'description',
         'photos',
         'id_produit',

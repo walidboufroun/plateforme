@@ -14,11 +14,11 @@ return new class extends Migration
     {
         Schema::create('commandes', function (Blueprint $table) {
             $table->id();
-            $table->date('date_commande');
+            $table->date('date');
             $table->unsignedBigInteger('id_client')->nullable();
             $table->unsignedBigInteger('id_societe')->nullable();
             $table->unsignedBigInteger('id_produit');
-            $table->integer('nombre_produit');
+            $table->integer('number');
             $table->enum('statut', ['en_cours', 'livree', 'annulee'])->default('en_cours');
             $table->timestamps();
             $table->foreign('id_produit')->references('id')->on('produits')->onDelete('cascade');

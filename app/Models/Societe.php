@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Societe extends Model
 {
     protected $fillable = [
-        'nom_societe',
+        'name',
         'site_web',
         'adresse',
         'phone_number',

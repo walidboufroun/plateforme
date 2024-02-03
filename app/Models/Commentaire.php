@@ -11,7 +11,7 @@ class Commentaire extends Model
     protected $fillable = [
         'id_produit',
         'id_utilisateur',
-        'texte_commentaire',
+        'content',
         'statut',
         // Add other fillable attributes as needed
     ];

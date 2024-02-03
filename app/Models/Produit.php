@@ -9,7 +9,8 @@ use Illuminate\Database\Eloquent\Model;
 class Produit extends Model
 {
     protected $fillable = [
-        'nom_produit',
+        'name',
+        'code',
         'photos',
         'descriptive',
         'prix',
@@ -25,6 +26,11 @@ class Produit extends Model
     public function forfait()
     {
         return $this->hasOne(Forfait::class, 'id_produit');
+    }
+
+    public function images()
+    {
+        return $this->hasMany(Image::class, 'id_produit');
     }
 
     // Add other relationships as needed

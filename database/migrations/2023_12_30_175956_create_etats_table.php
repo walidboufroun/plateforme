@@ -10,11 +10,11 @@ class CreateEtatsTable extends Migration
     {
         Schema::create('etats', function (Blueprint $table) {
             $table->id();
-            $table->string('etat_glass');
-            $table->string('etat_plastic');
-            $table->string('etat_metal');
-            $table->string('etat_paper');
-            $table->string('etat_other');
+            $table->string('state_glass');
+            $table->string('state_plastic');
+            $table->string('state_metal');
+            $table->string('state_paper');
+            $table->string('state_other');
             $table->string('gps');
             $table->string('detecteur_de_feu');
             $table->string('detecteur_de_mouvement');

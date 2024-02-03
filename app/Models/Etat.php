@@ -9,11 +9,11 @@ use Illuminate\Database\Eloquent\Model;
 class Etat extends Model
 {
     protected $fillable = [
-        'etat_glass',
-        'etat_plastic',
-        'etat_metal',
-        'etat_paper',
-        'etat_other',
+        'state_glass',
+        'state_plastic',
+        'state_metal',
+        'state_paper',
+        'state_other',
         'gps',
         'detecteur_de_feu',
         'detecteur_de_mouvement',
