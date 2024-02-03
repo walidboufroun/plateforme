@@ -12,7 +12,7 @@ class CreateSocietesTable extends Migration
     {
         Schema::create('societes', function (Blueprint $table) {
             $table->id();
-            $table->string('nom_societe');
+            $table->string('name');
             $table->string('site_web')->nullable();
             $table->string('adresse');
             $table->string('phone_number');

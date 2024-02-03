@@ -9,10 +9,10 @@ use Illuminate\Database\Eloquent\Model;
 class Alert extends Model
 {
     protected $fillable = [
-        'nom_alerte',
-        'date_et_heure',
+        'name',
+        'date',
         'id_produit',
-        'lu',
+        'seen',
         'description',
         'id_client',
         // Add other fillable attributes as needed

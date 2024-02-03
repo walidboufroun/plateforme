@@ -12,11 +12,11 @@ class CreateAlertsTable extends Migration
     {
         Schema::create('alerts', function (Blueprint $table) {
             $table->id();
-            $table->string('nom_alerte');
-            $table->dateTime('date_et_heure');
+            $table->string('name');
+            $table->dateTime('date');
             $table->unsignedBigInteger('id_produit');
             $table->text('description');
-            $table->boolean('lu')->default(false)->nullable();      
+            $table->boolean('seen')->default(false)->nullable();      
             $table->unsignedBigInteger('id_client');
             // Add other columns as needed
             $table->timestamps();

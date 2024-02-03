@@ -14,7 +14,7 @@ class CreateCommentairesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('id_produit');
             $table->unsignedBigInteger('id_utilisateur');
-            $table->text('texte_commentaire');
+            $table->text('content');
             $table->enum('statut', ['En attente', 'En cours de traitement', 'Traitement terminé avec succès', 'Traitement terminé avec problème', 'Non applicable'])->default('En attente'); // Assuming an integer for stars (1, 2, 3, 4, 5)
             // Add other columns as needed
           

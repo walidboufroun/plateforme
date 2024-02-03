@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Commande extends Model
 {
     protected $fillable = [
-        'date_commande',
+        'date',
         'id_client',
         'id_societe',
         'id_produit',
-        'nombre_produit',
+        'number',
         'statut',
     ];
 
