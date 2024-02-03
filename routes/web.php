@@ -104,8 +104,8 @@ Route::post('Client-profile-edit', [AuthClient::class, 'update_profile'])->name(
 Route::post('Client-societe-edit', [AuthClient::class, 'update_societe']);
 Route::get('Client-Reclamation', [ComplaintControllerClient::class, 'index'])->name('Client-Reclamation');
 
-Route::post('deleteEmployee', [EmployeeControllerClient::class, 'deleteEmployee']);
-Route::post('modifyEmployee', [EmployeeControllerClient::class, 'modifyEmployee']);
+Route::post('deleteEmployee/{id}', [EmployeeControllerClient::class, 'deleteEmployee']);
+Route::post('modifyEmployee/{id}', [EmployeeControllerClient::class, 'modifyEmployee']);
 Route::post('addEmployee', [EmployeeControllerClient::class, 'addEmployee']);
 
 Route::prefix('Blog')->group(function () {

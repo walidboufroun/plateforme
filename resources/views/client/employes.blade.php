@@ -50,12 +50,6 @@
                                             </div>
                                         </div>
                                         <div class="row mb-3">
-                                            <label for="inputText" class="col-sm-2 col-form-label">Mot de passe</label>
-                                            <div class="col-sm-10">
-                                                <input type="password" class="form-control" name="password" required>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-3">
                                             <label for="inputText" class="col-sm-2 col-form-label">Email</label>
                                             <div class="col-sm-10">
                                                 <input type="email" class="form-control" name="email" required>
@@ -69,9 +63,27 @@
                                             </div>
                                         </div>
                                         <div class="row mb-3">
+                                            <label for="inputText" class="col-sm-2 col-form-label">Address</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" name="adresse" required>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <label for="inputText" class="col-sm-2 col-form-label">Photo</label>
+                                            <div class="col-sm-10">
+                                                <input type="file" class="form-control" name="photo">
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <label for="inputText" class="col-sm-2 col-form-label">Mot de passe</label>
+                                            <div class="col-sm-10">
+                                                <input type="password" class="form-control" name="password" required>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
                                             <label for="inputText" class="col-sm-2 col-form-label">Type</label>
                                             <div class="col-sm-10">
-                                                <select name="type" required>
+                                                <select name="type" class="form-control" required>
                                                     <option value="gerant">Gerant</option>
                                                     <option value="superviseur">Superviseur</option>
                                                     <option value="employe">Employe</option>
@@ -81,7 +93,7 @@
                                         <div class="row mb-3">
                                             <label for="inputText" class="col-sm-2 col-form-label">Societe</label>
                                             <div class="col-sm-10">
-                                                <select name="id_societe" required>
+                                                <select name="id_societe" class="form-control" required>
                                                     <option value="1">1</option>
                                                 </select>
                                             </div>
@@ -143,45 +155,25 @@
                                                     <div class="modal-body">
                                                         <div class="row mb-3">
                                                             <label for="inputText"
-                                                                class="col-sm-2 col-form-label">Nom</label>
+                                                                class="col-sm-2 col-form-label">Nom et prenom</label>
                                                             <div class="col-sm-10">
                                                                 <input type="text" class="form-control" name="nom"
                                                                     value="{{ $employe->name }}">
                                                             </div>
                                                         </div>
                                                         <div class="row mb-3">
-                                                            <label for="inputText" class="col-sm-2 col-form-label">Nom
-                                                                utilisateur</label>
+                                                            <label for="inputText" class="col-sm-2 col-form-label">Nom utilisateur</label>
                                                             <div class="col-sm-10">
                                                                 <input type="text" class="form-control" name="prenom"
                                                                     value="{{ $employe->username }}">
                                                             </div>
                                                         </div>
-
-                                                        <div class="row mb-3">
-                                                            <label for="inputText"
-                                                                class="col-sm-2 col-form-label">Societe</label>
-                                                            <div class="col-sm-10">
-                                                                <select name="id_societe" value="" required>
-                                                                
-                                                                </select>
-                                                            </div>
-                                                        </div>
-
                                                         <div class="row mb-3">
                                                             <label for="inputText"
                                                                 class="col-sm-2 col-form-label">Email</label>
                                                             <div class="col-sm-10">
                                                                 <input type="text" class="form-control" name="ldn"
                                                                     value="{{ $employe->email }}">
-                                                            </div>
-                                                        </div>
-                                                        <div class="row mb-3">
-                                                            <label for="inputText"
-                                                                class="col-sm-2 col-form-label">Adresse</label>
-                                                            <div class="col-sm-10">
-                                                                <input type="text" class="form-control" name="Adresse"
-                                                                    value="{{ $employe->adresse }}">
                                                             </div>
                                                         </div>
                                                         <div class="row mb-3">
@@ -194,13 +186,38 @@
                                                         </div>
                                                         <div class="row mb-3">
                                                             <label for="inputText"
-                                                                class="col-sm-2 col-form-label">Type</label>
+                                                                class="col-sm-2 col-form-label">Adresse</label>
                                                             <div class="col-sm-10">
                                                                 <input type="text" class="form-control" name="Adresse"
-                                                                    value="{{ $employe->type }}">
+                                                                    value="{{ $employe->adresse }}">
                                                             </div>
                                                         </div>
-
+                                                        <div class="row mb-3">
+                                                            <label for="inputText"
+                                                                class="col-sm-2 col-form-label">Photo</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="image" class="form-control" name="photo"
+                                                                    value="{{ $employe->photo }}">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3">
+                                                            <label for="inputText"
+                                                                class="col-sm-2 col-form-label">Type</label>
+                                                            <div class="col-sm-10">
+                                                                <select name="type" value="{{ $employe->type }}" class="form-control">
+                                                                    
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3">
+                                                            <label for="inputText"
+                                                                class="col-sm-2 col-form-label">Societe</label>
+                                                            <div class="col-sm-10">
+                                                                <select name="id_societe" value="{{ $employe->id_societe }}" class="form-control">
+                                                                    <option value="1">1</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-danger"
@@ -216,7 +233,7 @@
 
                                     <div class="modal fade" id="verticalycentered_{{ $employe->id }}" tabindex="-1">
                                         <div class="modal-dialog modal-dialog-centered">
-                                            <form action="deleteEmploye/{{ $employe->id }}" method="post">
+                                            <form action="deleteEmployee/{{ $employe->id }}" method="post">
                                                 @csrf
                                                 <div class="modal-content">
                                                     <div class="modal-header">
