@@ -28,9 +28,6 @@ use App\Http\Controllers\ClientControllers\ProductAnomalyControllerCleint;
 use App\Http\Controllers\ClientControllers\ProductAnomalyControllerClient;
 
 
-
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -106,6 +103,10 @@ Route::get('Client-Edit-Profile', [AuthClient::class, 'edit_profile'])->name('Cl
 Route::post('Client-profile-edit', [AuthClient::class, 'update_profile'])->name('Client-profile-edit');
 Route::post('Client-societe-edit', [AuthClient::class, 'update_societe']);
 Route::get('Client-Reclamation', [ComplaintControllerClient::class, 'index'])->name('Client-Reclamation');
+
+Route::post('deleteEmployee', [EmployeeControllerClient::class, 'deleteEmployee']);
+Route::post('modifyEmployee', [EmployeeControllerClient::class, 'modifyEmployee']);
+Route::post('addEmployee', [EmployeeControllerClient::class, 'addEmployee']);
 
 Route::prefix('Blog')->group(function () {
         Route::get('/', function () {

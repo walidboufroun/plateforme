@@ -11,6 +11,8 @@
 
     .fix_width {
         width: 3vw;
+        display: flex;
+        gap: 1vw;
     }
 </style>
 @section('content')
@@ -123,8 +125,7 @@
                             <th>ID Produit</th>
                             <th>Description</th>
                             <th>Statut</th>
-                            <th>Action</th>
-                            <th>Action</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -245,8 +246,8 @@
                                     </div><!-- End Large Modal-->
                                     <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
                                         data-bs-target="#modifier_réclamations_{{ $alert->id }}">Modifier</button>
-                                </td>
-                                <td class="fix_width">
+
+
                                     <div class="modal fade" id="verticalycentered_{{ $alert->id }}" tabindex="-1">
                                         <div class="modal-dialog modal-dialog-centered">
                                             <div class="modal-content">

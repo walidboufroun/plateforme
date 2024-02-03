@@ -10,9 +10,10 @@
     .custom-modal-width {
         max-width: calc(70%) !important;
     }
-
     .fix_width {
         width: 3vw;
+        display: flex;
+        gap: 1vw;
     }
 </style>
 
@@ -35,9 +36,7 @@
                         <th>Photos</th>
                         <th>Description</th>
                         <th>prix</th>
-                        <th>Action</th>
-                        <th>Action</th>
-                        <th>Action</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -263,15 +262,14 @@
                                 </div>
                             </div>
                             <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#voir_produit_">Voir</button>
-                        </td>
-                        <td class="fix_width">
+                        
 
                             <div class="modal fade" id="modifier_réclamations_" tabindex="-1">
                                 <div class="modal-dialog modal-lg">3
                                     <form action="Admin_Add_ordre" method="post">
                                         @csrf
                                         <div class="modal-content">
-                                             <div class="modal-header">
+                                            <div class="modal-header">
 
                                             <div class="modal-header">
 
@@ -323,11 +321,6 @@
                                 </div>
                             </div><!-- End Large Modal-->
                             <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modifier_réclamations_">Modifier</button>
-                        </td>
-                        <td>
-
-
-                        <td class="fix_width">
 
                             <div class="modal fade" id="verticalycentered_" tabindex="-1">
                                 <div class="modal-dialog modal-dialog-centered">

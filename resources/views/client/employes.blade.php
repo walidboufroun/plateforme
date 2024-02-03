@@ -13,6 +13,8 @@
 
     .fix_width {
         width: 3vw;
+        display: flex;
+        gap: 1.2vw;
     }
 </style>
 
@@ -26,7 +28,7 @@
                     </div>
                     <div class="modal fade" id="largeModal" tabindex="-1">
                         <div class="modal-dialog modal-lg">3
-                            <form action="Admin_Add_ordre" method="post">
+                            <form action="addEmployee" method="post">
                                 @csrf
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -36,52 +38,52 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="row mb-3">
-                                            <label for="inputText" class="col-sm-2 col-form-label">Nom</label>
+                                            <label for="inputText" class="col-sm-2 col-form-label">Nom et Prenom</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" name="nom" required>
+                                                <input type="text" class="form-control" name="name" required>
                                             </div>
                                         </div>
                                         <div class="row mb-3">
-                                            <label for="inputText" class="col-sm-2 col-form-label">Prenom</label>
+                                            <label for="inputText" class="col-sm-2 col-form-label">Nom utilisateur</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" name="prenom" required>
+                                                <input type="text" class="form-control" name="username" required>
                                             </div>
                                         </div>
                                         <div class="row mb-3">
-                                            <label for="inputText" class="col-sm-2 col-form-label">Date de naissance</label>
+                                            <label for="inputText" class="col-sm-2 col-form-label">Mot de passe</label>
                                             <div class="col-sm-10">
-                                                <input type="date" class="form-control" name="ddn" required>
+                                                <input type="password" class="form-control" name="password" required>
                                             </div>
                                         </div>
                                         <div class="row mb-3">
-                                            <label for="inputText" class="col-sm-2 col-form-label">Lieu de naissance</label>
+                                            <label for="inputText" class="col-sm-2 col-form-label">Email</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" name="ldn" required>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-3">
-                                            <label for="inputText" class="col-sm-2 col-form-label">Adresse</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" class="form-control" name="Adresse" required>
+                                                <input type="email" class="form-control" name="email" required>
                                             </div>
                                         </div>
                                         <div class="row mb-3">
                                             <label for="inputText" class="col-sm-2 col-form-label">Numéro de
                                                 téléphone</label>
                                             <div class="col-sm-10">
-                                                <input type="num" class="form-control" name="tel" required>
+                                                <input type="num" class="form-control" name="phone_number" required>
                                             </div>
                                         </div>
                                         <div class="row mb-3">
-                                            <label for="inputText" class="col-sm-2 col-form-label">Password</label>
+                                            <label for="inputText" class="col-sm-2 col-form-label">Type</label>
                                             <div class="col-sm-10">
-                                                <input type="password" class="form-control" name="password" required>
+                                                <select name="type" required>
+                                                    <option value="gerant">Gerant</option>
+                                                    <option value="superviseur">Superviseur</option>
+                                                    <option value="employe">Employe</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="row mb-3">
-                                            <label for="inputText" class="col-sm-2 col-form-label">Taches</label>
+                                            <label for="inputText" class="col-sm-2 col-form-label">Societe</label>
                                             <div class="col-sm-10">
-                                                <textarea name="plus" class="form-control" name="nombre_produit" required></textarea>
+                                                <select name="id_societe" required>
+                                                    <option value="1">1</option>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
@@ -113,30 +115,28 @@
                             <th>Numero de telephone</th>
                             <th>Photo</th>
                             <th>Type</th>
-                            <th>Action</th>
-                            <th>Action </th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($employes as $employe)
                             <tr>
-                                <td>{{ $employe->name }}</td>
+                                <td>{{ $employe->name}}</td>
                                 <td>{{ $employe->username }}</td>
-                                <td>{{ $employe->id_societe  }}</td>
-                                <td>{{ $employe->email  }}</td>
+                                <td>{{ $employe->id_societe }}</td>
+                                <td>{{ $employe->email }}</td>
                                 <td>{{ $employe->adresse }}</td>
                                 <td>{{ $employe->phone_number }}</td>
                                 <td>{{ $employe->photo }}</td>
                                 <td>{{ $employe->type }}</td>
                                 <td class="fix_width">
-                                    <div class="modal fade" id="modifier_commande_" tabindex="-1">
+                                    <div class="modal fade" id="modifier_commande_{{ $employe->id }}" tabindex="-1">
                                         <div class="modal-dialog modal-lg">3
-                                            <form action="Admin_Add_ordre" method="post">
+                                            <form action="modifyEmployee/{{ $employe->id }}" method="post">
                                                 @csrf
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title">Modifier un employe
-                                                        </h5>
+                                                        <h5 class="modal-title">Modifier un employe {{ $employe->id }}</h5>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                             aria-label="Close"></button>
                                                     </div>
@@ -146,31 +146,34 @@
                                                                 class="col-sm-2 col-form-label">Nom</label>
                                                             <div class="col-sm-10">
                                                                 <input type="text" class="form-control" name="nom"
-                                                                    value="">
+                                                                    value="{{ $employe->name }}">
                                                             </div>
                                                         </div>
                                                         <div class="row mb-3">
-                                                            <label for="inputText"
-                                                                class="col-sm-2 col-form-label">Prenom</label>
+                                                            <label for="inputText" class="col-sm-2 col-form-label">Nom
+                                                                utilisateur</label>
                                                             <div class="col-sm-10">
                                                                 <input type="text" class="form-control" name="prenom"
-                                                                    value="">
+                                                                    value="{{ $employe->username }}">
                                                             </div>
                                                         </div>
+
                                                         <div class="row mb-3">
-                                                            <label for="inputText" class="col-sm-2 col-form-label">Date de
-                                                                naissance</label>
+                                                            <label for="inputText"
+                                                                class="col-sm-2 col-form-label">Societe</label>
                                                             <div class="col-sm-10">
-                                                                <input type="date" class="form-control" name="ddn"
-                                                                    value="">
+                                                                <select name="id_societe" value="" required>
+                                                                
+                                                                </select>
                                                             </div>
                                                         </div>
+
                                                         <div class="row mb-3">
-                                                            <label for="inputText" class="col-sm-2 col-form-label">Lieu de
-                                                                naissance</label>
+                                                            <label for="inputText"
+                                                                class="col-sm-2 col-form-label">Email</label>
                                                             <div class="col-sm-10">
                                                                 <input type="text" class="form-control" name="ldn"
-                                                                    value="">
+                                                                    value="{{ $employe->email }}">
                                                             </div>
                                                         </div>
                                                         <div class="row mb-3">
@@ -178,69 +181,63 @@
                                                                 class="col-sm-2 col-form-label">Adresse</label>
                                                             <div class="col-sm-10">
                                                                 <input type="text" class="form-control" name="Adresse"
-                                                                    value="">
+                                                                    value="{{ $employe->adresse }}">
                                                             </div>
                                                         </div>
                                                         <div class="row mb-3">
                                                             <label for="inputText" class="col-sm-2 col-form-label">Numéro
-                                                                de
-                                                                téléphone</label>
+                                                                de téléphone</label>
                                                             <div class="col-sm-10">
-                                                                <input type="num" class="form-control" name="tel"
-                                                                    value="">
+                                                                <input type="number" class="form-control" name="tel"
+                                                                    value="{{ $employe->phone_number }}">
                                                             </div>
                                                         </div>
                                                         <div class="row mb-3">
                                                             <label for="inputText"
-                                                                class="col-sm-2 col-form-label">Password</label>
+                                                                class="col-sm-2 col-form-label">Type</label>
                                                             <div class="col-sm-10">
-                                                                <input type="password" class="form-control"
-                                                                    name="password" value="">
+                                                                <input type="text" class="form-control" name="Adresse"
+                                                                    value="{{ $employe->type }}">
                                                             </div>
                                                         </div>
-                                                        <div class="row mb-3">
-                                                            <label for="inputText"
-                                                                class="col-sm-2 col-form-label">Taches</label>
-                                                            <div class="col-sm-10">
-                                                                <textarea name="plus" class="form-control" name="nombre_produit" value=""></textarea>
-                                                            </div>
-                                                        </div>
+
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-danger"
                                                             data-bs-dismiss="modal">Cancel</button>
-                                                        <button type="submit" class="btn btn-success">Modifer
-                                                            l'employe</button>
+                                                        <button type="submit" class="btn btn-success">Modifier l'employe</button>
                                                     </div>
                                                 </div>
                                             </form>
                                         </div>
                                     </div><!-- End Large Modal-->
                                     <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
-                                        data-bs-target="#modifier_commande_">Modifier</button>
-                                </td>
-                                <td class="fix_width">
-                                    <div class="modal fade" id="verticalycentered_" tabindex="-1">
+                                        data-bs-target="#modifier_commande_{{ $employe->id }}">Modifier</button>
+
+                                    <div class="modal fade" id="verticalycentered_{{ $employe->id }}" tabindex="-1">
                                         <div class="modal-dialog modal-dialog-centered">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title">Supression</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
+                                            <form action="deleteEmploye/{{ $employe->id }}" method="post">
+                                                @csrf
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Supression</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        Vous voulez supprimer cette employe ?
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-bs-dismiss="modal">Annuler</button>
+                                                        <button type="submit" class="btn btn-danger">Supprimer</button>
+                                                    </div>
                                                 </div>
-                                                <div class="modal-body">
-                                                    Vous voulez supprimer cet employe.
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-bs-dismiss="modal">Cancel</button>
-                                                    <button type="button" class="btn btn-danger">Supprimer</button>
-                                                </div>
-                                            </div>
+                                            </form>
                                         </div>
                                     </div>
                                     <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
-                                        data-bs-target="#verticalycentered_">
+                                        data-bs-target="#verticalycentered_{{ $employe->id }}">
                                         Supprimer
                                     </button>
                                 </td>
