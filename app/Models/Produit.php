@@ -18,6 +18,11 @@ class Produit extends Model
     ];
 
     // Add relationships if needed
+    public function clients()
+    {
+        return $this->hasMany(Client::class, 'id_client');
+    }
+
     public function commentaires()
     {
         return $this->hasMany(Commentaire::class, 'id_produit');

@@ -134,10 +134,10 @@
                             <tr>
                                 <td>{{ $alert->name }}</td>
                                 <td>{{ $alert->date }}</td>
-                                <td>{{ $alert->id_produit }}</td>
+                                <td>{{ $alert->produit->name }}</td>
                                 <td>{{ $alert->description }}</td>
                                 <td>{{ $alert->seen }}</td>
-                                <td>{{ $alert->id_client }}</td>
+                                <td>{{ $alert->client->name }}</td>
                                 <td class="fix_width">
                                     <div class="modal fade" id="modifier_réclamations_{{ $alert->id }}"
                                         tabindex="-1">

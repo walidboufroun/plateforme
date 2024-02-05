@@ -136,12 +136,12 @@
                         <tr>
                                 <td>{{ $complaint->content }}</td>
                                 <td>{{ $complaint->produit->name }}</td>
+                                <td>{{ $complaint->produit->name }}</td>
                                 <td>{{ $complaint->utilisateur->email }}</td>
                                 <td>{{ $complaint->utilisateur->type }}</td>
-                                <td>{{ $complaint->produit->name }}</td>
                                 <td>{{ $complaint->statut }}</td>
-                                <td>{{ $complaint->utilisateur->name }}</td>
-                                <td>{{ $complaint->utilisateur->statut }}</td>
+                                <td>{{ $complaint->utilisateur->type }}</td>
+                                <td>{{ $complaint->created_at }}</td>   
                                 <td class="fix_width">
                                     <div class="modal fade" id="modifier_réclamations_{{ $complaint->id }}" tabindex="-1">
                                         <div class="modal-dialog modal-lg">3

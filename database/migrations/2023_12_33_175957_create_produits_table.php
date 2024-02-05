@@ -17,9 +17,11 @@ class CreateProduitsTable extends Migration
             $table->string('photos')->nullable();
             $table->text('descriptive')->nullable();
             $table->decimal('prix', 10, 2);
+            $table->unsignedBigInteger('id_client');
             // Add other columns as needed
 
             $table->timestamps();
+            $table->foreign('id_client')->references('id')->on('clients')->onDelete('cascade');
         });
     }
 

@@ -135,7 +135,7 @@
                             <tr>
                                 <td>{{ $employe->name}}</td>
                                 <td>{{ $employe->username }}</td>
-                                <td>{{ $employe->id_societe }}</td>
+                                <td>{{ $employe->societe->name }}</td>
                                 <td>{{ $employe->email }}</td>
                                 <td>{{ $employe->adresse }}</td>
                                 <td>{{ $employe->phone_number }}</td>
