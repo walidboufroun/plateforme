@@ -140,7 +140,7 @@
                                 <td>{{ $employe->adresse }}</td>
                                 <td>{{ $employe->phone_number }}</td>
                                 {{-- <td><img src="{{ asset('images/client1.jpg') }}" width="100px" height="100px" alt=""></td>  --}}
-                                <td><img src="{{ asset('images/' . $employe->photo) }}" width="100px" height="100px" alt=""></td>
+                                <td><img src="{{ asset('images/' . $employe->photo) }}" width="40px" height="40px" alt=""></td>
                                 <td>{{ $employe->type }}</td>
                                 <td class="fix_width">
                                     <div class="modal fade" id="modifier_commande_{{ $employe->id }}" tabindex="-1">

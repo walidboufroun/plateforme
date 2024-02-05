@@ -125,6 +125,7 @@
                             <th>ID Produit</th>
                             <th>Description</th>
                             <th>Statut</th>
+                            <th>Client</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -132,10 +133,11 @@
                         @foreach ($alerts as $alert)
                             <tr>
                                 <td>{{ $alert->name }}</td>
-                                <td>{{ $alert->date_et_heure }}</td>
+                                <td>{{ $alert->date }}</td>
                                 <td>{{ $alert->id_produit }}</td>
                                 <td>{{ $alert->description }}</td>
-                                <td>{{ $alert->lu }}</td>
+                                <td>{{ $alert->seen }}</td>
+                                <td>{{ $alert->id_client }}</td>
                                 <td class="fix_width">
                                     <div class="modal fade" id="modifier_réclamations_{{ $alert->id }}"
                                         tabindex="-1">

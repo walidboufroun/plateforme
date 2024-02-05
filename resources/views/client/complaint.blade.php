@@ -133,13 +133,13 @@
                     </thead>
                     <tbody>
                         @foreach ($complaints as $complaint)
-                            <tr>
-                                <td>{{ $complaint->texte_commentaire }}</td>
-                                <td>{{ $complaint->produit->nom_produit }}</td>
-                                <td>{{ $complaint->utilisateur->name }}</td>
-                                <td>{{ $complaint->utilisateur->statut }}</td>
-                                <td>{{ $complaint->texte_commentaire }}</td>
-                                <td>{{ $complaint->produit->nom_produit }}</td>
+                        <tr>
+                                <td>{{ $complaint->content }}</td>
+                                <td>{{ $complaint->produit->name }}</td>
+                                <td>{{ $complaint->utilisateur->email }}</td>
+                                <td>{{ $complaint->utilisateur->type }}</td>
+                                <td>{{ $complaint->produit->name }}</td>
+                                <td>{{ $complaint->statut }}</td>
                                 <td>{{ $complaint->utilisateur->name }}</td>
                                 <td>{{ $complaint->utilisateur->statut }}</td>
                                 <td class="fix_width">
@@ -251,7 +251,7 @@
                                     </div><!-- End Large Modal-->
                                     <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
                                         data-bs-target="#modifier_réclamations_{{ $complaint->id }}">Modifier</button>
-                                
+
                                     <div class="modal fade" id="verticalycentered_{{ $complaint->id }}" tabindex="-1">
                                         <div class="modal-dialog modal-dialog-centered">
                                             <div class="modal-content">
@@ -277,7 +277,7 @@
                                     </button>
                                 </td>
                             </tr>
-                        @endforeach
+                            @endforeach 
                     </tbody>
                 </table>
                 <!-- End Table with stripped rows -->
