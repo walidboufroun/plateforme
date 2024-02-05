@@ -59,6 +59,8 @@
                     <thead>
                         <tr>
                             <th>Nom de produit</th>
+                            <th>Code produit</th>
+                            <th>Photo</th>
                             <th>Description de produit</th>
                             <th>Prix</th>
                             <th>Action</th>
@@ -68,8 +70,10 @@
                     <tbody>
 
                         @foreach ($produits as $produit)
-                            <tr>
-                                <td>{{ $produit->nom_produit }}</td>
+                            <tr >
+                                <td >{{ $produit->name }}</td>
+                                <td>{{ $produit->code }}</td>
+                                <td>{{ $produit->photos }}</td>
                                 <td>{{ $produit->descriptive }}</td>
                                 <td>{{ $produit->prix }}</td>
                                 <td>

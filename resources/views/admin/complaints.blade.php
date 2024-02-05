@@ -33,9 +33,9 @@
 
                         @foreach ($complaints as $complaint)
                             <tr class="table-success">
-                                <td>{{ $complaint->texte_commentaire }}</td>
-                                <td>{{ $complaint->produit->nom_produit }}</td>
-                                <td>{{ $complaint->utilisateur->name }}</td>
+                                <td>{{ $complaint->content }}</td>
+                                <td>{{ $complaint->id_produit }}</td>
+                                <td>{{ $complaint->id_utilisateur }}</td>
                                 <td>{{ $complaint->statut }}</td>
                                 <td>
                                     <div class="modal fade" id="change_statut_reclamation-{{ $complaint->id }}" tabindex="-1">

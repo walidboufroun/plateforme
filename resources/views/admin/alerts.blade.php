@@ -88,88 +88,91 @@
                             <th>Nom Produit</th>
                             <th>Statut</th>
                             <th>Description</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>
-                                <div class="modal fade" id="modifier_réclamations_" tabindex="-1">
-                                    <div class="modal-dialog modal-lg">3
-                                        <form action="Admin_Add_ordre" method="post">
-                                            @csrf
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title">Modifier une alerte</h5>
-                                                    <button type="button" class="btn-close"
-                                                        data-bs-dismiss="modal"aria-label="Close"></button>
+                        @foreach ($alerts as $alert)
+                            <tr>
+                                <td>{{ $alert->name }}</td>
+                                <td>{{ $alert->date }}</td>
+                                <td>{{ $alert->id_produit }}</td>
+                                <td>{{ $alert->description }}</td>
+                                <td>{{ $alert->seen }}</td>
+                                <td>{{ $alert->id_client }}</td>
+                                <td>
+                                    <div class="modal fade" id="modifier_réclamations_" tabindex="-1">
+                                        <div class="modal-dialog modal-lg">3
+                                            <form action="Admin_Add_ordre" method="post">
+                                                @csrf
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Modifier une alerte</h5>
+                                                        <button type="button" class="btn-close"
+                                                            data-bs-dismiss="modal"aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="row mb-3">
+                                                            <label for="inputText" class="col-sm-2 col-form-label">Nom
+                                                                alerte</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" name="nom_alerte"
+                                                                    value="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3">
+                                                            <label for="inputText" class="col-sm-2 col-form-label">Date
+                                                                alerte</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="date" class="form-control"
+                                                                    name="date_alerte" value="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3">
+                                                            <label for="inputText"
+                                                                class="col-sm-2 col-form-label">Client</label>
+                                                            <div class="col-sm-10">
+                                                                <!-- select from list clients -->
+                                                                <select class="form-control" id="idclient"
+                                                                    name="client" value="">
+                                                                    <option value="client1">client1</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3">
+                                                            <label for="inputText" class="col-sm-2 col-form-label">Nom
+                                                                Produit</label>
+                                                            <div class="col-sm-10">
+                                                                <!-- select from list produit de clients -->
+                                                                <select class="form-control" id="id_produit_client"
+                                                                    name="Nom_produit">
+                                                                    <option value="produit1">produit1</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3">
+                                                            <label for="inputText"
+                                                                class="col-sm-2 col-form-label">Description</label>
+                                                            <div class="col-sm-10">
+                                                                <textarea class="form-control" name="description_alerte"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger"
+                                                            data-bs-dismiss="modal">Cancel</button>
+                                                        <button type="submit" class="btn btn-success">Modifier
+                                                            l'alerte</button>
+                                                    </div>
                                                 </div>
-                                                <div class="modal-body">
-                                                    <div class="row mb-3">
-                                                        <label for="inputText" class="col-sm-2 col-form-label">Nom
-                                                            alerte</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="text" class="form-control" name="nom_alerte"
-                                                                value="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mb-3">
-                                                        <label for="inputText" class="col-sm-2 col-form-label">Date
-                                                            alerte</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="date" class="form-control" name="date_alerte"
-                                                                value="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mb-3">
-                                                        <label for="inputText"
-                                                            class="col-sm-2 col-form-label">Client</label>
-                                                        <div class="col-sm-10">
-                                                            <!-- select from list clients -->
-                                                            <select class="form-control" id="idclient" name="client"
-                                                                value="">
-                                                                <option value="client1">client1</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mb-3">
-                                                        <label for="inputText" class="col-sm-2 col-form-label">Nom
-                                                            Produit</label>
-                                                        <div class="col-sm-10">
-                                                            <!-- select from list produit de clients -->
-                                                            <select class="form-control" id="id_produit_client"
-                                                                name="Nom_produit">
-                                                                <option value="produit1">produit1</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mb-3">
-                                                        <label for="inputText"
-                                                            class="col-sm-2 col-form-label">Description</label>
-                                                        <div class="col-sm-10">
-                                                            <textarea class="form-control" name="description_alerte"></textarea>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-danger"
-                                                        data-bs-dismiss="modal">Cancel</button>
-                                                    <button type="submit" class="btn btn-success">Modifier
-                                                        l'alerte</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div><!-- End Large Modal-->
-                                <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
-                                    data-bs-target="#modifier_réclamations_">Modifier</button>
-                            </td>
-                        </tr>
+                                            </form>
+                                        </div>
+                                    </div><!-- End Large Modal-->
+                                    <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
+                                        data-bs-target="#modifier_réclamations_">Modifier</button>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
                 <!-- End Table with stripped rows -->

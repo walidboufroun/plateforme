@@ -69,8 +69,8 @@
 
                         @foreach ($forfaits as $forfait)
                             <tr>
-                                <td>{{ $forfait->nom_forfait }}</td>
-                                <td>{{ $forfait->duree_forfait }}</td>
+                                <td>{{ $forfait->name }}</td>
+                                <td>{{ $forfait->duration }}</td>
                                 <td>{{ $forfait->description }}</td>
                                 <td>
                                     <div class="modal fade" id="modifier_commande_{{ $forfait->produit->nom_produit	 }}" tabindex="-1">

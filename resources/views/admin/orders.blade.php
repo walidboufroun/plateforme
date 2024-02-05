@@ -129,10 +129,10 @@
 
                         @foreach ($commandes as $commande)
                             <tr>
-                                <td>{{ $commande->date_commande }}</td>
+                                <td>{{ $commande->date }}</td>
                                 <td>{{ $commande->client->name }}</td>
-                                <td>{{ $commande->produit->nom_produit }}</td>
-                                <td>{{ $commande->nombre_produit }}</td>
+                                <td>{{ $commande->produit->name }}</td>
+                                <td>{{ $commande->number }}</td>
                                 <td>{{ $commande->statut }}</td>
                                 <td>
                                     <div class="modal fade" id="modifier_commande_{{ $commande->id }}" tabindex="-1">
