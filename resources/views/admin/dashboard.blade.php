@@ -31,16 +31,16 @@
                         </div>
 
                         <div class="card-body">
-                            <h5 class="card-title">PLASTIQUE <span>| Ce mois</span></h5>
+                            <h5 class="card-title">Commandes <span>| Ce mois</span></h5>
 
                             <div class="d-flex align-items-center">
                                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                     <i class="bi bi-suitcase2"></i>
                                 </div>
                                 <div class="ps-3">
-                                    <h6>145 </h6>
-                                    <span class="text-success small pt-1 fw-bold">28%</span> <span
-                                        class="text-muted small pt-2 ps-1">Revenu</span>
+                                    <h6>0 </h6>
+                                    <span class="text-success small pt-1 fw-bold">0%</span> <span
+                                        class="text-muted small pt-2 ps-1">Commande</span>
 
                                 </div>
                             </div>
@@ -66,16 +66,16 @@
                         </div>
 
                         <div class="card-body">
-                            <h5 class="card-title">PAPIER <span>| Ce mois</span></h5>
+                            <h5 class="card-title">Societes  <span>| Ce mois</span></h5>
 
                             <div class="d-flex align-items-center">
                                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                     <i class="bi bi-file-earmark-text"></i>
                                 </div>
                                 <div class="ps-3">
-                                    <h6>$3,264</h6>
-                                    <span class="text-success small pt-1 fw-bold">12%</span> <span
-                                        class="text-muted small pt-2 ps-1">Revenu</span>
+                                    <h6>0</h6>
+                                    <span class="text-success small pt-1 fw-bold">0%</span> <span
+                                        class="text-muted small pt-2 ps-1">Societe</span>
 
                                 </div>
                             </div>
@@ -100,16 +100,16 @@
                         </div>
 
                         <div class="card-body">
-                            <h5 class="card-title">VERRE <span>| Ce mois</span></h5>
+                            <h5 class="card-title">Produit <span>| Ce mois</span></h5>
 
                             <div class="d-flex align-items-center">
                                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                     <i class="bi bi-trash2"></i>
                                 </div>
                                 <div class="ps-3">
-                                    <h6>$3,264</h6>
-                                    <span class="text-success small pt-1 fw-bold">8%</span> <span
-                                        class="text-muted small pt-2 ps-1">Revenu</span>
+                                    <h6>0</h6>
+                                    <span class="text-success small pt-1 fw-bold">0%</span> <span
+                                        class="text-muted small pt-2 ps-1">Produit</span>
 
                                 </div>
                             </div>
@@ -134,7 +134,7 @@
                         </div>
 
                         <div class="card-body">
-                            <h5 class="card-title">MÉTAL <span>| Ce mois</span></h5>
+                            <h5 class="card-title">Employes <span>| Ce mois</span></h5>
 
                             <div class="d-flex align-items-center">
                                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -142,10 +142,9 @@
                                 </div>
 
                                 <div class="ps-3">
-                                    <h6>$3,264</h6>
-                                    <span class="text-success small pt-1 fw-bold">17%</span> <span
-                                        class="text-muted small pt-2 ps-1">Revenu</span>
-
+                                    <h6>0</h6>
+                                    <span class="text-success small pt-1 fw-bold">0%</span> <span
+                                        class="text-muted small pt-2 ps-1">Employe</span>
                                 </div>
                             </div>
                         </div>
@@ -171,7 +170,7 @@
                         </div>
 
                         <div class="card-body">
-                            <h5 class="card-title">AUTRE <span>| Ce Mois </span></h5>
+                            <h5 class="card-title">Alerts <span>| Ce Mois </span></h5>
 
                             <div class="d-flex align-items-center">
                                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -179,9 +178,9 @@
                                     <i class="bi bi-recycle"></i>
                                 </div>
                                 <div class="ps-3">
-                                    <h6>1244</h6>
-                                    <span class="text-danger small pt-1 fw-bold">25%</span> <span
-                                        class="text-muted small pt-2 ps-1">Revenu</span>
+                                    <h6>0</h6>
+                                    <span class="text-danger small pt-1 fw-bold">0%</span> <span
+                                        class="text-muted small pt-2 ps-1">Alert</span>
 
                                 </div>
                             </div>
@@ -213,7 +212,7 @@
                         </div>
 
                         <div class="card-body">
-                            <h5 class="card-title">Reports <span>/Today</span></h5>
+                            <h5 class="card-title">Rapports  <span>| Aujourd'hui</span></h5>
 
                             <!-- Line Chart -->
                             <div id="reportsChart"></div>
@@ -222,14 +221,20 @@
                                 document.addEventListener("DOMContentLoaded", () => {
                                     new ApexCharts(document.querySelector("#reportsChart"), {
                                         series: [{
-                                            name: 'Sales',
+                                            name: 'Paper',
                                             data: [31, 40, 28, 51, 42, 82, 56],
                                         }, {
-                                            name: 'Revenue',
+                                            name: 'Plastic',
                                             data: [11, 32, 45, 32, 34, 52, 41]
                                         }, {
-                                            name: 'Customers',
-                                            data: [15, 11, 32, 18, 9, 24, 11]
+                                            name: 'Metal',
+                                            data: [06, 32, 68, 32, 20, 52, 41]
+                                        }, {
+                                            name: 'GLASS',
+                                            data: [90, 90, 90, 90, 90, 90, 90]
+                                        }, {
+                                            name: 'Other',
+                                            data: [05, 15, 25, 35, 45, 65, 75]
                                         }],
                                         chart: {
                                             height: 350,
@@ -463,7 +468,7 @@
                 </div>
 
                 <div class="card-body">
-                    <h5 class="card-title">Recent Activity <span>| Today</span></h5>
+                    <h5 class="card-title">Activité récente  <span>| Aujourd'hui </span></h5>
 
                     <div class="activity">
 

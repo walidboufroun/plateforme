@@ -65,7 +65,7 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger"
                                             data-bs-dismiss="modal">Cancel</button>
-                                        <button type="submit" class="btn btn-success">Ajouter l'alerte</button>
+                                        <button type="submit" class="btn btn-success">Ajouter l''alerte</button>
                                     </div>
                                 </div>
                             </form>
@@ -96,10 +96,10 @@
                             <tr>
                                 <td>{{ $alert->name }}</td>
                                 <td>{{ $alert->date }}</td>
-                                <td>{{ $alert->id_produit }}</td>
+                                <td>{{ $alert->produit->code }}</td>
                                 <td>{{ $alert->description }}</td>
-                                <td>{{ $alert->seen }}</td>
-                                <td>{{ $alert->id_client }}</td>
+                                <td>{{ $alert->seen == 1 ? 'VU' : 'Na pas encor vu'  }}</td>
+                                <td>{{ $alert->client->name }}</td>
                                 <td>
                                     <div class="modal fade" id="modifier_réclamations_" tabindex="-1">
                                         <div class="modal-dialog modal-lg">3

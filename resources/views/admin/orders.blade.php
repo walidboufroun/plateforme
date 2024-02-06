@@ -28,7 +28,7 @@
                                         <div class="row mb-3">
                                             <label for="inputText" class="col-sm-2 col-form-label">date de livrision</label>
                                             <div class="col-sm-10">
-                                            <input type="date" class="form-control" name="date_commande" value="{{ now()->format('Y-m-d') }}" required>
+                                            <input type="date" class="form-control" name="date" value="{{ now()->format('Y-m-d') }}" required>
                                             </div>
                                         </div>
                                         @if (!$societes->isEmpty() || !$clientsWithoutSociete->isEmpty())
@@ -93,7 +93,7 @@
                                         <div class="row mb-3">
                                             <label for="inputText" class="col-sm-2 col-form-label">nombre produit</label>
                                             <div class="col-sm-10">
-                                                <input type="number" class="form-control" name="nombre_produit" required>
+                                                <input type="number" class="form-control" name="number" required>
                                             </div>
                                         </div>
                                     </div>

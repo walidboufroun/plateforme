@@ -136,7 +136,7 @@
                                 <td>{{ $alert->date }}</td>
                                 <td>{{ $alert->produit->name }}</td>
                                 <td>{{ $alert->description }}</td>
-                                <td>{{ $alert->seen }}</td>
+                                <td>{{ $alert->seen == ? 'VU' : 'Na pas encor vu' }}</td>
                                 <td>{{ $alert->client->name }}</td>
                                 <td class="fix_width">
                                     <div class="modal fade" id="modifier_réclamations_{{ $alert->id }}"
