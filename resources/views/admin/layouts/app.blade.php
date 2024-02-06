@@ -313,12 +313,6 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link @if (trim($__env->yieldContent('title')) != 'Maintenance') collapsed @endif" href="{{ route('Admin-maintenance') }}">
-                    <i class="bi bi-person"></i>
-                    <span>Maintenance</span>
-                </a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link @if (trim($__env->yieldContent('title')) != 'Produit') collapsed @endif" href="{{ route('Admin-Produit') }}">
                     <i class="bi bi-person"></i>
                     <span>Produits</span>
@@ -343,10 +337,16 @@
                 </a>
             </li><!-- End Contact Page Nav -->
             <li class="nav-heading">Autres - Pages</li>
+            <li class="nav-item">
+                <a class="nav-link @if (trim($__env->yieldContent('title')) != 'Maintenance') collapsed @endif" href="{{ route('Admin-maintenance') }}">
+                    <i class="bi bi-person"></i>
+                    <span>Maintenance</span>
+                </a>
+            </li>
         </ul>
-
+        
     </aside><!-- End Sidebar-->
-
+    
     <main id="main" class="main">
 
         <div class="pagetitle">
