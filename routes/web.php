@@ -67,6 +67,7 @@ Route::get('Admin-Produit', [ProductController::class, 'index'])->name('Admin-Pr
 Route::get('Admin-Categories', [CategoryController::class, 'index'])->name('Admin-Categories');
 Route::get('Admin-Commandes', [OrderController::class, 'index'])->name('Admin-Commandes');
 Route::post('Admin_Add_ordre', [OrderController::class, 'add_ordre']);
+Route::post('Admin_Update_Order', [OrderController::class, 'update_order']);
 
 Route::get('Admin-Clients', [ClientController::class, 'index'])->name('Admin-Clients');
 Route::get('Admin-Forfaits', [ForfaitController::class, 'index'])->name('Admin-Forfaits');

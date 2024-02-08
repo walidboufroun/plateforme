@@ -25,7 +25,7 @@ class OrderController extends Controller
         //$commandes = Commande::all();
         $commandes = Commande::with('client.societe')->get();
         //dd($commandes);
-        return view('admin.orders', compact('commandes','produits', 'societes', 'clientsWithoutSociete'));
+        return view('admin.orders', compact('commandes', 'produits', 'societes', 'clientsWithoutSociete'));
     }
     public function add_ordre(Request $request)
     {
@@ -38,5 +38,28 @@ class OrderController extends Controller
         $commande->statut = 'en_cours'; // ou utilisez le statut du formulaire si nécessaire
         $commande->save();
         return redirect()->route('Admin-Commandes');
+    }
+    public function update_order(Request $request)
+    {
+        /*
+        $request->validate([
+            'date' => 'required|date',
+            'id_societe' => 'required',
+            'id_client' => 'required',
+            'id_produit' => 'required',
+            'number' => 'required',
+            // Ajoutez d'autres règles de validation au besoin
+        ]);*/
+        $commande = Commande::findOrFail($request->id);
+
+        $commande->date = $request->input('date');
+        $commande->id_societe = $request->input('id_societe');
+        $commande->id_client = $request->input('id_client');
+        $commande->id_produit = $request->input('id_produit');
+        $commande->number = $request->input('number');
+        $commande->save();
+
+        // Rediriger vers la liste des commandes avec un message de succès
+        return redirect()->route('Admin-Commandes')->with('success', 'La commande a été mise à jour avec succès.');
     }
 }
