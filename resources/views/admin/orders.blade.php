@@ -42,7 +42,7 @@
                                                             </option>
                                                             @foreach ($societes as $societe)
                                                                 <option value="{{ $societe->id }}">
-                                                                    {{ $societe->nom_societe }}
+                                                                    {{ $societe->name }}
                                                                 </option>
                                                             @endforeach
                                                         </select>
@@ -84,7 +84,7 @@
                                                 <select class="form-select" name="id_produit"
                                                     aria-label="Sélectionnez un produit" required>
                                                     @foreach ($produits as $produit)
-                                                        <option value="{{ $produit->id }}">{{ $produit->nom_produit }} -
+                                                        <option value="{{ $produit->id }}">{{ $produit->name }} -
                                                             {{ $produit->descriptive }} - {{ $produit->prix }} DA</option>
                                                     @endforeach
                                                 </select>
