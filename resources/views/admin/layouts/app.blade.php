@@ -15,7 +15,9 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -71,18 +73,18 @@
 
                     <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
                         <i class="bi bi-bell"></i>
-                        <span class="badge bg-primary badge-number">4</span>
+                        <span class="badge bg-primary badge-number">0</span>
                     </a><!-- End Notification Icon -->
 
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
                         <li class="dropdown-header">
-                            You have 4 new notifications
+                            Vous n'avez pas de nouvelles notifications.
                             <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
                         </li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-
+                        <!--
                         <li class="notification-item">
                             <i class="bi bi-exclamation-circle text-warning"></i>
                             <div>
@@ -130,12 +132,12 @@
                                 <p>4 hrs. ago</p>
                             </div>
                         </li>
-
+                        -->
                         <li>
                             <hr class="dropdown-divider">
                         </li>
                         <li class="dropdown-footer">
-                            <a href="#">Show all notifications</a>
+                            <a href="#">Afficher toutes les notifications.</a>
                         </li>
 
                     </ul><!-- End Notification Dropdown Items -->
@@ -146,18 +148,19 @@
 
                     <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
                         <i class="bi bi-chat-left-text"></i>
-                        <span class="badge bg-success badge-number">3</span>
+                        <span class="badge bg-success badge-number">0</span>
                     </a><!-- End Messages Icon -->
 
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
                         <li class="dropdown-header">
-                            You have 3 new messages
-                            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                            Vous n'avez pas de nouveaux messages.
+                            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">Afficher
+                                    tout.</span></a>
                         </li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-
+                        <!--
                         <li class="message-item">
                             <a href="#">
                                 <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
@@ -185,7 +188,6 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-
                         <li class="message-item">
                             <a href="#">
                                 <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle">
@@ -196,12 +198,13 @@
                                 </div>
                             </a>
                         </li>
+                    -->
                         <li>
                             <hr class="dropdown-divider">
                         </li>
 
                         <li class="dropdown-footer">
-                            <a href="#">Show all messages</a>
+                            <a href="#">Afficher tous les messages.</a>
                         </li>
 
                     </ul><!-- End Messages Dropdown Items -->
@@ -210,8 +213,10 @@
 
                 <li class="nav-item dropdown pe-3">
 
-                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                        <img src="img-profile/{{ empty(Auth::user()->profile_photo_path) ? 'profile-img.jpg'  : Auth::user()->profile_photo_path }}" alt="Profile" class="rounded-circle">
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#"
+                        data-bs-toggle="dropdown">
+                        <img src="img-profile/{{ empty(Auth::user()->profile_photo_path) ? 'profile-img.jpg' : Auth::user()->profile_photo_path }}"
+                            alt="Profile" class="rounded-circle">
                         <span class="d-none d-md-block dropdown-toggle ps-2">{{ Auth::user()->name }}</span>
                     </a><!-- End Profile Iamge Icon -->
 
@@ -227,12 +232,13 @@
                         <li>
                             <a class="dropdown-item d-flex align-items-center" href="{{ route('Admin-profile') }}">
                                 <i class="bi bi-person"></i>
-                                <span>Profil</span>
+                                <span>Profile</span>
                             </a>
                         </li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
+                        <!--
 
                         <li>
                             <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
@@ -253,11 +259,11 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-
+                    -->
                         <li>
                             <a class="dropdown-item d-flex align-items-center" href="{{ route('Admin-logout') }}">
                                 <i class="bi bi-box-arrow-right"></i>
-                                <span>Sign Out</span>
+                                <span>Déconnexion.</span>
                             </a>
                         </li>
 
@@ -275,7 +281,8 @@
         <ul class="sidebar-nav" id="sidebar-nav">
 
             <li class="nav-item">
-                <a class="nav-link @if (trim($__env->yieldContent('title')) != 'Acceuil') collapsed @endif" href="{{ route('Admin-Dashboard') }}">
+                <a class="nav-link @if (trim($__env->yieldContent('title')) != 'Acceuil') collapsed @endif"
+                    href="{{ route('Admin-Dashboard') }}">
                     <i class="bi bi-grid"></i>
                     <span>Accueil</span>
                 </a>
@@ -295,58 +302,66 @@
                 </ul>
             </li> End Icons Nav -->
             <li class="nav-item">
-                <a class="nav-link @if (trim($__env->yieldContent('title')) != 'Commandes') collapsed @endif" href="{{ route('Admin-Commandes') }}">
+                <a class="nav-link @if (trim($__env->yieldContent('title')) != 'Commandes') collapsed @endif"
+                    href="{{ route('Admin-Commandes') }}">
                     <i class="bi bi-person"></i>
                     <span>Commandes</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link @if (trim($__env->yieldContent('title')) != 'Client') collapsed @endif" href="{{ route('Admin-Clients') }}">
+                <a class="nav-link @if (trim($__env->yieldContent('title')) != 'Client') collapsed @endif"
+                    href="{{ route('Admin-Clients') }}">
                     <i class="bi bi-person"></i>
                     <span>Clients</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link @if (trim($__env->yieldContent('title')) != 'Forfait') collapsed @endif" href="{{ route('Admin-Forfaits') }}">
+                <a class="nav-link @if (trim($__env->yieldContent('title')) != 'Forfait') collapsed @endif"
+                    href="{{ route('Admin-Forfaits') }}">
                     <i class="bi bi-person"></i>
                     <span>Forfaits</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link @if (trim($__env->yieldContent('title')) != 'Produit') collapsed @endif" href="{{ route('Admin-Produit') }}">
+                <a class="nav-link @if (trim($__env->yieldContent('title')) != 'Produit') collapsed @endif"
+                    href="{{ route('Admin-Produit') }}">
                     <i class="bi bi-person"></i>
                     <span>Produits</span>
                 </a>
             </li><!-- End Profile Page Nav -->
             <li class="nav-item">
-                <a class="nav-link @if (trim($__env->yieldContent('title')) != 'Alerts') collapsed @endif" href="{{ route('Admin-alerts') }}">
+                <a class="nav-link @if (trim($__env->yieldContent('title')) != 'Alerts') collapsed @endif"
+                    href="{{ route('Admin-alerts') }}">
                     <i class="bi bi-envelope"></i>
                     <span>Alerts</span>
                 </a>
             </li><!-- End Contact Page Nav -->
             <li class="nav-item">
-                <a class="nav-link @if (trim($__env->yieldContent('title')) != 'Réclamations') collapsed @endif" href="{{ route('Admin-Reclamation') }}">
+                <a class="nav-link @if (trim($__env->yieldContent('title')) != 'Réclamations') collapsed @endif"
+                    href="{{ route('Admin-Reclamation') }}">
                     <i class="bi bi-envelope"></i>
                     <span>Réclamations</span>
                 </a>
             </li><!-- End Contact Page Nav -->
             <li class="nav-item">
-                <a class="nav-link @if (trim($__env->yieldContent('title')) != 'Employes') collapsed @endif" href="{{ route('Admin-Employees') }}">
+                <a class="nav-link @if (trim($__env->yieldContent('title')) != 'Employes') collapsed @endif"
+                    href="{{ route('Admin-Employees') }}">
                     <i class="bi bi-envelope"></i>
                     <span>Employes</span>
                 </a>
             </li><!-- End Contact Page Nav -->
             <li class="nav-heading">Autres - Pages</li>
             <li class="nav-item">
-                <a class="nav-link @if (trim($__env->yieldContent('title')) != 'Maintenance') collapsed @endif" href="{{ route('Admin-maintenance') }}">
+                <a class="nav-link @if (trim($__env->yieldContent('title')) != 'Maintenance') collapsed @endif"
+                    href="{{ route('Admin-maintenance') }}">
                     <i class="bi bi-person"></i>
                     <span>Maintenance</span>
                 </a>
             </li>
         </ul>
-        
+
     </aside><!-- End Sidebar-->
-    
+
     <main id="main" class="main">
 
         <div class="pagetitle">
@@ -380,7 +395,8 @@
         </div>
     </footer><!-- End Footer -->
 
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
