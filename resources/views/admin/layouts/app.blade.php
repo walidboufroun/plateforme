@@ -352,6 +352,13 @@
             </li><!-- End Contact Page Nav -->
             <li class="nav-heading">Autres - Pages</li>
             <li class="nav-item">
+                <a class="nav-link @if (trim($__env->yieldContent('title')) != 'societe') collapsed @endif"
+                    href="{{ route('Admin-societe') }}">
+                    <i class="bi bi-person"></i>
+                    <span>Societe</span>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link @if (trim($__env->yieldContent('title')) != 'Maintenance') collapsed @endif"
                     href="{{ route('Admin-maintenance') }}">
                     <i class="bi bi-person"></i>

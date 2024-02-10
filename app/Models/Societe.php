@@ -14,7 +14,7 @@ class Societe extends Model
         'adresse',
         'phone_number',
         'logo',
-        'type_societe',
+        'type',
         'registre_commerce',
         'description',
         // Add other fillable attributes as needed

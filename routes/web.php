@@ -1,31 +1,33 @@
 <?php
 
-use App\Http\Controllers\AuthAdmin;
-use App\Http\Controllers\AuthClient;
+use App\Http\Controllers\AdminControllers\AlertController;
+use App\Http\Controllers\AdminControllers\CategoryController;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminControllers\ClientController;
+use App\Http\Controllers\AdminControllers\ComplaintController;
 
 //Admin
-use App\Http\Controllers\AdminControllers\AlertController;
-use App\Http\Controllers\AdminControllers\OrderController;
-use App\Http\Controllers\AdminControllers\ClientController;
-use App\Http\Controllers\AdminControllers\ForfaitController;
-use App\Http\Controllers\AdminControllers\ProductController;
-use App\Http\Controllers\AdminControllers\CategoryController;
-use App\Http\Controllers\AdminControllers\EmployeeController;
-use App\Http\Controllers\AdminControllers\ComplaintController;
 use App\Http\Controllers\AdminControllers\DashboardController;
-use App\Http\Controllers\BlogControllers\BlogContactController;
+use App\Http\Controllers\AdminControllers\EmployeeController;
+use App\Http\Controllers\AdminControllers\ForfaitController;
 use App\Http\Controllers\AdminControllers\MaintenanceController;
+use App\Http\Controllers\AdminControllers\OrderController;
+use App\Http\Controllers\AdminControllers\ProductController;
+use App\Http\Controllers\AuthAdmin;
+use App\Http\Controllers\AuthClient;
+use App\Http\Controllers\BlogControllers\BlogContactController;
 use App\Http\Controllers\ClientControllers\AlertControllerClient;
-use App\Http\Controllers\ClientControllers\EmployeeControllerCleint;
-use App\Http\Controllers\ClientControllers\EmployeeControllerClient;
 use App\Http\Controllers\ClientControllers\ComplaintControllerCleint;
 use App\Http\Controllers\ClientControllers\ComplaintControllerClient;
 use App\Http\Controllers\ClientControllers\DashboardControllerClient;
+use App\Http\Controllers\ClientControllers\EmployeeControllerCleint;
+use App\Http\Controllers\ClientControllers\EmployeeControllerClient;
 use App\Http\Controllers\ClientControllers\ProductAnomalyControllerCleint;
 use App\Http\Controllers\ClientControllers\ProductAnomalyControllerClient;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\SocieteController;
+use Illuminate\Support\Facades\Route;
+
 
 
 /*
@@ -76,6 +78,8 @@ Route::middleware(['auth.admin'])->group(function () {
     Route::get('Admin-Clients', [ClientController::class, 'index'])->name('Admin-Clients');
     Route::get('Admin-Forfaits', [ForfaitController::class, 'index'])->name('Admin-Forfaits');
     Route::get('Admin-maintenance', [MaintenanceController::class, 'index'])->name('Admin-maintenance');
+    Route::get('Admin-societe', [SocieteController::class, 'index'])->name('Admin-societe');
+    Route::post('Admin-Add-societe', [SocieteController::class, 'add_societe']);
     Route::get('Admin-alerts', [AlertController::class, 'index'])->name('Admin-alerts');
     Route::get('Admin-Reclamation', [ComplaintController::class, 'index'])->name('Admin-Reclamation');
     Route::post('change_statut_reclamation/{id}', [ComplaintController::class, 'changeStatutReclamation']);
