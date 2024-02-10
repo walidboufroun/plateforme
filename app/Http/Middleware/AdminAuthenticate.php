@@ -20,6 +20,6 @@ class AdminAuthenticate
             return $next($request);
         }
 
-        return redirect()->route('dashboard');
+        return redirect()->route('Admin-login');
     }
 }
