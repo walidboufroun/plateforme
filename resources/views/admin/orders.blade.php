@@ -28,7 +28,8 @@
                                         <div class="row mb-3">
                                             <label for="inputText" class="col-sm-2 col-form-label">date de livrision</label>
                                             <div class="col-sm-10">
-                                            <input type="date" class="form-control" name="date" value="{{ now()->format('Y-m-d') }}" required>
+                                                <input type="date" class="form-control" name="date"
+                                                    value="{{ now()->format('Y-m-d') }}" required>
                                             </div>
                                         </div>
                                         @if (!$societes->isEmpty() || !$clientsWithoutSociete->isEmpty())
@@ -42,7 +43,7 @@
                                                             </option>
                                                             @foreach ($societes as $societe)
                                                                 <option value="{{ $societe->id }}">
-                                                                    {{ $societe->nom_societe }}
+                                                                    {{ $societe->name }}
                                                                 </option>
                                                             @endforeach
                                                         </select>
@@ -84,7 +85,7 @@
                                                 <select class="form-select" name="id_produit"
                                                     aria-label="Sélectionnez un produit" required>
                                                     @foreach ($produits as $produit)
-                                                        <option value="{{ $produit->id }}">{{ $produit->nom_produit }} -
+                                                        <option value="{{ $produit->id }}">{{ $produit->name }} -
                                                             {{ $produit->descriptive }} - {{ $produit->prix }} DA</option>
                                                     @endforeach
                                                 </select>
@@ -113,6 +114,12 @@
                     </div>
                 </div>
 
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
                 <!-- Table with stripped rows -->
                 <table class="table datatable">
                     <thead>
@@ -137,11 +144,12 @@
                                 <td>
                                     <div class="modal fade" id="modifier_commande_{{ $commande->id }}" tabindex="-1">
                                         <div class="modal-dialog modal-lg">3
-                                            <form action="Admin_Add_ordre" method="post">
+                                            <form action="Admin_Update_Order" method="post">
                                                 @csrf
+                                                <input type="hidden" name="id" value="{{ $commande->id }}">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title">Ajouter une commande {{ $commande->id }}
+                                                        <h5 class="modal-title">Modifier la commande {{ $commande->id }}
                                                         </h5>
                                                         <button type="button" class="btn-close"
                                                             data-bs-dismiss="modal"aria-label="Close"></button>
@@ -152,8 +160,8 @@
                                                                 commande</label>
                                                             <div class="col-sm-10">
                                                                 <input type="date" class="form-control"
-                                                                    name="date_commande"
-                                                                    value="{{ $commande->date_commande }}" required>
+                                                                    name="date" value="{{ $commande->date }}"
+                                                                    required>
                                                             </div>
                                                         </div>
                                                         @if (!$societes->isEmpty() || !$clientsWithoutSociete->isEmpty())
@@ -221,7 +229,7 @@
                                                                     aria-label="Sélectionnez un produit" required>
                                                                     @foreach ($produits as $produit)
                                                                         <option value="{{ $produit->id }}">
-                                                                            {{ $produit->nom_produit }} -
+                                                                            {{ $produit->name }} -
                                                                             {{ $produit->descriptive }} -
                                                                             {{ $produit->prix }} DA</option>
                                                                     @endforeach
@@ -233,8 +241,8 @@
                                                                 produit</label>
                                                             <div class="col-sm-10">
                                                                 <input type="number" class="form-control"
-                                                                    name="nombre_produit"
-                                                                    value="{{ $commande->nombre_produit }}" required>
+                                                                    name="number" value="{{ $commande->number }}"
+                                                                    required>
                                                             </div>
                                                         </div>
                                                     </div>

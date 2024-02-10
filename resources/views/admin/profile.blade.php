@@ -16,7 +16,7 @@
                 <div class="card">
                     <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-                        <img src="assets/img/{{ Auth::user()->profile_photo_path }}" alt="Profile" class="rounded-circle">
+                        <img src="img-profile/{{ empty(Auth::user()->profile_photo_path) ? 'profile-img.jpg'  : Auth::user()->profile_photo_path }}" alt="Profile" class="rounded-circle">
                         <h2>{{ $user->name }}</h2>
                         <h3>{{ $user->username }}</h3>
                         <div class="social-links mt-2">
@@ -117,7 +117,7 @@
                                         <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile
                                             Image</label>
                                         <div class="col-md-8 col-lg-9">
-                                            <img src="assets/img/profile-img.jpg" alt="Profile">
+                                            <img src="img-profile/{{ empty(Auth::user()->profile_photo_path) ? 'profile-img.jpg'  : Auth::user()->profile_photo_path }}" alt="Profile">
                                             <div class="pt-2">
                                                 <a href="#" class="btn btn-primary btn-sm"
                                                     title="Upload new profile image"><i class="bi bi-upload"></i></a>

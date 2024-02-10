@@ -17,7 +17,7 @@ class CreateSocietesTable extends Migration
             $table->string('adresse');
             $table->string('phone_number');
             $table->string('logo')->nullable();
-            $table->enum('type_societe', ['SI', 'SARL', 'SPA', 'SNC', 'SCS']);
+            $table->enum('type', ['SI', 'SARL', 'SPA', 'SNC', 'SCS']);
             $table->string('registre_commerce')->nullable();
             $table->text('description')->nullable();
             // Add other columns as needed
