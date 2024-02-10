@@ -46,7 +46,7 @@ class Authenticate extends Middleware
             $redirectTo = route('dashboard');
         } else {
             // Aucun utilisateur n'est connecté (peut-être un invité)
-            $redirectTo = route('login');
+            $redirectTo = route('dashboard');
         }
         
         return $redirectTo;
