@@ -92,16 +92,19 @@
               <li class="nav-item active">
                 <a class="nav-link" href="{{ route('about') }}"> Qui Somme Nous <span class="sr-only">(current)</span> </a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('service') }}">Services & Solutions</a>
+              </li>
               <div class="subnav">
                 <li class="nav-item">
-                  <button class="nav-link subnavbtn">Notre Service</a>
+                  <button class="nav-link subnavbtn">Secteurs</a>
                 </li>
                 <div class="subnav-content">
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ route('service') }}">Nos Services</a>
+                    <a class="nav-link" href="{{ route('immobiliers') }}">Immobiliers</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ route('Product') }}">Nos Solutions</a>
+                    <a class="nav-link" href="{{ route('centres') }}">Centres commerciaux</a>
                   </li>
                 </div>
               </div>
@@ -232,17 +235,17 @@
               Links
             </h4>
             <div class="info_links">
-              <a class="active" href="{{ route('welcome') }}">
+              <a class="" href="{{ route('welcome') }}">
                 Acceuil
               </a>
-              <a class="" href="{{ route('about') }}">
+              <a class="active" href="{{ route('about') }}">
                 Qui somme nous
               </a>
               <a class="" href="{{ route('service') }}">
                 Nos Services
               </a>
-              <a class="" href="{{ route('Product') }}">
-                Nos Produits
+              <a class="" href="{{ route('Secteur') }}">
+                Nos Secteurs
               </a>
               <a class="" href="{{ route('why') }}">
                 Pourquoi nous

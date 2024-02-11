@@ -70,7 +70,8 @@
                                             <label for="inputText" class="col-sm-2 col-form-label">Type de
                                                 réclamation</label>
                                             <div class="col-sm-10">
-                                                <select class="form-control" id="typeReclamation" name="type">
+         
+                                                <a class="nav-link" href="{{ route('welcome') }}">Acceuil <span class="sr-only">(current)</span                                       <select class="form-control" id="typeReclamation" name="type">
                                                     <option value="produit_defectueux">Produit défectueux</option>
                                                     <option value="service_insatisfaisant">Service insatisfaisant</option>
                                                     <option value="livraison_retardee">Livraison retardée</option>

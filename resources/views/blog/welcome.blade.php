@@ -87,23 +87,26 @@
           </button>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav  ">
+            <ul class="navbar-nav">
               <li class="nav-item active">
                 <a class="nav-link" href="{{ route('welcome') }}">Acceuil <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('about') }}"> Qui Somme Nous</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('service') }}">Services & Solutions</a>
+              </li>
               <div class="subnav">
                 <li class="nav-item">
-                  <button class="nav-link subnavbtn">Notre Service</a>
+                  <button class="nav-link subnavbtn">Secteurs</a>
                 </li>
                 <div class="subnav-content">
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ route('service') }}">Nos Services</a>
+                    <a class="nav-link" href="{{ route('immobiliers') }}">Immobiliers</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ route('Product') }}">Nos Solutions</a>
+                    <a class="nav-link" href="{{ route('centres') }}">Centres commerciaux</a>
                   </li>
                 </div>
               </div>
@@ -861,8 +864,8 @@
               <a class="" href="{{ route('service') }}">
                 Nos Services
               </a>
-              <a class="" href="{{ route('Product') }}">
-                Nos Solutions
+              <a class="" href="{{ route('Secteur') }}">
+                Nos Secteurs
               </a>
               <a class="" href="{{ route('why') }}">
                 Pourquoi nous

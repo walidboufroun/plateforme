@@ -92,19 +92,22 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('about') }}"> Qui Somme Nous</a>
               </li>
-              <div class="subnav">
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('service') }}">Services & Solutions</a>
+            </li>
+            <div class="subnav">
                 <li class="nav-item">
-                  <button class="nav-link subnavbtn">Notre Service</a>
+                    <button class="nav-link subnavbtn">Secteurs</a>
                 </li>
                 <div class="subnav-content">
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{ route('service') }}">Nos Services</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{ route('Product') }}">Nos Solutions</a>
-                  </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('immobiliers') }}">Immobiliers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('centres') }}">Centres commerciaux</a>
+                    </li>
                 </div>
-              </div>
+            </div>
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('why') }}">Pouquoi Nous</a>
               </li>
@@ -338,7 +341,7 @@
               Links
             </h4>
             <div class="info_links">
-              <a class="active" href="{{ route('welcome') }}">
+              <a class="" href="{{ route('welcome') }}">
                 Acceuil
               </a>
               <a class="" href="{{ route('about') }}">
@@ -347,13 +350,13 @@
               <a class="" href="{{ route('service') }}">
                 Nos Services
               </a>
-              <a class="" href="{{ route('Product') }}">
-                Nos Produits
+              <a class="" href="{{ route('Secteur') }}">
+                Nos Secteurs
               </a>
               <a class="" href="{{ route('why') }}">
                 Pourquoi nous
               </a>
-              <a class="" href="{{ route('team') }}">
+              <a class="active" href="{{ route('team') }}">
                 Notre Team
               </a>
             </div>
