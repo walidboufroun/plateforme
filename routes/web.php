@@ -76,7 +76,10 @@ Route::middleware(['auth.admin'])->group(function () {
     Route::post('Admin_Update_Order', [OrderController::class, 'update_order']);
     
     Route::get('Admin-Clients', [ClientController::class, 'index'])->name('Admin-Clients');
+    //Forfait
     Route::get('Admin-Forfaits', [ForfaitController::class, 'index'])->name('Admin-Forfaits');
+    Route::post('Admin_Add_forfait', [ForfaitController::class, 'Add_forfait']);
+
     Route::get('Admin-maintenance', [MaintenanceController::class, 'index'])->name('Admin-maintenance');
     Route::get('Admin-societe', [SocieteController::class, 'index'])->name('Admin-societe');
     Route::post('Admin-Add-societe', [SocieteController::class, 'add_societe']);

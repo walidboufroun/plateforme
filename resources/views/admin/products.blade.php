@@ -11,7 +11,7 @@
             <div class="card-body">
                 <div class="d-flex justify-content-between" style="">
                     <div class="card-title">
-                        <h5 class="card-title">Liste des commandes</h5>
+                        <h5 class="card-title">Liste des Produits</h5>
                     </div>
                     <div class="modal fade" id="largeModal" tabindex="-1">
                         <div class="modal-dialog modal-lg">3

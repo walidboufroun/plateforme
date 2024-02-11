@@ -140,11 +140,12 @@
                 <div class="heading_container heading_center">
                     <h2>
                         Secteur <span>Immobilier</span>
-                    </h2>
+                    </h2><br><br>
                     <p>Les développements immobiliers sont confrontés à des défis uniques en matière de gestion des
                         déchets en raison du <br> volume élevé de construction et de maintenance continue. Les principaux
                         insights incluent :</p>
                         <br>
+                   
                 </div>
                 <div class="row first_row">
                     <div class="col-lg-6 col-md-12 immo_first_row">

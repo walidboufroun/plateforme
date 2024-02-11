@@ -11,11 +11,11 @@
             <div class="card-body">
                 <div class="d-flex justify-content-between" style="">
                     <div class="card-title">
-                        <h5 class="card-title">Liste des commandes</h5>
+                        <h5 class="card-title">Liste des Forfaits</h5>
                     </div>
                     <div class="modal fade" id="largeModal" tabindex="-1">
-                        <div class="modal-dialog modal-lg">3
-                            <form action="Admin_Add_ordre" method="post">
+                        <div class="modal-dialog modal-lg">
+                            <form action="Admin_Add_forfait" method="post">
                                 @csrf
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -25,16 +25,42 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="row mb-3">
-                                            <label for="inputText" class="col-sm-2 col-form-label">date commande</label>
+                                            <label for="inputText" class="col-sm-2 col-form-label">Name</label>
                                             <div class="col-sm-10">
-                                                <input type="date" class="form-control" name="date_commande" required>
+                                                <input type="text" class="form-control" name="name" required>
                                             </div>
                                         </div>
 
                                         <div class="row mb-3">
-                                            <label for="inputText" class="col-sm-2 col-form-label">nombre produit</label>
+                                            <label for="inputText" class="col-sm-2 col-form-label">Duree</label>
                                             <div class="col-sm-10">
-                                                <input type="number" class="form-control" name="nombre_produit" required>
+                                                <input type="number" class="form-control" name="duration" required>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <label for="inputText" class="col-sm-2 col-form-label">Description</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" name="description" required>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <label for="inputText" class="col-sm-2 col-form-label">Photo</label>
+                                            <div class="col-sm-10">
+                                                <input type="file" class="form-control" name="photos" required>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <label for="inputText" class="col-sm-2 col-form-label">produit</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-select" name="id_produit"
+                                                    aria-label="Sélectionnez un produit" required>
+                                                    @foreach ($produits as $produit)
+                                                        <option value="{{ $produit->id }}">
+                                                            {{ $produit->name }} -
+                                                            {{ $produit->descriptive }} -
+                                                            {{ $produit->prix }} DA</option>
+                                                    @endforeach
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
@@ -53,7 +79,11 @@
                             data-bs-target="#largeModal">Ajouter une commande</button>
                     </div>
                 </div>
-
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
                 <!-- Table with stripped rows -->
                 <table class="table datatable">
                     <thead>
@@ -73,7 +103,7 @@
                                 <td>{{ $forfait->duration }}</td>
                                 <td>{{ $forfait->description }}</td>
                                 <td>
-                                    <div class="modal fade" id="modifier_commande_{{ $forfait->produit->nom_produit	 }}" tabindex="-1">
+                                    <div class="modal fade" id="modifier_commande_{{ $forfait->id }}" tabindex="-1">
                                         <div class="modal-dialog modal-lg">3
                                             <form action="Admin_Add_ordre" method="post">
                                                 @csrf
@@ -84,11 +114,58 @@
                                                         <button type="button" class="btn-close"
                                                             data-bs-dismiss="modal"aria-label="Close"></button>
                                                     </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-danger"
-                                                            data-bs-dismiss="modal">Cancel</button>
-                                                        <button type="submit" class="btn btn-success">Modifer la
-                                                            commande</button>
+                                                    <div class="modal-body">
+                                                        <div class="row mb-3">
+                                                            <label for="inputText"
+                                                                class="col-sm-2 col-form-label">Name</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" name="name" value="{{ $forfait->name }}"
+                                                                    required>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row mb-3">
+                                                            <label for="inputText"
+                                                                class="col-sm-2 col-form-label">Duree</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="number" class="form-control" name="duration" value="{{ $forfait->duration }}"
+                                                                    required>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3">
+                                                            <label for="inputText"
+                                                                class="col-sm-2 col-form-label">Description</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" value="{{ $forfait->description}}"
+                                                                    name="description" required>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3">
+                                                            <label for="inputText"
+                                                                class="col-sm-2 col-form-label">Photo</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="file" class="form-control" name="photos" 
+                                                                    required>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3">
+                                                            <label for="inputText"
+                                                                class="col-sm-2 col-form-label">produit</label>
+                                                            <div class="col-sm-10">
+                                                                <select class="form-select" name="id_produit" aria-label="Sélectionnez un produit" required>
+                                                                    @foreach ($produits as $produit)
+                                                                        
+                                                                        <option value="{{ $produit->id }}" @if ($forfait->id_produit == $produit->id) echo "selected" @endif  >{{ $produit->name }} -{{ $produit->descriptive }} -{{ $produit->prix }} DA</option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-danger"
+                                                                data-bs-dismiss="modal">Cancel</button>
+                                                            <button type="submit" class="btn btn-success">Modifer la
+                                                                commande</button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </form>

@@ -344,7 +344,7 @@
                 </a>
             </li><!-- End Contact Page Nav -->
             <li class="nav-item">
-                <a class="nav-link @if (trim($__env->yieldContent('title')) != 'Employes') collapsed @endif"
+                <a class="nav-link @if (trim($__env->yieldContent('title')) != 'Employes') collapsed @endif"    
                     href="{{ route('Admin-Employees') }}">
                     <i class="bi bi-envelope"></i>
                     <span>Employes</span>
@@ -352,7 +352,7 @@
             </li><!-- End Contact Page Nav -->
             <li class="nav-heading">Autres - Pages</li>
             <li class="nav-item">
-                <a class="nav-link @if (trim($__env->yieldContent('title')) != 'societe') collapsed @endif"
+                <a class="nav-link @if (trim($__env->yieldContent('title')) != 'Societe') collapsed @endif"
                     href="{{ route('Admin-societe') }}">
                     <i class="bi bi-person"></i>
                     <span>Societe</span>
@@ -391,7 +391,7 @@
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
         <div class="copyright">
-            &copy; Copyright <strong><span>GNOV - STARTUP </span></strong>. All Rights Reserved
+            &copy; Copyright <strong><span>GNOV - STARTUPP </span></strong>. All Rights Reserved
         </div>
         <div class="credits">
             <!-- All the links in the footer should remain intact. -->
