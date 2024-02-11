@@ -61,12 +61,6 @@
                         </a>
                         <a href="{{ route('ESPACE-CLIENT') }}"><span>Espace CLIENT</span></a>
             <a href="{{ route('ESPACE-ADMIN') }}"><span>Espace ADMIN</span></a>
-                        <!-- <a href="">
-              <i class="fa fa-map-marker" aria-hidden="true"></i>
-              <span>
-                Location
-              </span>
-            </a> -->
                     </div>
                 </div>
             </div>
@@ -92,16 +86,19 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('about') }}"> Qui Somme Nous</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('service') }}">Services & Solutions</a>
+                            </li>
                             <div class="subnav">
                                 <li class="nav-item">
-                                    <button class="nav-link subnavbtn">Notre Service</a>
+                                    <button class="nav-link subnavbtn">Secteurs</a>
                                 </li>
                                 <div class="subnav-content">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('service') }}">Nos Services</a>
+                                        <a class="nav-link" href="{{ route('immobiliers') }}">Immobiliers</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('Product') }}">Nos Solutions</a>
+                                        <a class="nav-link" href="{{ route('centres') }}">Centres commerciaux</a>
                                     </li>
                                 </div>
                             </div>
@@ -111,16 +108,7 @@
                             <li class="nav-item active">
                                 <a class="nav-link" href="{{ route('contact') }}">Contactez Nous <span class="sr-only">(current)</span></a>
                             </li>
-                            <!--
-              <li class="nav-item">
-                <a class="nav-link" href="#"> <i class="fa fa-user" aria-hidden="true"></i> Login</a>
-              </li>
-              <form class="form-inline">
-                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                  <i class="fa fa-search" aria-hidden="true"></i>
-                </button>
-              </form>
-              -->
+                            
                         </ul>
                     </div>
                 </nav>
@@ -236,7 +224,7 @@
                             Links
                         </h4>
                         <div class="info_links">
-                            <a class="active" href="{{ route('welcome') }}">
+                            <a class="" href="{{ route('welcome') }}">
                                 Acceuil
                             </a>
                             <a class="" href="{{ route('about') }}">
@@ -245,8 +233,8 @@
                             <a class="" href="{{ route('service') }}">
                                 Nos Services
                             </a>
-                            <a class="" href="{{ route('Product') }}">
-                                Nos Produits
+                            <a class="" href="{{ route('Secteur') }}">
+                                Nos Secteurs
                             </a>
                             <a class="" href="{{ route('why') }}">
                                 Pourquoi nous

@@ -120,6 +120,18 @@ Route::prefix('Blog')->group(function () {
     Route::get('/Product', function () {
         return view('blog.product');
     })->name('Product');
+    // Route::get('/Immobilier', function () {
+    //     return view('blog.immobiliers');
+    // })->name('immobiliers');
+    Route::get('/Immobiliers', function () {
+        return view('blog.immobiliers');
+    })->name('immobiliers');
+    Route::get('/Secteur', function () {
+        return view('blog.immobiliers');
+    })->name('Secteur');
+    Route::get('/Centres', function () {
+        return view('blog.centres');
+    })->name('centres');
     Route::get('/Team', function () {
         return view('blog.team');
     })->name('team');

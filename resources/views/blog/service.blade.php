@@ -92,19 +92,22 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('about') }}"> Qui Somme Nous</a>
               </li>
-              <div class="subnav">
-                <li class="nav-item active">
-                  <button class="nav-link subnavbtn">Notre Service <span class="sr-only">(current)</span></a>
+              <li class="nav-item active">
+                <a class="nav-link" href="{{ route('service') }}">Services & Solutions <span class="sr-only">(current)</span></a>
+            </li>
+            <div class="subnav">
+                <li class="nav-item">
+                    <button class="nav-link subnavbtn">Secteurs</a>
                 </li>
                 <div class="subnav-content">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="{{ route('service') }}">Nos Services <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{ route('Product') }}">Nos Solutions</a>
-                  </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('immobiliers') }}">Immobiliers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('centres') }}">Centres commerciaux</a>
+                    </li>
                 </div>
-              </div>
+            </div>
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('why') }}">Pouquoi Nous</a>
               </li>
@@ -227,6 +230,89 @@
 
   <!-- end service section -->
 
+
+<!-- product section -->
+
+<section class="service_section layout_padding">
+  <div class="service_container">
+    <div class="container ">
+      <div class="heading_container heading_center">
+        <h2>
+          Nos <span>Solutions</span> Dans La Gestion Des Déchets
+        </h2>
+        <p>
+          Les Solutions disponibles dans notre Startup :
+        </p>
+      </div>
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-4 ">
+          <div class="box ">
+            <div class="img-box">
+              <img src="{{ asset('images/prod.png') }}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                G-BIN
+              </h5>
+              <p>
+                Une poubelle intelligente qui fait le tri séletif automatiquement avec numérisation des données 
+                contient 5 bacs internes (Plastique, Metal, Papier, Verre, Autres)
+              </p>
+              <!-- <a href="">
+                Read More
+              </a> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 ">
+          <div class="box ">
+            <div class="img-box">
+              <img src="{{ asset('images/prod.png') }}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                S-BIN
+              </h5>
+              <p>
+                Une poubelle intelligente qui fait le tri séletif automatiquement avec numérisation des données 
+                contient 3 bacs internes (Plastique, Papier, Autres)
+              </p>
+              <!-- <a href="">
+                Read More
+              </a> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 ">
+          <div class="box ">
+            <div class="img-box">
+              <img src="{{ asset('images/prod.png') }}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                KIT-BIN
+              </h5>
+              <p>
+
+              </p>
+              <!-- <a href="">
+                Read More
+              </a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="btn-box">
+        <a href="">
+          View All
+        </a>
+      </div> -->
+    </div>
+  </div>
+</section>
+
+<!-- end product section -->
+
   <!-- info section -->
 
   <section class="info_section layout_padding2">
@@ -291,17 +377,17 @@
               Links
             </h4>
             <div class="info_links">
-              <a class="active" href="{{ route('welcome') }}">
+              <a class="" href="{{ route('welcome') }}">
                 Acceuil
               </a>
               <a class="" href="{{ route('about') }}">
                 Qui somme nous
               </a>
-              <a class="" href="{{ route('service') }}">
+              <a class="active" href="{{ route('service') }}">
                 Nos Services
               </a>
-              <a class="" href="{{ route('Product') }}">
-                Nos Produits
+              <a class="" href="{{ route('Secteur') }}">
+                Nos Secteurs
               </a>
               <a class="" href="{{ route('why') }}">
                 Pourquoi nous
