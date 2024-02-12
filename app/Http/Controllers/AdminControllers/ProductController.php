@@ -12,7 +12,8 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $produits = Produit::all();
+        //$produits = Produit::all();
+        $produits = Produit::with('clients', 'societes')->get();
         return view('admin.products' ,compact('produits'));
     }
 }
