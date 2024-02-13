@@ -91,6 +91,7 @@ Route::middleware(['auth.admin'])->group(function () {
     
     Route::get('Admin-societe', [SocieteController::class, 'index'])->name('Admin-societe');
     Route::post('Admin_Add_Societe', [SocieteController::class, 'Add_societe']);
+    Route::post('Admin_Update_societe', [SocieteController::class, 'Update_societe']);
     
     Route::post('Admin-Add-societe', [SocieteController::class, 'add_societe']);
     Route::get('Admin-alerts', [AlertController::class, 'index'])->name('Admin-alerts');

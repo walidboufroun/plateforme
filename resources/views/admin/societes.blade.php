@@ -127,8 +127,9 @@
                         <td>
                             <div class="modal fade" id="modifier_commande_{{ $societe->id }}" tabindex="-1">
                                 <div class="modal-dialog modal-lg">3
-                                    <form action="Admin_Add_ordre" method="post">
+                                    <form action="Admin_Update_societe" method="post">
                                         @csrf
+                                        <input type="hidden" name="id" value="{{ $societe->id }}">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title">Ajouter une commande {{ $societe->id }}
@@ -137,12 +138,60 @@
                                             </div>
                                             <div class="modal-body">
                                                 <div class="row mb-3">
-                                                    <label for="inputText" class="col-sm-2 col-form-label">date
-                                                        commande</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="date" class="form-control" name="date_commande" value="{{ $societe->date_commande }}" required>
+                                                    <label for="inputText" class="col-sm-3 col-form-label">Nom de societe</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" name="name" value="{{ $societe->name }}" required>
                                                     </div>
                                                 </div>
+                                                <div class="row mb-3">
+                                                    <label for="inputText" class="col-sm-3 col-form-label">Description</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" name="description" value="{{ $societe->description }}" required>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <label for="inputText" class="col-sm-3 col-form-label">Site web</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" name="site_web" value="{{ $societe->site_web }}" required>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <label for="inputText" class="col-sm-3 col-form-label">Adresse</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" name="adresse" value="{{ $societe->adresse }}" required>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <label for="inputText" class="col-sm-3 col-form-label">Numero de telephone</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" name="phone_number" value="{{ $societe->phone_number }}" required>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <label for="inputText" class="col-sm-3 col-form-label">Logo de societe</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="file" class="form-control" name="phone_number" value="{{ $societe->phone_number }}">
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <label for="inputText" class="col-sm-3 col-form-label">Registre de commerce</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" name="registre_commerce" value="{{ $societe->registre_commerce }}" required>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <label for="inputText" class="col-sm-3 col-form-label">Type</label>
+                                                    <div class="col-sm-9">
+                                                        <select class="form-select" name="type" required>
+                                                            <option value="SI" {{ $societe->type === 'SI' ? 'selected' : '' }}>SI</option>
+                                                            <option value="SARL" {{ $societe->type === 'SARL' ? 'selected' : '' }}>SARL</option>
+                                                            <option value="SPA" {{ $societe->type === 'SPA' ? 'selected' : '' }}>SPA</option>
+                                                            <option value="SNC" {{ $societe->type === 'SNC' ? 'selected' : '' }}>SNC</option>
+                                                            <option value="SCS" {{ $societe->type === 'SCS' ? 'selected' : '' }}>SCS</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
