@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 
 namespace App\Http\Controllers\AdminControllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\Client;
-use App\Models\Commande;
 use App\Models\Produit;
 use App\Models\Societe;
+use App\Models\Commande;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class OrderController extends Controller
 {
@@ -61,5 +61,29 @@ class OrderController extends Controller
 
         // Rediriger vers la liste des commandes avec un message de succès
         return redirect()->route('Admin-Commandes')->with('success', 'La commande a été mise à jour avec succès.');
+    }
+    public function Delete_ordre(Request $request)
+    {
+        // Valider la demande
+        $request->validate([
+            'id' => 'required|exists:commandes,id',
+        ]);
+
+        // Récupérer l'ID de la commande à supprimer
+        $orderId = $request->input('id');
+
+        // Trouver la commande
+        $commande = Commande::find($orderId);
+
+        if (!$commande) {
+            // La commande n'existe pas
+            return redirect()->route('Admin-Commandes')->with('error', 'La commande n\'existe pas.');
+        }
+
+        // Supprimer la commande
+        $commande->delete();
+
+        // Rediriger avec un message de succès
+        return redirect()->route('Admin-Commandes')->with('success', 'La commande a été supprimée avec succès.');
     }
 }

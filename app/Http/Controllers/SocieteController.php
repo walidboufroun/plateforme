@@ -22,6 +22,6 @@ class SocieteController extends Controller
 
         Societe::create($request->all());
 
-        return redirect()->route('societes.index')->with('success', 'Société créée avec succès.');
+        return redirect()->route('Admin-societe')->with('success', 'Société créée avec succès.');
     }
 }

@@ -97,7 +97,7 @@
                                 <td>{{ $alert->name }}</td>
                                 <td>{{ $alert->date }}</td>
                                 <td>{{ $alert->produit->code }}</td>
-                                <td>{{ $alert->description }}</td>
+                                <td>{{ $alert->produit->name }}</td>
                                 <td>{{ $alert->seen == 1 ? 'VU' : 'Na pas encor vu'  }}</td>
                                 <td>{{ $alert->client->name }}</td>
                                 <td>
