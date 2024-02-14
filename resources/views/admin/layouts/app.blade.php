@@ -323,6 +323,13 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link @if (trim($__env->yieldContent('title')) != 'Societe') collapsed @endif"
+                    href="{{ route('Admin-societe') }}">
+                    <i class="bi bi-person"></i>
+                    <span>Societe</span>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link @if (trim($__env->yieldContent('title')) != 'Produit') collapsed @endif"
                     href="{{ route('Admin-Produit') }}">
                     <i class="bi bi-person"></i>
@@ -344,20 +351,14 @@
                 </a>
             </li><!-- End Contact Page Nav -->
             <li class="nav-item">
-                <a class="nav-link @if (trim($__env->yieldContent('title')) != 'Employes') collapsed @endif"    
+                <a class="nav-link @if (trim($__env->yieldContent('title')) != 'Employes') collapsed @endif"
                     href="{{ route('Admin-Employees') }}">
                     <i class="bi bi-envelope"></i>
                     <span>Employes</span>
                 </a>
             </li><!-- End Contact Page Nav -->
             <li class="nav-heading">Autres - Pages</li>
-            <li class="nav-item">
-                <a class="nav-link @if (trim($__env->yieldContent('title')) != 'Societe') collapsed @endif"
-                    href="{{ route('Admin-societe') }}">
-                    <i class="bi bi-person"></i>
-                    <span>Societe</span>
-                </a>
-            </li>
+
             <li class="nav-item">
                 <a class="nav-link @if (trim($__env->yieldContent('title')) != 'Maintenance') collapsed @endif"
                     href="{{ route('Admin-maintenance') }}">
