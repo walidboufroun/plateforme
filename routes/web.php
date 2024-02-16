@@ -7,12 +7,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
 //Admin
-use App\Http\Controllers\AdminControllers\SocieteController;
 use App\Http\Controllers\AdminControllers\AlertController;
 use App\Http\Controllers\AdminControllers\OrderController;
 use App\Http\Controllers\AdminControllers\ClientController;
 use App\Http\Controllers\AdminControllers\ForfaitController;
 use App\Http\Controllers\AdminControllers\ProductController;
+use App\Http\Controllers\AdminControllers\SocieteController;
 use App\Http\Controllers\AdminControllers\CategoryController;
 use App\Http\Controllers\AdminControllers\EmployeeController;
 use App\Http\Controllers\AdminControllers\ComplaintController;
@@ -101,6 +101,8 @@ Route::middleware(['auth.admin'])->group(function () {
 
     Route::get('Admin-Employees', [EmployeeController::class, 'index'])->name('Admin-Employees');
     Route::post('Admin_Add_Employe', [EmployeeController::class, 'Add_Employe']);
+    Route::post('Admin_Update_Employe', [EmployeeController::class, 'Update_Employe']);
+    Route::post('Admin_Delete_Employe', [EmployeeController::class, 'deleteEmployee']);
 
     Route::get('Admin-profile', [AuthAdmin::class, 'profile'])->name('Admin-profile');
     Route::get('Admin-Edit-Profile', [AuthAdmin::class, 'edit_profile'])->name('Admin-profile_edit');

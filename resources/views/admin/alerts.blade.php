@@ -101,13 +101,13 @@
                                 <td>{{ $alert->seen == 1 ? 'VU' : 'Na pas encor vu'  }}</td>
                                 <td>{{ $alert->client->name }}</td>
                                 <td>
-                                    <div class="modal fade" id="modifier_réclamations_" tabindex="-1">
+                                    <div class="modal fade" id="modifier_réclamations_{{ $alert->id }}" tabindex="-1">
                                         <div class="modal-dialog modal-lg">3
                                             <form action="Admin_Add_ordre" method="post">
                                                 @csrf
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title">Modifier une alerte</h5>
+                                                        <h5 class="modal-title">Modifier une alerte n° {{ $alert->id }}</h5>
                                                         <button type="button" class="btn-close"
                                                             data-bs-dismiss="modal"aria-label="Close"></button>
                                                     </div>
@@ -120,43 +120,7 @@
                                                                     value="">
                                                             </div>
                                                         </div>
-                                                        <div class="row mb-3">
-                                                            <label for="inputText" class="col-sm-2 col-form-label">Date
-                                                                alerte</label>
-                                                            <div class="col-sm-10">
-                                                                <input type="date" class="form-control"
-                                                                    name="date_alerte" value="">
-                                                            </div>
-                                                        </div>
-                                                        <div class="row mb-3">
-                                                            <label for="inputText"
-                                                                class="col-sm-2 col-form-label">Client</label>
-                                                            <div class="col-sm-10">
-                                                                <!-- select from list clients -->
-                                                                <select class="form-control" id="idclient"
-                                                                    name="client" value="">
-                                                                    <option value="client1">client1</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row mb-3">
-                                                            <label for="inputText" class="col-sm-2 col-form-label">Nom
-                                                                Produit</label>
-                                                            <div class="col-sm-10">
-                                                                <!-- select from list produit de clients -->
-                                                                <select class="form-control" id="id_produit_client"
-                                                                    name="Nom_produit">
-                                                                    <option value="produit1">produit1</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row mb-3">
-                                                            <label for="inputText"
-                                                                class="col-sm-2 col-form-label">Description</label>
-                                                            <div class="col-sm-10">
-                                                                <textarea class="form-control" name="description_alerte"></textarea>
-                                                            </div>
-                                                        </div>
+                                                        
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-danger"
@@ -169,7 +133,7 @@
                                         </div>
                                     </div><!-- End Large Modal-->
                                     <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
-                                        data-bs-target="#modifier_réclamations_">Modifier</button>
+                                        data-bs-target="#modifier_réclamations_{{ $alert->id }}">Modifier le statut</button>
                                 </td>
                             </tr>
                         @endforeach
