@@ -36,7 +36,7 @@ class Produit extends Model
 
     public function forfait()
     {
-        return $this->hasOne(Forfait::class, 'id_produit');
+        return $this->hasMany(Forfait::class, 'id_produit');
     }
 
     public function images()

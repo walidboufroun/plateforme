@@ -17,7 +17,9 @@ class ProductController extends Controller
         //$produits = Produit::all();
         $produits = Produit::with('clients', 'societes')->get();
         $societes = Societe::all();
-        return view('admin.products', compact('produits', 'societes'));
+        $adminController = new AdminController();
+        $AlertsCount = $adminController->InfosApp();
+        return view('admin.products', compact('produits', 'societes' , 'AlertsCount'));
     }
     public function Add_Produit(Request $request)
     {

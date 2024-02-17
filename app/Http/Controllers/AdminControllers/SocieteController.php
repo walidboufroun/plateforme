@@ -12,8 +12,11 @@ class SocieteController extends Controller
 {
     public function index()
     {
+        $adminController = new AdminController();
+        $AlertsCount = $adminController->InfosApp();
+        
         $societes = Societe::all();
-        return view('admin.societes', compact('societes'));
+        return view('admin.societes', compact('societes' ,'AlertsCount'));
     }
     public function add_societe(Request $request)
     {

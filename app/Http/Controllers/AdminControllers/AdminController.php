@@ -11,12 +11,7 @@ class AdminController extends Controller
 {
     public function InfosApp()
     {
-        // Compter les alertes avec seen == 0
         $alertsCount = Alert::where('seen', 0)->count();
-
-        // Autres opérations si nécessaire...
-
-        // Retourner la vue avec le compte d'alertes non lues
         return $alertsCount;
     }
     

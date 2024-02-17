@@ -13,8 +13,10 @@ class EmployeeController extends Controller
 {
     public function index()
     {
+        $adminController = new AdminController();
+        $AlertsCount = $adminController->InfosApp();
         $employes = User::all();
-        return view('admin.employees', compact('employes'));
+        return view('admin.employees', compact('employes', 'AlertsCount'));
     }
     public function Add_Employe(Request $request)
     {

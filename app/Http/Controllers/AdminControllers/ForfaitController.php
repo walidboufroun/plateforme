@@ -14,9 +14,12 @@ class ForfaitController extends Controller
 {
     public function index()
     {
+        $adminController = new AdminController();
+        $AlertsCount = $adminController->InfosApp();
+        
         $forfaits = Forfait::with('produit')->get();
         $produits = Produit::all();
-        return view('admin.forfaits', compact('forfaits', 'produits'));
+        return view('admin.forfaits', compact('forfaits', 'produits', 'AlertsCount'));
     }
     public function Add_forfait(Request $request)
     {

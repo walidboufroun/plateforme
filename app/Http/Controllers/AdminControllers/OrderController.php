@@ -16,16 +16,16 @@ class OrderController extends Controller
 {
     public function index()
     {
-        //liste des produits 
+        $adminController = new AdminController();
+        $AlertsCount = $adminController->InfosApp();
+        
         $produits = Produit::all();
-        // Récupérez toutes les sociétés
         $societes = Societe::all();
-        // Récupérez tous les clients qui n'ont pas d'id_societe
         $clientsWithoutSociete = Client::whereNull('id_societe')->get();
-        //$commandes = Commande::all();
-        $commandes = Commande::with('client.societe')->get();
-        //dd($commandes);
-        return view('admin.orders', compact('commandes', 'produits', 'societes', 'clientsWithoutSociete'));
+       
+        $commandes = Commande::with('Societe')->get();
+       
+        return view('admin.orders', compact('commandes', 'produits', 'societes', 'clientsWithoutSociete', 'AlertsCount'));
     }
     public function add_ordre(Request $request)
     {
