@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 namespace App\Http\Controllers\AdminControllers;
 
 use App\Models\Client;
+use App\Models\Societe;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,9 +16,9 @@ class ClientController extends Controller
     {
         $adminController = new AdminController();
         $AlertsCount = $adminController->InfosApp(); 
-        
+        $societes = Societe::all();        
         $clients = Client::with('societe')->get();
-        return view('admin.clients', compact('clients', 'AlertsCount'));
+        return view('admin.clients', compact('clients', 'AlertsCount' , 'societes'));
     }
     public function Add_client(Request $request)
     {
@@ -54,6 +55,7 @@ class ClientController extends Controller
             'adresse' => 'required|string|max:255',
             'phone_number' => 'required|string|max:20',
             'role' => 'required|in:gerant,superviseur,employe',
+            'id_societe' => 'required',
         ]);
 
         // Retrieve the client by ID

@@ -76,6 +76,17 @@
                                             </select>
                                         </div>
                                     </div>
+                                    <div class="row mb-3">
+                                        <label for="inputText" class="col-sm-2 col-form-label">Societe</label>
+                                        <div class="col-sm-10">
+                                            <select class="form-select" name="id_societe" aria-label="Sélectionnez une société ou une societe" required>
+                                                <option value="" disabled selected>Choisir la société</option>
+                                                @foreach ($societes as $societe)
+                                                <option value="{{ $societe->id }}">{{ $societe->name }} {{ $societe->id }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
@@ -126,7 +137,7 @@
                                         <input type="hidden" name="id" value="{{ $client->id }}">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title">Ajouter une commande {{ $client->id }}
+                                                <h5 class="modal-title">Modifier le client n° {{ $client->id }}
                                                 </h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
@@ -184,6 +195,17 @@
                                                         </select>
                                                     </div>
                                                 </div>
+                                                <div class="row mb-3">
+                                                    <label for="inputText" class="col-sm-2 col-form-label">Societe</label>
+                                                    <div class="col-sm-10">
+                                                        <select class="form-select" name="id_societe" aria-label="Sélectionnez une société ou une societe" required>
+                                                            <option value="" disabled selected>Choisir la société</option>
+                                                            @foreach ($societes as $societe)
+                                                            <option value="{{ $societe->id }}">{{ $societe->name }} {{ $societe->id }}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
@@ -201,7 +223,7 @@
                                     <div class="modal-dialog modal-dialog-centered">
                                         <div class="modal-content">
                                             <form action="Admin_delete_client" method="post">
-                                                @csrf 
+                                                @csrf
                                                 <input type="hidden" name="id" value="{{ $client->id }}">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title">Supresion client n° {{ $client->id }}</h5>

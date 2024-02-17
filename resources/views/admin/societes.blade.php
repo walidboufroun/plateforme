@@ -104,7 +104,7 @@
                         <th>Site Web</th>
                         <th>Adresse</th>
                         <th>Phone number</th>
-                        <th>Logo</th>
+                        
                         <th>Type</th>
                         <th>Registre</th>
                         <th>Description</th>
@@ -120,7 +120,8 @@
                         <td>{{ $societe->site_web }}</td>
                         <td>{{ $societe->adresse }}</td>
                         <td>{{ $societe->phone_number }}</td>
-                        <td>{{ $societe->logo }}</td>
+                        <!--<td><img src="{{ $societe->logo }}" width="50px" height="50px" alt=""></td>-->
+                    
                         <td>{{ $societe->type }}</td>
                         <td>{{ $societe->registre_commerce }}</td>
                         <td>{{ $societe->description }}</td>
