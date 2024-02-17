@@ -4,8 +4,8 @@
 namespace App\Http\Controllers;
 namespace App\Http\Controllers\AdminControllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class CategoryController extends Controller
 {

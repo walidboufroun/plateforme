@@ -13,8 +13,11 @@ class ClientController extends Controller
 {
     public function index()
     {
+        $adminController = new AdminController();
+        $AlertsCount = $adminController->InfosApp(); 
+        
         $clients = Client::with('societe')->get();
-        return view('admin.clients', compact('clients'));
+        return view('admin.clients', compact('clients', 'AlertsCount'));
     }
     public function Add_client(Request $request)
     {

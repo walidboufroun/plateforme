@@ -42,6 +42,17 @@
                                         </div>
                                     </div>
                                     <div class="row mb-3">
+                                        <label for="inputText" class="col-sm-2 col-form-label">Societe</label>
+                                        <div class="col-sm-10">
+                                            <select class="form-select" name="id_societe" aria-label="Sélectionnez une société ou une societe" required>
+                                                <option value="" disabled selected>Choisir la société</option>
+                                                @foreach ($societes as $societe)
+                                                <option value="{{ $societe->id }}">{{ $societe->name }} {{ $societe->id }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
                                         <label for="inputText" class="col-sm-2 col-form-label">Description produit</label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" name="descriptive" required>
@@ -50,7 +61,7 @@
                                     <div class="row mb-3">
                                         <label for="inputText" class="col-sm-2 col-form-label">Prix produit</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" name="prix" required>
+                                            <input type="number" class="form-control" name="prix" required>
                                         </div>
                                     </div>
 
@@ -68,12 +79,16 @@
                     <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#largeModal">Ajouter Produit</button>
                 </div>
             </div>
+            @if(session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+            @endif
             @if (session('success'))
             <div class="alert alert-success">
                 {{ session('success') }}
             </div>
             @endif
-
             <!-- Table with stripped rows -->
             <table class="table datatable">
                 <thead>
@@ -132,24 +147,28 @@
                             <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modifier_commande_{{ $produit->id }}">Modifier</button>
                         </td>
                         <td>
-                            <div class="modal fade" id="verticalycentered" tabindex="-1">
+                            <form action="Admin_Delete_Produit" method="post">
+                            <div class="modal fade" id="verticalycentered_{{ $produit->id }}" tabindex="-1">
                                 <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Supresion</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            Vous voulez supprimer cette commande.
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                            <button type="button" class="btn btn-danger">Supprimer</button>
+                                        @csrf 
+                                        <input type="hidden" name="id" value="{{ $produit->id }}">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Supresion</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Vous voulez supprimer le produit n° {{ $produit->id }}.
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                <button type="submit" class="btn btn-danger">Supprimer</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#verticalycentered">
+                            </form>
+                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#verticalycentered_{{ $produit->id }}">
                                 Supprimer
                             </button>
                         </td>

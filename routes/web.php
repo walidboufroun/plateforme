@@ -70,7 +70,8 @@ Route::middleware(['auth.admin'])->group(function () {
     Route::post('/logout', [AuthAdmin::class, 'logout'])->name('logout');
 
     Route::get('Admin-Produit', [ProductController::class, 'index'])->name('Admin-Produit');
-    Route::post('Admin_Add_Produit', [ProductController::class, 'Add_client']);
+    Route::post('Admin_Add_Produit', [ProductController::class, 'Add_Produit']);
+    Route::post('Admin_Delete_Produit', [ProductController::class, 'Delete_Produit']);
 
     Route::get('Admin-Categories', [CategoryController::class, 'index'])->name('Admin-Categories');
     Route::get('Admin-Commandes', [OrderController::class, 'index'])->name('Admin-Commandes');
@@ -86,15 +87,22 @@ Route::middleware(['auth.admin'])->group(function () {
     //Forfait
     Route::get('Admin-Forfaits', [ForfaitController::class, 'index'])->name('Admin-Forfaits');
     Route::post('Admin_Add_forfait', [ForfaitController::class, 'Add_forfait']);
+    Route::post('Admin_Update_Forfait', [ForfaitController::class, 'Update_Forfait']);
+    Route::post('Admin_Delete_Forfait', [ForfaitController::class, 'Delete_Forfait']);
 
+    //Maintenance
     Route::get('Admin-maintenance', [MaintenanceController::class, 'index'])->name('Admin-maintenance');
 
+    //Societe
     Route::get('Admin-societe', [SocieteController::class, 'index'])->name('Admin-societe');
     Route::post('Admin_Add_Societe', [SocieteController::class, 'Add_societe']);
     Route::post('Admin_Update_societe', [SocieteController::class, 'Update_societe']);
-
-    Route::post('Admin-Add-societe', [SocieteController::class, 'add_societe']);
+    Route::post('Admin_Delete_Societe', [SocieteController::class, 'Delete_societe']);
+    
+    //alerts
     Route::get('Admin-alerts', [AlertController::class, 'index'])->name('Admin-alerts');
+    Route::post('Admin_Update_Alert', [AlertController::class, 'Update_Alert']);
+
     Route::get('Admin-Reclamation', [ComplaintController::class, 'index'])->name('Admin-Reclamation');
     Route::post('change_statut_reclamation/{id}', [ComplaintController::class, 'changeStatutReclamation']);
     Route::post('Admin-suprmier_complaint/{id}', [ComplaintController::class, 'suprmier_complaint']);

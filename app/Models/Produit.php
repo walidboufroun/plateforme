@@ -12,6 +12,8 @@ class Produit extends Model
         'name',
         'code',
         'photos',
+        'id_client',
+        'id_societe',
         'descriptive',
         'prix',
         // Add other fillable attributes as needed
