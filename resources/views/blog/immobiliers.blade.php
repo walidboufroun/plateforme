@@ -7,8 +7,6 @@
 <!doctype html>
 <html lang="EN">
 
-<
-
 <body>
   <div id="main" aria-label="content">
     <header class="section section--header">
@@ -86,6 +84,21 @@
                 </div>
               </div>
             </div>
+        </header>
+        <!-- end header section -->
+
+        <!-- secteur section -->
+        <section class="service_section layout_padding">
+            <div class="">
+                <div class="heading_container heading_center">
+                    <h2>
+                        Secteur <span>Immobilier</span>
+                    </h2><br><br>
+                    <p>Les développements immobiliers sont confrontés à des défis uniques en matière de gestion des
+                        déchets en raison du <br> volume élevé de construction et de maintenance continue. Les principaux
+                        insights incluent :</p>
+                        <br>
+                   
             <div class="c-featured-listing__card carousel-cell">
               <div class="c-featured-listing__wrap">
                 <div class="c-featured-listing__row">

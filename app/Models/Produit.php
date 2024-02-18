@@ -12,6 +12,8 @@ class Produit extends Model
         'name',
         'code',
         'photos',
+        'id_client',
+        'id_societe',
         'descriptive',
         'prix',
         // Add other fillable attributes as needed
@@ -20,7 +22,11 @@ class Produit extends Model
     // Add relationships if needed
     public function clients()
     {
-        return $this->hasMany(Client::class, 'id_client');
+        return $this->belongsTo(Client::class, 'id_client');
+    }
+    public function societes()
+    {
+        return $this->belongsTo(Societe::class, 'id_societe');
     }
 
     public function commentaires()
@@ -30,7 +36,7 @@ class Produit extends Model
 
     public function forfait()
     {
-        return $this->hasOne(Forfait::class, 'id_produit');
+        return $this->hasMany(Forfait::class, 'id_produit');
     }
 
     public function images()
