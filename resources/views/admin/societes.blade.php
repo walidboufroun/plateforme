@@ -104,7 +104,7 @@
                         <th>Site Web</th>
                         <th>Adresse</th>
                         <th>Phone number</th>
-                        <th>Logo</th>
+                        
                         <th>Type</th>
                         <th>Registre</th>
                         <th>Description</th>
@@ -120,7 +120,8 @@
                         <td>{{ $societe->site_web }}</td>
                         <td>{{ $societe->adresse }}</td>
                         <td>{{ $societe->phone_number }}</td>
-                        <td>{{ $societe->logo }}</td>
+                        <!--<td><img src="{{ $societe->logo }}" width="50px" height="50px" alt=""></td>-->
+                    
                         <td>{{ $societe->type }}</td>
                         <td>{{ $societe->registre_commerce }}</td>
                         <td>{{ $societe->description }}</td>
@@ -170,7 +171,7 @@
                                                 <div class="row mb-3">
                                                     <label for="inputText" class="col-sm-3 col-form-label">Logo de societe</label>
                                                     <div class="col-sm-9">
-                                                        <input type="file" class="form-control" name="phone_number" value="{{ $societe->phone_number }}">
+                                                        <input type="file" class="form-control" name="photo" value="{{ $societe->photo }}">
                                                     </div>
                                                 </div>
                                                 <div class="row mb-3">
@@ -205,24 +206,28 @@
                             <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modifier_commande_{{ $societe->id }}">Modifier</button>
                         </td>
                         <td>
-                            <div class="modal fade" id="verticalycentered" tabindex="-1">
+                            <div class="modal fade" id="verticalycentered_{{ $societe->id }}" tabindex="-1">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Supresion</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            Vous voulez supprimer cette commande.
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                            <button type="button" class="btn btn-danger">Supprimer</button>
-                                        </div>
+                                        <form action="Admin_Delete_Societe" method="post">
+                                            @csrf 
+                                            <input type="hidden" name="id" value="{{ $societe->id }}">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Supresion societe n° {{ $societe->id }}</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Vous voulez supprimer cette commande.
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                <button type="submit" class="btn btn-danger">Supprimer</button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
-                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#verticalycentered">
+                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#verticalycentered_{{ $societe->id }}">
                                 Supprimer
                             </button>
                         </td>

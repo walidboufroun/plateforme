@@ -19,6 +19,10 @@ class Societe extends Model
         'description',
         // Add other fillable attributes as needed
     ];
+    public function societes()
+    {
+        return $this->hasMany(Societe::class, 'id_societe');
+    }
 
     // You can add mutators, accessors, and relationships as needed
 }

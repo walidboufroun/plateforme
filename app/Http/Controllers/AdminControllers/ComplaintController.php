@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 
 namespace App\Http\Controllers\AdminControllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\Commentaire;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ComplaintController extends Controller
 {
@@ -25,7 +25,7 @@ class ComplaintController extends Controller
 
         $complaints = Commentaire::with('produit', 'utilisateur')->get();
         // Redirect or return a response as needed
-        return redirect()->route('Admin-Reclamation'); // Replace 'your.success.route' with the actual success route
+        return redirect()->route('Admin-Reclamation')->with('success', 'Réclamationa modifié avec succès.'); // Replace 'your.success.route' with the actual success route
     }
     public function suprmier_complaint(Request $request, $id)
     {
@@ -39,7 +39,7 @@ class ComplaintController extends Controller
             // Optionally, you can add a flash message or other logic here
 
             // Redirect or respond as needed
-            return redirect()->route('Admin-Reclamation'); // Replace 'your.success.route' with the actual success route
+            return redirect()->route('Admin-Reclamation')->with('success', 'Réclamationa supprimé avec succès.'); // Replace 'your.success.route' with the actual success route
         } else {
             // Handle the case where the complaint does not exist
             return abort(404); // You can customize this response code as needed
@@ -47,9 +47,10 @@ class ComplaintController extends Controller
     }
     public function index()
     {
-        //$complaints = Commentaire::all()->with('produits','users')->get(); 
-        //dd($complaints);
+        $adminController = new AdminController();
+        $AlertsCount = $adminController->InfosApp(); 
+        
         $complaints = Commentaire::with('produit', 'utilisateur')->get();
-        return view('admin.complaints', compact('complaints'));
+        return view('admin.complaints', compact('complaints' , 'AlertsCount'));
     }
 }

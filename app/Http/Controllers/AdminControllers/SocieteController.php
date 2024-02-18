@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 namespace App\Http\Controllers\AdminControllers;
 
 use App\Models\Societe;
@@ -11,8 +12,11 @@ class SocieteController extends Controller
 {
     public function index()
     {
+        $adminController = new AdminController();
+        $AlertsCount = $adminController->InfosApp();
+        
         $societes = Societe::all();
-        return view('admin.societes', compact('societes'));
+        return view('admin.societes', compact('societes' ,'AlertsCount'));
     }
     public function add_societe(Request $request)
     {
@@ -31,13 +35,13 @@ class SocieteController extends Controller
         // Validate the form data
         $validatedData = $request->validate([
             'id' => 'required|exists:societes,id',
-            'name' => 'required|string',
+            /*'name' => 'required|string',
             'description' => 'required|string',
             'site_web' => 'required|url',
             'adresse' => 'required|string',
             'phone_number' => 'required|string',
             'logo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'registre_commerce' => 'required|string',
+            'registre_commerce' => 'required|string',*/
             'type' => 'required|in:SI,SARL,SPA,SNC,SCS',
         ]);
 
@@ -46,13 +50,13 @@ class SocieteController extends Controller
 
         // Update the Societe with the new data
         $societe->update([
-            'name' => $validatedData['name'],
-            'description' => $validatedData['description'],
-            'site_web' => $validatedData['site_web'],
-            'adresse' => $validatedData['adresse'],
-            'phone_number' => $validatedData['phone_number'],
-            'registre_commerce' => $validatedData['registre_commerce'],
-            'type' => $validatedData['type'],
+            'name' => $request->input('name'),
+            'description' => $request->input('description'),
+            'site_web' => $request->input('site_web'),
+            'adresse' => $request->input('adresse'),
+            'phone_number' => $request->input('phone_number'),
+            'registre_commerce' => $request->input('registre_commerce'),
+            'type' => $request->input('type'),
         ]);
 
         // Handle logo upload if provided
@@ -63,5 +67,25 @@ class SocieteController extends Controller
 
         // Redirect back or wherever you want after updating
         return redirect()->back()->with('success', 'Societe updated successfully');
+    }
+    public function Delete_societe(Request $request)
+    {
+        // Validate the incoming request data
+        $request->validate([
+            'id' => 'required|exists:societes,id',
+        ]);
+
+        // Find the société by ID
+        $societe = Societe::find($request->id);
+
+        if (!$societe) {
+            return redirect()->back()->with('error', 'Société not found');
+        }
+
+        // Delete the société
+        $societe->delete();
+
+        // Redirect or respond as needed
+        return redirect()->route('Admin-societe')->with('success', 'Société deleted successfully');
     }
 }

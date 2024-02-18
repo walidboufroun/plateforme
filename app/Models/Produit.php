@@ -12,6 +12,8 @@ class Produit extends Model
         'name',
         'code',
         'photos',
+        'id_client',
+        'id_societe',
         'descriptive',
         'prix',
         // Add other fillable attributes as needed
@@ -34,7 +36,7 @@ class Produit extends Model
 
     public function forfait()
     {
-        return $this->hasOne(Forfait::class, 'id_produit');
+        return $this->hasMany(Forfait::class, 'id_produit');
     }
 
     public function images()
