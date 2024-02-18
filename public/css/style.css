@@ -1,5 +1,38 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap");
-body {
+@font-face {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 400;
+  src: local("Lato Regular"), local("Lato-Regular"), url(../fonts/Lato-Regular.woff2) format("woff2"), url(../fonts/Lato-Regular.woff) format("woff");
+  unicode-range: u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da, u+02dc, u+2000-206f, u+2074, u+20ac, u+2122, u+2191, u+2193, u+2212, u+2215, u+feff, u+fffd;
+  font-display: swap
+}
+
+@font-face {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 700;
+  src: local("Lato Bold"), local("Lato-Bold"), url(../fonts/Lato-Bold.woff2) format("woff2"), url(../fonts/Lato-Bold.woff) format("woff");
+  unicode-range: u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da, u+02dc, u+2000-206f, u+2074, u+20ac, u+2122, u+2191, u+2193, u+2212, u+2215, u+feff, u+fffd;
+  font-display: swap
+}
+
+@font-face {
+  font-family: Playfair Display;
+  font-style: normal;
+  font-weight: 400;
+  src: local("Playfair Display Regular"), local("PlayfairDisplay-Regular"), url(../fonts/PlayfairDisplay-Regular.woff2) format("woff2"), url(../fonts/PlayfairDisplay-Regular.woff) format("woff");
+  unicode-range: u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da, u+02dc, u+2000-206f, u+2074, u+20ac, u+2122, u+2191, u+2193, u+2212, u+2215, u+feff, u+fffd;
+  font-display: swap
+}
+
+@font-face {
+  font-family: Playfair Display;
+  font-style: normal;
+  font-weight: 700;
+  src: local("Playfair Display Bold"), local("PlayfairDisplay-Bold"), url(../fonts/PlayfairDisplay-Bold.woff2) format("woff2"), url(../fonts/PlayfairDisplay-Bold.woff) format("woff");
+  unicode-range: u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da, u+02dc, u+2000-206f, u+2074, u+20ac, u+2122, u+2191, u+2193, u+2212, u+2215, u+feff, u+fffd;
+  font-display: swap
+}body {
   font-family: "Open Sans", sans-serif;
   color: #0c0c0c;
   background-color: #ffffff;
@@ -63,12 +96,49 @@ img {
   width: 75%;
   margin: auto;
 }
+
+/* ---------------------------------------------------------------------------------;;; */
+/* --------------------------------17/02-------------------------------------------------;;; */
+.ContentImmo {
+  position: relative;
+  height: 100vh; 
+  background-size: cover !important;;
+  background-repeat: no-repeat !important;;
+}
+.content-wrapper {
+  position: absolute;
+  top: 120px;
+  right: 0;
+  width: 40%; /* Adjust the width as needed */
+  padding: 20px; /* Adjust the padding as needed */
+}
+
+.content {
+  background-color: #f0f0f0; /* Example background color */
+  padding: 20px; /* Adjust the padding as needed */
+  border-radius: 10px; /* Example border radius */
+}
+.content.one {
+  font-weight: 600;
+}
+
+.content.two {
+  font-weight: 600;
+}
+@media screen and (max-width: 768px) {
+  .content-wrapper {
+      width: 100%; /* Take full width on smaller screens */
+      padding: 10px; /* Adjust the padding as needed */
+  }
+}
+
+/* ---------------------------------------------------------------------------------;;; */
 .fix_width {
   width: 3vw;
 }
 
-.layout_padding {
-  padding: 90px 0;
+ .layout_padding {
+  padding-bottom: 90px;
 }
 
 .layout_padding2 {
@@ -119,6 +189,7 @@ img {
   margin-top: 10px;
   margin-bottom: 0;
   font-size: 18px;
+  margin-bottom: 2vw;
 }
 
 .heading_container.heading_center {
@@ -465,44 +536,29 @@ a:focus {
 }
 
 .service_section .box {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  margin-top: 45px;
+  margin-top: 20px; /* Adjust the margin for smaller screens */
   background-color: #f8f8f9;
   padding: 20px;
   border-radius: 5px;
-  height: 25vw;
+  height: auto; /* Adjust height as needed */
 }
 
 .service_section .box .img-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  width: 125px;
-  min-width: 75px;
-  height: 75px;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%; /* Adjust width for responsiveness */
+  max-width: 125px; /* Set maximum width for image */
   margin-bottom: 15px;
 }
 
 .service_section .box .img-box img {
-  max-width: 100%;
+  max-width: 75%;
   max-height: 100%;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
@@ -511,13 +567,8 @@ a:focus {
   text-transform: uppercase;
 }
 
-.service_section .box .detail-box a {
-  color: #00204a;
-  font-weight: 600;
-}
-
 .service_section .box .detail-box a:hover {
-  color: #1c8200 ;
+  color: #1c8200;
 }
 
 .service_section .btn-box {
@@ -584,7 +635,11 @@ a:focus {
   margin-top: 15px;
 }
 
-
+.why_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 .why_section .box {
   margin-top: 45px;
@@ -618,6 +673,22 @@ a:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.why_section .detail-box{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  flex-direction: column;
+}
+.boxP{
+  width: 80%;
 }
 
 .why_section .box .img-box img {

@@ -159,10 +159,10 @@ Route::prefix('Blog')->group(function () {
     })->name('service');
     Route::get('/Product', function () {
         return view('blog.product');
-    })->name('Product');
-    // Route::get('/Immobilier', function () {
-    //     return view('blog.immobiliers');
-    // })->name('immobiliers');
+    })->name('product');
+    Route::get('/index', function () {
+        return view('blog.index');
+    })->name('index');
     Route::get('/Immobiliers', function () {
         return view('blog.immobiliers');
     })->name('immobiliers');
