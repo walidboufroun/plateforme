@@ -1,334 +1,183 @@
-<!DOCTYPE html>
-<html>
+@extends("blog/layouts.layout")
 
-<head>
-    <!-- Basic -->
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- Mobile Metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <!-- Site Metas -->
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <link rel="shortcut icon" href="images/favicon.png" type="">
+@section("title", "Secteur")
 
-    <title> GNOV </title>
+@section("content")
+<!-- secteur section -->
+<!doctype html>
+<html lang="EN">
 
-    <!-- bootstrap core css -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}" />
+<
 
-    <!-- fonts style -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-
-    <!--owl slider stylesheet -->
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-
-    <!-- font awesome style -->
-    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" />
-
-    <!-- Custom styles for this template -->
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
-    <!-- responsive style -->
-    <link href="{{ asset('css/responsive.css') }}" rel="stylesheet" />
-
-</head>
-
-<body class="sub_page">
-
-    <div class="hero_area">
-
-        <div class="hero_bg_box">
-            <div class="bg_img_box">
-                <img src="images/hero-bg.png" alt="">
-            </div>
+<body>
+  <div id="main" aria-label="content">
+    <header class="section section--header">
+      <div class="section__inner-wrapper">
+        <div class="header">
+          
+          <div class="header__intro">
+            <h1 class="header__title">Permettez-nous de vous aider à trouver la meilleure gestion des déchets</h1>
+            <p class="header__text"> </p>
+            <a class="c-btn c-btn--header" data-scroll href="#subscribe" aria-label="Subscribe">Conactez-nous</a>
+          </div>
+          <a class="c-link c-link--header" data-scroll href="#feature" aria-label="Go to Feature">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="17" fill="none">
+              <path stroke="#fff" d="M6.5 0v16m0 0L1 10.6M6.5 16l5.5-5.4" /></svg>
+          </a>
         </div>
-
-        <!-- header section strats -->
-        <header class="header_section">
-            <div class="header_top">
-                <div class="container-fluid-top ">
-                    <div class="contact_nav">
-                        <a href="">
-                            <i class="fa fa-phone" aria-hidden="true"></i>
-                            <span>
-                                Call : +213 558629858
-                            </span>
-                        </a>
-                        <a href="">
-                            <i class="fa fa-envelope" aria-hidden="true"></i>
-                            <span>
-                                Email : gnov2023@gmail.com
-                            </span>
-                        </a>
-                        <a href="{{ route('ESPACE-CLIENT') }}"><span>Espace CLIENT</span></a>
-                        <a href="{{ route('ESPACE-ADMIN') }}"><span>Espace ADMIN</span></a>
-                        <!-- <a href="">
-            <i class="fa fa-map-marker" aria-hidden="true"></i>
-            <span>
-            Location
-            </span>
-            </a> -->
-                    </div>
-                </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="section section--benefits">
+        <div class="c-benefits__bg c-placeholder" data-large="images/cube.jpg">
+          <img src="images/cube-placeholder.jpg" class="c-placeholder__image">
+          <div style="padding-bottom: 15rem;"></div>
+        </div>
+        <div class="section__inner-wrapper">
+          <div class="c-benefits">
+            <div class="c-benefits__item">
+              <div class="c-benefits__icon">
+                <img src="{{ asset('images/rse.png') }}" width="49" height="51" fill="none">
+              </div>
+              <p class="c-benefits__note">
+              RSE : En intégrant les principes de la RSE dans notre activité, nous nous engageons à gérer les déchets de manière durable, éthique et responsable.
+              </p>
             </div>
-            <div class="container-fluid">
-                <nav class="navbar navbar-expand-lg custom_nav-container ">
-                    <a class="navbar-brand" href="{{ route('welcome') }}">
-                        <span>
-                            <img src="{{ asset('images/gnov5.png') }}" alt="" style="width: 30%;">
-                        </span>
-                    </a>
-
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class=""> </span>
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('welcome') }}">Acceuil</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('about') }}"> Qui Somme Nous</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('service') }}">Services & Solutions</a>
-                            </li>
-                            <div class="subnav">
-                                <li class="nav-item active">
-                                    <button class="nav-link subnavbtn">Secteurs <span class="sr-only">(current)</span> </a>
-                                </li>
-                                <div class="subnav-content">
-                                    <li class="nav-item active">
-                                        <a class="nav-link" href="{{ route('immobiliers') }}">Immobiliers <span class="sr-only">(current)</span></a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('centres') }}">Centres commerciaux</a>
-                                    </li>
-                                </div>
-                            </div>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('why') }}">Pouquoi Nous</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('contact') }}">Contactez Nous</a>
-                            </li>
-                            <!--
-            <li class="nav-item">
-            <a class="nav-link" href="#"> <i class="fa fa-user" aria-hidden="true"></i> Login</a>
-            </li>
-            <form class="form-inline">
-            <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </button>
-            </form>
-            -->
-                        </ul>
-                    </div>
-                </nav>
+            <div class="c-benefits__item">
+              <div class="c-benefits__icon">
+                <img src="{{ asset('images/shield.png') }}" width="49" height="51" fill="none">
+              </div>
+              <p class="c-benefits__note">
+              HSE : Notre engagement en matière de santé, sécurité et environnement est fondamental dans notre approche de gestion des déchets.
+              </p>
             </div>
-        </header>
-        <!-- end header section -->
-
-        <!-- secteur section -->
-        <section class="service_section layout_padding">
-            <div class="">
-                <div class="heading_container heading_center">
-                    <h2>
-                        Secteur <span>Immobilier</span>
-                    </h2>
-                    <p>Les développements immobiliers sont confrontés à des défis uniques en matière de gestion des
-                        déchets en raison du <br> volume élevé de construction et de maintenance continue. Les principaux
-                        insights incluent :</p>
-                        <br>
-                </div>
-                <div class="row first_row">
-                    <div class="col-lg-6 col-md-12 immo_first_row">
-                        <h2>Gestion Immobilière</h2>
-                        <p>La gestion immobilière englobe une variété de défis liés à la collecte et au recyclage des
-                            déchets dans les propriétés résidentielles et commerciales. Les services efficaces de
-                            gestion des déchets sont essentiels pour maintenir la propreté et l'ordre, tout en réduisant
-                            l'impact environnemental. Cela inclut la collecte régulière des déchets, le tri sélectif
-                            pour encourager le recyclage, et la mise en place de solutions durables pour la gestion des
-                            déchets organiques.</p>
-                        <br>
-                        <h2>Conformité Réglementaire</h2>
-                        <p>La conformité réglementaire en matière de gestion des déchets est une préoccupation majeure
-                            pour les propriétaires et les gestionnaires immobiliers. Les réglementations locales exigent
-                            souvent une gestion appropriée des déchets, y compris le respect des normes de tri, de
-                            collecte et de recyclage. En outre, les normes de durabilité sont de plus en plus
-                            importantes, avec un accent croissant sur la réduction des déchets et l'adoption de
-                            pratiques respectueuses de l'environnement.</p>
-                    </div>
-                    <div class="col-lg-6 col-md-12 text-right">
-                        <img src="{{ asset('images/IMMO.jpg') }}" alt="Gestion des déchets" class="img-fluid">
-                    </div>
-                </div>
+            <div class="c-benefits__item">
+              <div class="c-benefits__icon">
+                <img src="{{ asset('images/economique.png') }}" width="49" height="47" fill="none">
+                  <path fill="#000" fill-rule="evenodd" d="M26.5 46.8H14.3v-13a4 4 0 0 0 2.7-2.2c4.4 1.7 7.4-4.9 3.7-7.5 2-2.4.5-5.8-2.5-5.4-1.4-5-8.4-5-9.9 0-2.8-.5-4.4 2.6-2.8 4.9-3.4 3-.2 8.6 3.8 7.4a4.2 4.2 0 0 0 3 2.8v13H8.2V36.4c-.7-.5-1.2-1.1-1.1-1.1C3 34.7 0 30.8 0 26.7c0-1.3.3-2.5.8-3.7-.6-3.5 1.4-7.1 4.8-8.3a9.3 9.3 0 0 1 7.3-4L24.5 0 49 22.6l-2.7 3.2L24.5 5.7l-6.7 6.2a9 9 0 0 1 1.7 1.2l5-4.6c2.2 2.2 4.5 4.3 6.9 6.4l4.6 4.2 6.9 6.4v21.3H30.6V36h-4v10.6zm-4-12a7.7 7.7 0 0 1-4.1 1.3v6.4h4v-7.6zm2.8-3h9.4v10.7h4V27.4L24.5 14.2l-1.6 1.5a7.4 7.4 0 0 1 2.7 7.7 8.9 8.9 0 0 1-.2 8.5zm-12.1-7.7c3-2.2 6.6 1.6 4.7 4.7 0-3.1-1.8-4.9-4.7-4.7zm-4.3 2.5c-2.6-4 2-8.9 5.9-6.2-3.9 0-6 2.3-6 6.2z"
+                    clip-rule="evenodd" /></svg>
+              </div>
+              <p class="c-benefits__note">
+                Aspect économique : Notre approche de la gestion des déchets intègre des considérations économiques essentielles.
+              </p>
             </div>
-        </section>
-        <section class="service_section layout_padding">
-            <div class="">
-                <div class="heading_container heading_center">
-                    <h2>Solutions pour le Secteur <span>Immobilier</span></h2>
-                    <p>Nos solutions de gestion des déchets pour le secteur immobilier sont conçues pour répondre à ces
-                        défis spécifiques :</p>
-                    <br>
+          </div>
+        </div>
+      </section>
+      <section class="section section--featured-listing" id="feature">
+        <div class="section__inner-wrapper">
+          <div class="section__header">
+            <h2 class="section__title">Notre Avantages Compétitive :</h2>
+          </div>
+          <div class="c-featured-listing" data-flickity='{ "watchCSS": true}'>
+            <div class="c-featured-listing__card carousel-cell">
+              <div class="c-featured-listing__wrap">
+                <div class="c-featured-listing__row">
+                  <h4 class="c-featured-listing__title">Tri</h4>
+                  <p class="c-featured-listing__text">Tri Sélectif Automatique</p>
                 </div>
-                <div class="row second_row">
-                    <div class="col-lg-6 col-md-12 immo_second_row">
-                        <ul class="list-group">
-                            <li class="list-group-item">Surveillance des déchets immobiliers : Capteurs IoT pour
-                                surveiller en temps réel les niveaux de déchets dans les espaces communs et les bacs de
-                                collecte des déchets.</li>
-                            <li class="list-group-item">Rapports de durabilité : Intégration avec les systèmes de
-                                gestion immobilière pour suivre les métriques des déchets et générer des rapports de
-                                durabilité.</li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-6 col-md-12 text-right">
-                        <img src="{{ asset('images/GBIN.jpg') }}" alt="Gestion des déchets" class="img-fluid">
-                    </div>
+              </div>
+            </div>
+            <div class="c-featured-listing__card carousel-cell">
+              <div class="c-featured-listing__wrap">
+                <div class="c-featured-listing__row">
+                  <h4 class="c-featured-listing__title">Numérisation</h4>
+                  <p class="c-featured-listing__text">Numérisation De Données. </p>
                 </div>
+              </div>
             </div>
-        </section>
-        <!-- end secteur section -->
-
-        <!-- info section -->
-
-        <section class="info_section layout_padding2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-lg-3 info_col">
-                        <div class="info_contact">
-                            <h4>
-                                Address
-                            </h4>
-                            <div class="contact_link_box">
-                                <!-- <a href="">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                    <span>
-                    Location
-                    </span>
-                </a> -->
-                                <a href="">
-                                    <i class="fa fa-phone" aria-hidden="true"></i>
-                                    <span>
-                                        +213 558629858
-                                    </span>
-                                </a>
-                                <a href="">
-                                    <i class="fa fa-envelope" aria-hidden="true"></i>
-                                    <span>
-                                        gnov2023@gmail.com
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="info_social">
-                            <a href="https://www.facebook.com/gnovstar">
-                                <i class="fa fa-facebook" aria-hidden="true"></i>
-                            </a>
-                            <!-- <a href="">
-                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                        </a> -->
-                            <a href="https://www.linkedin.com/company/gnov">
-                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                            </a>
-                            <a href="https://www.youtube.com/@GNOV-uc9fb">
-                                <i class="fa fa-youtube-play" aria-hidden="true"></i>
-                            </a>
-                            <a href="https://www.instagram.com/gnovstartup/">
-                                <i class="fa fa-instagram" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 info_col">
-                        <div class="info_detail">
-                            <h4>
-                                Vision
-                            </h4>
-                            <p>
-                                Notre vision est de vous offrir une solution pratique qui simplifie la gestion de vos
-                                déchets tout en stimulant votre entreprise. </p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-2 mx-auto info_col">
-                        <div class="info_link_box">
-                            <h4>
-                                Links
-                            </h4>
-                            <div class="info_links">
-                                <a class="" href="{{ route('welcome') }}">
-                                    Acceuil
-                                </a>
-                                <a class="" href="{{ route('about') }}">
-                                    Qui somme nous
-                                </a>
-                                <a class="" href="{{ route('service') }}">
-                                    Nos Services
-                                </a>
-                                <a class="active" href="{{ route('Secteur') }}">
-                                    Nos Secteurs
-                                </a>
-                                <a class="" href="{{ route('why') }}">
-                                    Pourquoi nous
-                                </a>
-                                <a class="" href="{{ route('team') }}">
-                                    Notre Team
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 info_col ">
-                        <h4>
-                            Contactez Nous
-                        </h4>
-                        <form action="#">
-                            <a class="contact" href="">
-                                Contactez Nous
-                            </a>
-                        </form>
-                    </div>
+            <div class="c-featured-listing__card carousel-cell">
+              <div class="c-featured-listing__wrap">
+                <div class="c-featured-listing__row">
+                  <h4 class="c-featured-listing__title">Valorisationr</h4>
+                  <p class="c-featured-listing__text">Valorisation Depuis Source</p>
                 </div>
+              </div>
             </div>
-        </section>
-
-        <!-- end info section -->
-
-        <!-- footer section -->
-        <section class="footer_section">
-            <div class="container">
-                <p>
-                    &copy; <span id="displayYear"></span> All Rights Reserved By
-                    <a href="https://html.design/">GNOV</a>
-                </p>
+            <div class="c-featured-listing__card carousel-cell">
+              <div class="c-featured-listing__wrap">
+                <div class="c-featured-listing__row">
+                  <h4 class="c-featured-listing__title">Contrôle</h4>
+                  <p class="c-featured-listing__text">Contrôle De L'état De La Poubelle.</p>
+                </div>
+              </div>
             </div>
-        </section>
-        <!-- footer section -->
+            <div class="c-featured-listing__card carousel-cell">
+              <div class="c-featured-listing__wrap">
+                <div class="c-featured-listing__row">
+                  <h4 class="c-featured-listing__title">Elimination</h4>
+                  <p class="c-featured-listing__text">Elimination De Sensibilisation.</p>
+                </div>
+              </div>
+            </div>
+    
+            <div class="c-featured-listing__card carousel-cell">
+              <div class="c-featured-listing__wrap">
+                <div class="c-featured-listing__row">
+                  <h4 class="c-featured-listing__title">Remplissage</h4>
+                  <p class="c-featured-listing__text">Le Taux De Remplissage Actuel. </p>
+                </div>
+              </div>
+            </div>
+            <div class="c-featured-listing__card carousel-cell" style="display:none;">
+              <div class="c-featured-listing__wrap">
+                <div class="c-featured-listing__row">
+                  <h4 class="c-featured-listing__title">Localisation</h4>
+                  <p class="c-featured-listing__text">Localisation De Point D'élimination.</p>
+                </div>
+              </div>
+            </div>
+            <div class="c-featured-listing__card carousel-cell">
+              <div class="c-featured-listing__wrap">
+                <div class="c-featured-listing__row">
+                  <h4 class="c-featured-listing__title">Localisation</h4>
+                  <p class="c-featured-listing__text">Localisation De Point D'élimination.</p>
+                </div>
+              </div>
+            </div>
+            <div class="c-featured-listing__card carousel-cell" style="display:none;">
+              <div class="c-featured-listing__wrap">
+                <div class="c-featured-listing__row">
+                  <h4 class="c-featured-listing__title">Localisation</h4>
+                  <p class="c-featured-listing__text">Localisation De Point D'élimination.</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+    </main>
 
-        <!-- jQery -->
-        <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-        <!-- popper js -->
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-        </script>
-        <!-- bootstrap js -->
-        <script type="text/javascript" src="js/bootstrap.js"></script>
-        <!-- owl slider -->
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-        </script>
-        <!-- custom js -->
-        <script type="text/javascript" src="js/custom.js"></script>
-        <script type="text/javascript" src="js/js.js"></script>
-        <!-- Google Map -->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
-        </script>
-        <!-- End Google Map -->
+  </div>
+  <div class="dialog c-modal c-modal--success" id="success-modal">
+    <div class="dialog-overlay" tabindex="-1" data-a11y-dialog-hide></div>
+    <dialog class="c-modal__content" aria-labelledby="Success
+                modal" aria-describedby="User can subscribe dazzlepages website updates with
+                an email by subscribe modal">
+      <div class="c-modal__wrapper">
+        <div class="c-modal__ckeckmark">
+          <svg xmlns="http://www.w3.org/2000/svg" width="44" height="32" fill="none">
+            <path stroke="#000" stroke-width="4" d="M2 17.1l12.3 12L42 2" /></svg>
+        </div>
+        <h1 class="c-modal__title-head" id="dialogTitle">Thank you</h1>
+        <p class="c-modal__note" id="dialogDescription">You’ve sucessfully subscribed.</p>
+        <button data-a11y-dialog-hide class="c-btn c-register-form--btn" type="submit">OK</button>
+      </div>
+    </dialog>
+  </div>
+  <script src="scripts/vendor.min.js"></script>
 
+  <script src="scripts/main.min.js"></script>
+  <script>
+    var scroll = new SmoothScroll('a[href*="#"]', {
+      offset: 0,
+      updateURL: false
+    });
+  </script>
 </body>
 
 </html>
+
+<!-- end secteur section -->
+@endsection
