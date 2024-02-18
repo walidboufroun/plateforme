@@ -215,12 +215,6 @@
         </div>
     </div>
 </div>
-<h1>Products</h1>
-<h2>Ajouter/Modifier/Supprimer un produit.</h2>
-<h2> Afficher la liste des produits avec leurs détails.</h2>
-<h2>Gérer les catégories de produits.</h2>
-
-
 @endsection
 
 @section('footer', '© 2023 Your Website')
