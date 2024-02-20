@@ -1,6 +1,6 @@
  <!-- info section -->
 
- <section class="info_section layout_padding2">
+ <section id="footer" class="info_section layout_padding2">
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-lg-3 info_col">
@@ -9,12 +9,6 @@
               Address
             </h4>
             <div class="contact_link_box">
-              <!-- <a href="">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span>
-                  Location
-                </span>
-              </a> -->
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
@@ -24,7 +18,7 @@
               <a href="">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
-                  gnov2023@gmail.com
+                  gnovstartup@gmail.com
                 </span>
               </a>
             </div>
@@ -33,9 +27,6 @@
             <a href="https://www.facebook.com/gnovstar">
               <i class="fa fa-facebook" aria-hidden="true"></i>
             </a>
-            <!-- <a href="">
-              <i class="fa fa-twitter" aria-hidden="true"></i>
-            </a> -->
             <a href="https://www.linkedin.com/company/gnov">
               <i class="fa fa-linkedin" aria-hidden="true"></i>
             </a>
@@ -68,17 +59,11 @@
               <a class="active" href="{{ route('about') }}">
                 Qui somme nous
               </a>
-              <a class="" href="{{ route('service') }}">
+              <a class="" href="{{ route('product') }}">
                 Nos Services
-              </a>
-              <a class="" href="{{ route('Secteur') }}">
-                Nos Secteurs
               </a>
               <a class="" href="{{ route('why') }}">
                 Pourquoi nous
-              </a>
-              <a class="" href="{{ route('team') }}">
-                Notre Team
               </a>
             </div>
           </div>
@@ -126,6 +111,8 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
   </script>
   <!-- End Google Map -->
+  <script type="text/javascript" src="{{ asset('js/new.js') }}"></script>
+  <script type="text/javascript" src="js/new.js"></script>
 
 </body>
 

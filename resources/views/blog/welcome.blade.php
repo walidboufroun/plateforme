@@ -1,5 +1,4 @@
 @extends("blog/layouts.layout")
-
 @section("title", "Welcome")
 
 @section("content")
@@ -18,7 +17,8 @@
         <div class="header__intro">
           <h1 class="header__title">Permettez-nous de vous aider à trouver la meilleure gestion des déchets</h1>
           <p class="header__text"> </p>
-          <a class="c-btn c-btn--header" data-scroll href="{{ route('contact') }}" aria-label="Subscribe">Conactez-nous</a>
+          <a class="c-btn c-btn--header" data-scroll href="{{ route('contact') }}"
+            aria-label="Subscribe">Conactez-nous</a>
         </div>
         <a class="c-link c-link--header" data-scroll href="#feature" aria-label="Go to Feature">
           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="17" fill="none">
@@ -131,6 +131,96 @@
   </main>
 </div>
 
+<!-- begin secteur -->
+<section class="">
+  <div class="container">
+    <div class="section__header">
+      <h2 class="section__title">Secteurs Concernés</h2>
+    </div>
+  </div>
+
+  <nav class="nav-menu">
+    <ul class="ul-menu">
+      <li class="li-menu"><i class="fa fa-reply-all" style="color: #63E6BE;"></i><a href="#" onclick="showSection(event, 'tout')"><span>Tout</span></a></li>
+      <li class="li-menu"><i class="fa fa-recycle" style="color: #63E6BE;"></i><a href="#" onclick="showSection(event, 'recyclage')"><span>Recyclage</span></a></li>
+      <li class="li-menu"><i class="fa fa-recycle" style="color: #63E6BE;"></i><a href="#" onclick="showSection(event, 'immobilier')"><span>Immobilier</span></a></li>
+      <li class="li-menu"><i class="fa fa-recycle" style="color: #63E6BE;"></i><a href="#" onclick="showSection(event, 'naftal')"><span>naftal</span></a></li>
+      <li class="li-menu"><i class="fa fa-recycle" style="color: #63E6BE;"></i><a href="#" onclick="showSection(event, 'centres')"><span>Centre commerciaux</span></a></li>
+      <li class="li-menu"><i class="fa fa-recycle" style="color: #63E6BE;"></i><a href="#" onclick="showSection(event, 'hopitaux')"><span>Hôpitaux</span></a></li>
+    </ul>
+
+  </nav>
+
+  <div id="tout" class="section-secteur sectionplay" style="display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 3vw;">
+    <div class="under-tout">
+      <img src="{{ asset('images/centre.jpg') }}" alt class="img_under_tout">
+      <div>
+        <a href="#" class="menu-item" data-target="recyclage" title="More Details">Recyclage</a>
+      </div>
+    </div>
+    <div class="under-tout">
+      <img src="{{ asset('images/centre.jpg') }}" alt class="img_under_tout">
+      <div>
+        <a href="#" class="menu-item" data-target="immobilier" title="More Details">Immoblier</a>
+      </div>
+    </div>
+    <div class="under-tout">
+      <img src="{{ asset('images/centre.jpg') }}" alt class="img_under_tout">
+      <div>
+        <a href="#" class="menu-item" data-target="naftal" title="More Details">Naftal</a>
+      </div>
+    </div>
+    <div class="under-tout">
+      <img src="{{ asset('images/centre.jpg') }}" alt class="img_under_tout">
+      <div>
+        <a href="#" class="menu-item" data-target="centres" title="More Details">Centres commerciaux</a>
+      </div>
+    </div>
+    <div class="under-tout">
+      <img src="{{ asset('images/centre.jpg') }}" alt class="img_under_tout">
+      <div>
+        <a href="#" class="menu-item" data-target="hopitaux" title="More Details">Hopitaux</a>
+      </div>
+    </div>
+    <div class="under-tout">
+      <img src="{{ asset('images/centre.jpg') }}" alt class="img_under_tout">
+      <div>
+        <a href="#" class="menu-item" data-target="air" title="More Details">Air Algérie</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="recyclage" class="section-secteur sectionplay">
+    <h2>Recyclage Section</h2>
+    <p>This is the Recyclage section.</p>
+  </div>
+
+  <div id="immobilier" class="section-secteur sectionplay">
+    <h2>Immo Section</h2>
+    <p>This is the Recyclage section.</p>
+  </div>
+
+  <div id="naftal" class="section-secteur sectionplay">
+    <h2>naftal Section</h2>
+    <p>This is the Recyclage section.</p>
+  </div>
+  <div id="centres" class="section-secteur sectionplay">
+    <h2>centre Section</h2>
+    <p>This is the Recyclage section.</p>
+  </div>
+  <div id="hopitaux" class="section-secteur sectionplay">
+    <h2>hopii Section</h2>
+    <p>This is the Recyclage section.</p>
+  </div>
+
+</section>
+<!-- end secteur -->
+
 <!-- about section -->
 <section class="about_section layout_padding">
   <div class="container  ">
@@ -162,7 +252,7 @@
 
 <!-- end about section -->
 <!-- team section -->
-<section class="team_section layout_padding">
+<!-- <section class="team_section layout_padding">
   <div class="container-fluid">
     <div class="heading_container heading_center">
       <h2 class="">
@@ -181,9 +271,6 @@
               <h5>
                 Boufroune Walid
               </h5>
-              <!-- <p>
-                  Marketing Head
-                </p> -->
             </div>
             <div class="social_box">
 
@@ -214,9 +301,6 @@
               <h5>
                 Boulsane Zakaria
               </h5>
-              <!-- <p>
-                  Marketing Head
-                </p> -->
             </div>
             <div class="social_box">
 
@@ -247,9 +331,6 @@
               <h5>
                 Diguer Imane
               </h5>
-              <!-- <p>
-                  Marketing Head
-                </p> -->
             </div>
             <div class="social_box">
 
@@ -274,7 +355,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- end team section -->
 
 @endsection

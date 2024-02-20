@@ -22,7 +22,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
   <!--owl slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
   <!-- font awesome style -->
   <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" />
@@ -38,14 +39,14 @@
 
   <!-- Disable tap highlight on IE -->
   <meta name="msapplication-tap-highlight" content="no">
-  
+
   <!-- Web Application Manifest -->
   <link rel="manifest" href=" {{ asset('js/manifest.json') }}">
 
   <!-- Add to homescreen for Chrome on Android -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="application-name" content="Dazzle Pages">
-  
+
   <!-- Add to homescreen for Safari on iOS -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -56,16 +57,16 @@
   <link rel="manifest" href="site.webmanifest?v=1.0.0">
   <link rel="mask-icon" href="safari-pinned-tab.svg?v=1.0.0" color="#3c3ce5">
   <link rel="shortcut icon" href="favicon.ico?v=1.0.0">
-  
+
   <!-- Tile icon for Win8 (144x144 + tile color) -->
   <meta name="msapplication-TileImage" content="mstile-150x150.png">
   <meta name="msapplication-TileColor" content="#3c3ce5">
-  
+
   <!-- Color the status bar on mobile devices -->
-
+  <link rel="stylesheet" href="{{ asset('css/new.css') }}">
   <link rel="stylesheet" href="{{ asset('css/vendor.min.css') }}">
-
   <link rel="stylesheet" href="{{ asset('css/main.min.css') }}">
+  
 </head>
 
 <body class="sub_page">
@@ -80,29 +81,23 @@
 
     <!-- header section strats -->
     <header class="header_section">
-    <div class="header_top">
-        <div class="container-fluid-top ">
+      <div class="header_top">
+        <div class="container-fluid-top">
           <div class="contact_nav">
-            <a href="">
+            <a href="#footer">
               <i class="fa fa-phone" aria-hidden="true"></i>
               <span>
                 Call : +213 558629858
               </span>
             </a>
-            <a href="">
+            <a href="#footer">
               <i class="fa fa-envelope" aria-hidden="true"></i>
               <span>
                 Email : gnov2023@gmail.com
               </span>
             </a>
-            <a href="{{ route('ESPACE-CLIENT') }}"><span>Espace CLIENT</span></a>
-            <a href="{{ route('ESPACE-ADMIN') }}"><span>Espace ADMIN</span></a>
-            <!-- <a href="">
-              <i class="fa fa-map-marker" aria-hidden="true"></i>
-              <span>
-                Location
-              </span>
-            </a> -->
+            <a href="{{ route('ESPACE-CLIENT') }}" class="aflex"><i class="fa fa-user-circle" aria-hidden="true"></i><span>CLIENT</span></a>
+            <a href="{{ route('ESPACE-ADMIN') }}" class="aflex"><i class="fa fa-user-circle-o" aria-hidden="true"></i><span>ADMIN</span></a>
           </div>
         </div>
       </div>
@@ -114,22 +109,23 @@
             </span>
           </a>
 
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class=""> </span>
           </button>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
-              <li class="nav-item"> 
-                <a class="nav-link"  href="{{ route('welcome') }}">Acceuil</a>
+              <li class="nav-item @if (trim($__env->yieldContent('title')) == 'Welcome') active @endif ">
+                <a class="nav-link " href="{{ route('welcome') }}"> Acceuil</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item @if (trim($__env->yieldContent('title')) == 'US') active @endif">
                 <a class="nav-link" href="{{ route('why') }}">Pouquoi Nous</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item @if (trim($__env->yieldContent('title')) == 'Products') active @endif">
                 <a class="nav-link" href="{{ route('product') }}">Products</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item  @if (trim($__env->yieldContent('title')) == 'Contact') active @endif">
                 <a class="nav-link" href="{{ route('contact') }}">Contactez Nous</a>
               </li>
               <!--
