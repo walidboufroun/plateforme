@@ -16,23 +16,7 @@
   font-display: swap
 }
 
-@font-face {
-  font-family: Playfair Display;
-  font-style: normal;
-  font-weight: 400;
-  src: local("Playfair Display Regular"), local("PlayfairDisplay-Regular"), url(../fonts/PlayfairDisplay-Regular.woff2) format("woff2"), url(../fonts/PlayfairDisplay-Regular.woff) format("woff");
-  unicode-range: u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da, u+02dc, u+2000-206f, u+2074, u+20ac, u+2122, u+2191, u+2193, u+2212, u+2215, u+feff, u+fffd;
-  font-display: swap
-}
-
-@font-face {
-  font-family: Playfair Display;
-  font-style: normal;
-  font-weight: 700;
-  src: local("Playfair Display Bold"), local("PlayfairDisplay-Bold"), url(../fonts/PlayfairDisplay-Bold.woff2) format("woff2"), url(../fonts/PlayfairDisplay-Bold.woff) format("woff");
-  unicode-range: u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da, u+02dc, u+2000-206f, u+2074, u+20ac, u+2122, u+2191, u+2193, u+2212, u+2215, u+feff, u+fffd;
-  font-display: swap
-}body {
+body {
   font-family: "Open Sans", sans-serif;
   color: #0c0c0c;
   background-color: #ffffff;
@@ -1207,4 +1191,12 @@ a:focus {
 .contact_nav a{
   color: #015263;
   font-weight: bolder;
+}
+.aflex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 5px;
 }
