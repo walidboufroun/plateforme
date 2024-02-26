@@ -11,12 +11,12 @@
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <link rel="shortcut icon" href="images/favicon.png" type="">
+  <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}" type="">
 
   <title> GNOV </title>
 
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}" />
 
   <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -26,22 +26,24 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
   <!-- font awesome style -->
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" />
 
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+  <link href="{{ asset('css/responsive.css') }}" rel="stylesheet" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="Dazzle Pages - Free HTML landings for increasing conversion rate">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
   <!-- Disable tap highlight on IE -->
   <meta name="msapplication-tap-highlight" content="no">
 
   <!-- Web Application Manifest -->
-  <link rel="manifest" href=" js/manifest.json">
+  <link rel="manifest" href=" {{ asset('js/manifest.json') }}">
 
   <!-- Add to homescreen for Chrome on Android -->
   <meta name="mobile-web-app-capable" content="yes">
@@ -63,9 +65,9 @@
   <meta name="msapplication-TileColor" content="#3c3ce5">
 
   <!-- Color the status bar on mobile devices -->
-  <link rel="stylesheet" href="css/new.css">
-  <link rel="stylesheet" href="css/vendor.min.css">
-  <link rel="stylesheet" href="css/main.min.css">
+  <link rel="stylesheet" href="{{ asset('css/new.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/vendor.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/main.min.css') }}">
   
 </head>
 
@@ -75,7 +77,7 @@
 
     <div class="hero_bg_box">
       <div class="bg_img_box">
-        <img src="images/hero-bg.png" alt="">
+        <img src="{{ asset('images/hero-bg.png') }}" alt="">
       </div>
     </div>
 
@@ -105,7 +107,7 @@
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="{{ route('welcome') }}">
             <span>
-              <img src="images/gnov5.png" alt="" style="width: 30%;">
+              <img src="{{ asset('images/gnov5.png') }}" alt="" style="width: 30%;">
             </span>
           </a>
 

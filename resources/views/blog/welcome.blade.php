@@ -141,12 +141,12 @@
 
   <nav class="nav-menu">
     <ul class="ul-menu">
-      <li class="li-menu"><i class="fa fa-reply-all" style="color: #63E6BE;"></i><a href="#" onclick="showSection(event, 'tout')"><span>Tout</span></a></li>
+      <li class="li-menu"><i class="bi bi-house" style="color: #63E6BE;"></i><a href="#" onclick="showSection(event, 'tout')"><span>Tout</span></a></li>
       <li class="li-menu"><i class="fa fa-recycle" style="color: #63E6BE;"></i><a href="#" onclick="showSection(event, 'recyclage')"><span>Recyclage</span></a></li>
-      <li class="li-menu"><i class="fa fa-recycle" style="color: #63E6BE;"></i><a href="#" onclick="showSection(event, 'immobilier')"><span>Immobilier</span></a></li>
-      <li class="li-menu"><i class="fa fa-recycle" style="color: #63E6BE;"></i><a href="#" onclick="showSection(event, 'naftal')"><span>naftal</span></a></li>
-      <li class="li-menu"><i class="fa fa-recycle" style="color: #63E6BE;"></i><a href="#" onclick="showSection(event, 'centres')"><span>Centre commerciaux</span></a></li>
-      <li class="li-menu"><i class="fa fa-recycle" style="color: #63E6BE;"></i><a href="#" onclick="showSection(event, 'hopitaux')"><span>Hôpitaux</span></a></li>
+      <li class="li-menu"><i class="bi bi-buildings" style="color: #63E6BE;"></i><a href="#" onclick="showSection(event, 'immobilier')"><span>Immobilier</span></a></li>
+      <li class="li-menu"><i class="bi bi-fuel-pump-diesel" style="color: #63E6BE;"></i><a href="#" onclick="showSection(event, 'naftal')"><span>naftal</span></a></li>
+      <li class="li-menu"><i class="bi bi-cart3" style="color: #63E6BE;"></i><a href="#" onclick="showSection(event, 'centres')"><span>Centre commerciaux</span></a></li>
+      <li class="li-menu"><i class="bi bi-hospital" style="color: #63E6BE;"></i><a href="#" onclick="showSection(event, 'hopitaux')"><span>Hôpitaux</span></a></li>
     </ul>
 
   </nav>
@@ -158,13 +158,13 @@
         align-items: center;
         gap: 3vw;">
     <div class="under-tout">
-      <img src="{{ asset('images/centre.jpg') }}" alt class="img_under_tout">
+      <img src="{{ asset('images/recycling_img.png') }}" alt class="img_under_tout">
       <div>
         <a href="#" class="menu-item" data-target="recyclage" title="More Details">Recyclage</a>
       </div>
     </div>
     <div class="under-tout">
-      <img src="{{ asset('images/centre.jpg') }}" alt class="img_under_tout">
+      <img src="{{ asset('images/IMMO.jpg') }}" alt class="img_under_tout">
       <div>
         <a href="#" class="menu-item" data-target="immobilier" title="More Details">Immoblier</a>
       </div>
@@ -182,13 +182,13 @@
       </div>
     </div>
     <div class="under-tout">
-      <img src="{{ asset('images/centre.jpg') }}" alt class="img_under_tout">
+      <img src="{{ asset('images/hospitals_img.png') }}" alt class="img_under_tout">
       <div>
         <a href="#" class="menu-item" data-target="hopitaux" title="More Details">Hopitaux</a>
       </div>
     </div>
     <div class="under-tout">
-      <img src="{{ asset('images/centre.jpg') }}" alt class="img_under_tout">
+      <img src="{{ asset('images/airports_img.png') }}" alt class="img_under_tout">
       <div>
         <a href="#" class="menu-item" data-target="air" title="More Details">Air Algérie</a>
       </div>
