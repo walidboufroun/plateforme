@@ -145,10 +145,10 @@ Route::middleware(['auth.client'])->group(function () {
     Route::post('addEmployee', [EmployeeControllerClient::class, 'addEmployee']);
 });
 
-Route::prefix('Blog')->group(function () {
+Route::prefix('Blog')->group(function () { } );
     Route::get('/', function () {
-        return view('blog.welcome');
-    });
+        return redirect()->route('welcome');
+    }); 
     Route::get('/welcome', function () {
         return view('blog.welcome');
     })->name('welcome');
@@ -183,4 +183,4 @@ Route::prefix('Blog')->group(function () {
         return view('blog.contact');
     })->name('contact');
     Route::post('/DoContact', [BlogContactController::class, 'index']);
-});
+
