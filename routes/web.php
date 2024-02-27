@@ -98,7 +98,7 @@ Route::middleware(['auth.admin'])->group(function () {
     Route::post('Admin_Add_Societe', [SocieteController::class, 'Add_societe']);
     Route::post('Admin_Update_societe', [SocieteController::class, 'Update_societe']);
     Route::post('Admin_Delete_Societe', [SocieteController::class, 'Delete_societe']);
-    
+
     //alerts
     Route::get('Admin-alerts', [AlertController::class, 'index'])->name('Admin-alerts');
     Route::post('Admin_Update_Alert', [AlertController::class, 'Update_Alert']);
@@ -126,6 +126,7 @@ Route::get('Client-singup', [AuthClient::class, 'singuppage'])->name('Client-sin
 Route::post('Clientsingup', [AuthClient::class, 'singup']);
 
 Route::middleware(['auth.client'])->group(function () {
+
     Route::get('Client-dashboard', [DashboardControllerClient::class, 'index'])->name('Client-dashboard');
     Route::post('Client-logout', [AuthClient::class, 'logout']);
     Route::get('Client-logout', [AuthClient::class, 'logout'])->name('Client-logout');
