@@ -43,6 +43,11 @@
                                     </div>
                                     <div class="row mb-3">
                                         <label for="inputText" class="col-sm-2 col-form-label">Societe</label>
+                                        @if ($societes->isEmpty())
+                                        <div class="col-sm-10 d-grid gap-2">
+                                            <a href="{{ route('Admin-societe') }}" class="btn btn-warning">Il faut ajouter une société</a>
+                                        </div>
+                                        @else
                                         <div class="col-sm-10">
                                             <select class="form-select" name="id_societe" aria-label="Sélectionnez une société ou une societe" required>
                                                 <option value="" disabled selected>Choisir la société</option>
@@ -51,6 +56,7 @@
                                                 @endforeach
                                             </select>
                                         </div>
+                                        @endif
                                     </div>
                                     <div class="row mb-3">
                                         <label for="inputText" class="col-sm-2 col-form-label">Description produit</label>
@@ -120,7 +126,7 @@
                                         @csrf
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title">Ajouter une commande {{ $produit->id }}
+                                                <h5 class="modal-title">Modifier le produit N° {{ $produit->id }}
                                                 </h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
@@ -140,7 +146,7 @@
                                                 <div class="row mb-3">
                                                     <label for="inputText" class="col-sm-2 col-form-label">Photo produit</label>
                                                     <div class="col-sm-10">
-                                                        <input type="file" class="form-control" name="photos" >
+                                                        <input type="file" class="form-control" name="photos">
                                                     </div>
                                                 </div>
                                                 <div class="row mb-3">

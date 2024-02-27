@@ -39,7 +39,7 @@ class EmployeeController extends Controller
         $employe->password = bcrypt($request->input('password'));
         $employe->phone_number = $request->input('phone_number');
         $employe->adresse = $request->input('adresse');
-        $employe->Type = $request->input('Type');
+        $employe->Type = $request->input('type');
 
         $employe->save();
 

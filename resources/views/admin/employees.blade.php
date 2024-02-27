@@ -212,7 +212,7 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            Vous voulez supprimer cette commande.
+                                            Vous voulez supprimer se employe.
                                         </div>
                                         <form action="Admin_Delete_Employe" method="post">
                                             @csrf
@@ -239,9 +239,6 @@
         </div>
     </div>
 </div>
-<h1>Employes</h1>
-<h2>Ajouter/Modifier/Supprimer un utilisateur administrateur.</h2>
-<h2>Afficher la liste des utilisateurs administrateurs.</h2>
 @endsection
 
 @section('footer', '© 2023 Your Website')

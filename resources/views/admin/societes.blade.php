@@ -217,7 +217,7 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                Vous voulez supprimer cette societe.
+                                                Vous voulez supprimer <strong> {{ $societe->name }}</strong> société.
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
