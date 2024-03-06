@@ -20,6 +20,7 @@ class Client extends Model implements Authenticatable
         'name',
         'photo',
         'adresse',
+        'etat',
         'phone_number',
         'type',
         'id_societe',

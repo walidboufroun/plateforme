@@ -8,13 +8,21 @@ use App\Http\Controllers\Controller;
 use App\Models\Client;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class EmployeeControllerClient extends Controller
 {
     public function index()
     {
-        $employes = Client::all();
+        //$employes = Client::all();
+        $authenticatedClientId = Auth::guard('clients')->user()->id;
+        $authenticatedClientSocieteId = Auth::guard('clients')->user()->id_societe;
+
+        $employes = Client::where('id', '!=', $authenticatedClientId)
+            ->where('id_societe', $authenticatedClientSocieteId)
+            ->get();
+            
         return view('client.employes', compact('employes'));
     }
 
@@ -31,7 +39,9 @@ class EmployeeControllerClient extends Controller
         $employee->adresse = $request->input('adresse');
         $employee->photo = $request->input('photo');
         $employee->save();
-        if ($request->hasFile('photo')) { dd($request->file('photo')); }
+        if ($request->hasFile('photo')) {
+            dd($request->file('photo'));
+        }
         $file = $request->file('photo');
         $fileName = time() . '_' . $file->getClientOriginalName();
         $file->storeAs('images/client', $fileName);
