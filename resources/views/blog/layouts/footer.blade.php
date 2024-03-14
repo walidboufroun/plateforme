@@ -89,7 +89,7 @@
     <div class="container">
       <p>
         &copy; <span id="displayYear"></span> All Rights Reserved By
-        <a href="https://html.design/">GNOV</a>
+        <a href="">GNOV</a>
       </p>
     </div>
   </section>
