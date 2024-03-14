@@ -156,80 +156,51 @@
     flex-wrap: wrap;
     gap: 3vw;">
     <div class="under-tout">
-
       <div class="contentUnder">
-      <img src="{{ asset('images/recycling_img.png') }}" alt class="img_under_tout">
-      <div class="portfolio-info">
-        <a href="#" onclick="showSection(event, 'recyclage')" class="menu-item" data-target="recyclage" title="More Details">Recyclage &nbsp; &nbsp;<i class="bi bi-arrow-right"></i></a>
-      </div>
-      </div>
-    </div>
-    <div class="under-tout">
-      <div class="contentUnder">
-      <img src="{{ asset('images/IMMO.jpg') }}" alt class="img_under_tout">
-      <div class="portfolio-info">
-        <a href="#" onclick="showSection(event, 'immobilier')" class="menu-item" data-target="immobilier" title="More Details">Immoblier &nbsp; &nbsp;<i class="bi bi-arrow-right"></i></a>
-      </div>
-      </div>
-    </div>
-    <div class="under-tout">
-<div class="contentUnder">
-<img src="{{ asset('images/foire.jpg') }}" alt class="img_under_tout">
-      <div class="portfolio-info">
-        <a href="#" onclick="showSection(event, 'foire')" class="menu-item" data-target="foire" title="More Details">Les Foires &nbsp; &nbsp;<i class="bi bi-arrow-right"></i></a>
-
-      <img src="images/recycling_img.png" alt class="img_under_tout">
-      <div>
-        <a href="#" class="menu-item" data-target="recyclage" title="More Details">Recyclage</a>
-      </div>
-    </div>
-    <div class="under-tout">
-      <img src="images/IMMO.jpg" alt class="img_under_tout">
-      <div>
-        <a href="#" class="menu-item" data-target="immobilier" title="More Details">Immoblier</a>
-      </div>
-    </div>
-    <div class="under-tout">
-      <img src="images/centre.jpg" alt class="img_under_tout">
-      <div>
-        <a href="#" class="menu-item" data-target="naftal" title="More Details">Naftal</a>
-      </div>
-</div>
-    </div>
-    <div class="under-tout">
-    <div class="contentUnder">
-    <img src="{{ asset('images/centre.jpg') }}" alt class="img_under_tout">
-      <div class="portfolio-info">
-        <a href="#" onclick="showSection(event, 'centres')" class="menu-item" data-target="centres" title="More Details">Centres commerciaux &nbsp; &nbsp;<i class="bi bi-arrow-right"></i></a>
-      <img src="images/centre.jpg" alt class="img_under_tout">
-      <div>
-        <a href="#" class="menu-item" data-target="centres" title="More Details">Centres commerciaux</a>
-      </div>
-    </div>
-    </div>
-    <div class="under-tout">
-      <div class="contentUnder">
-      <img src="{{ asset('images/hospitals_img.png') }}" alt class="img_under_tout">
-      <div class="portfolio-info">
-        <a href="#" onclick="showSection(event, 'hopitaux')" class="menu-item" data-target="hopitaux" title="More Details">Hopitaux &nbsp; &nbsp;<i class="bi bi-arrow-right"></i></a>
-      </div>
+        <img src="{{ asset('images/recycling_img.png') }}" alt class="img_under_tout">
+        <div class="portfolio-info">
+          <a href="#" onclick="showSection(event, 'recyclage')" class="menu-item" data-target="recyclage" title="More Details">Recyclage &nbsp; &nbsp;<i class="bi bi-arrow-right"></i></a>
+        </div>
       </div>
     </div>
     <div class="under-tout">
       <div class="contentUnder">
-      <img src="{{ asset('images/airports_img.png') }}" alt class="img_under_tout">
-      <div class="portfolio-info">
-        <a href="" class="menu-item" data-target="air" title="More Details">Air Algérie &nbsp; &nbsp;<i class="bi bi-arrow-right"></i></a>
-      </div>
-      <img src="images/hospitals_img.png" alt class="img_under_tout">
-      <div>
-        <a href="#" class="menu-item" data-target="hopitaux" title="More Details">Hopitaux</a>
+        <img src="{{ asset('images/IMMO.jpg') }}" alt class="img_under_tout">
+        <div class="portfolio-info">
+          <a href="#" onclick="showSection(event, 'immobilier')" class="menu-item" data-target="immobilier" title="More Details">Immoblier &nbsp; &nbsp;<i class="bi bi-arrow-right"></i></a>
+        </div>
       </div>
     </div>
     <div class="under-tout">
-      <img src="images/airports_img.png" alt class="img_under_tout">
-      <div>
-        <a href="#" class="menu-item" data-target="air" title="More Details">Air Algérie</a>
+      <div class="contentUnder">
+        <img src="{{ asset('images/foire.jpg') }}" alt class="img_under_tout">
+        <div class="portfolio-info">
+          <a href="#" onclick="showSection(event, 'foire')" class="menu-item" data-target="foire" title="More Details">Les Foires &nbsp; &nbsp;<i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="under-tout">
+      <div class="contentUnder">
+        <img src="{{ asset('images/centre.jpg') }}" alt class="img_under_tout">
+        <div class="portfolio-info">
+          <a href="#" onclick="showSection(event, 'centres')" class="menu-item" data-target="centres" title="More Details">Centres commerciaux &nbsp; &nbsp;<i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="under-tout">
+      <div class="contentUnder">
+        <img src="{{ asset('images/hospitals_img.png') }}" alt class="img_under_tout">
+        <div class="portfolio-info">
+          <a href="#" onclick="showSection(event, 'hopitaux')" class="menu-item" data-target="hopitaux" title="More Details">Hopitaux &nbsp; &nbsp;<i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="under-tout">
+      <div class="contentUnder">
+        <img src="{{ asset('images/airports_img.png') }}" alt class="img_under_tout">
+        <div class="portfolio-info">
+          <a href="" class="menu-item" data-target="air" title="More Details">Air Algérie &nbsp; &nbsp;<i class="bi bi-arrow-right"></i></a>
+        </div>
       </div>
     </div>
   </div>
