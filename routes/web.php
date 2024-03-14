@@ -98,7 +98,7 @@ Route::middleware(['auth.admin'])->group(function () {
     Route::post('Admin_Add_Societe', [SocieteController::class, 'Add_societe']);
     Route::post('Admin_Update_societe', [SocieteController::class, 'Update_societe']);
     Route::post('Admin_Delete_Societe', [SocieteController::class, 'Delete_societe']);
-    
+
     //alerts
     Route::get('Admin-alerts', [AlertController::class, 'index'])->name('Admin-alerts');
     Route::post('Admin_Update_Alert', [AlertController::class, 'Update_Alert']);
@@ -126,6 +126,7 @@ Route::get('Client-singup', [AuthClient::class, 'singuppage'])->name('Client-sin
 Route::post('Clientsingup', [AuthClient::class, 'singup']);
 
 Route::middleware(['auth.client'])->group(function () {
+
     Route::get('Client-dashboard', [DashboardControllerClient::class, 'index'])->name('Client-dashboard');
     Route::post('Client-logout', [AuthClient::class, 'logout']);
     Route::get('Client-logout', [AuthClient::class, 'logout'])->name('Client-logout');
@@ -144,10 +145,10 @@ Route::middleware(['auth.client'])->group(function () {
     Route::post('addEmployee', [EmployeeControllerClient::class, 'addEmployee']);
 });
 
-Route::prefix('Blog')->group(function () {
+Route::prefix('Blog')->group(function () { } );
     Route::get('/', function () {
-        return view('blog.welcome');
-    });
+        return redirect()->route('welcome');
+    }); 
     Route::get('/welcome', function () {
         return view('blog.welcome');
     })->name('welcome');
@@ -182,4 +183,4 @@ Route::prefix('Blog')->group(function () {
         return view('blog.contact');
     })->name('contact');
     Route::post('/DoContact', [BlogContactController::class, 'index']);
-});
+

@@ -19,6 +19,8 @@ class CreateClientsTable extends Migration
             $table->string('photo')->nullable();
             $table->string('adresse')->nullable();
             $table->string('phone_number');
+            $table->integer('etat')->default('0')->nullable();
+
             $table->enum('type', ['gerant', 'superviseur', 'employe'])->default('gerant')->nullable();
             $table->unsignedBigInteger('id_societe')->nullable();
             // Add other columns as needed

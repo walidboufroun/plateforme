@@ -133,14 +133,15 @@
                     <tbody>
                         @foreach ($employes as $employe)
                             <tr>
-                                <td>{{ $employe->name}}</td>
+                                <td>{{ $employe->name }}</td>
                                 <td>{{ $employe->username }}</td>
-                                <td>{{ empty($employe->societe->name)     ? 'Null' : 'Null' }}</td>
+                                <td>{{ empty($employe->societe->name) ? 'Null' : 'Null' }}</td>
                                 <td>{{ $employe->email }}</td>
                                 <td>{{ $employe->adresse }}</td>
                                 <td>{{ $employe->phone_number }}</td>
-                                {{-- <td><img src="{{ asset('images/client1.jpg') }}" width="100px" height="100px" alt=""></td>  --}}
-                                <td><img src="{{ asset('images/' . $employe->photo) }}" width="40px" height="40px" alt=""></td>
+                                {{-- <td><img src="{{ asset('images/client1.jpg') }}" width="100px" height="100px" alt=""></td> {{ asset('img-profile/' . $employe->photo) }} --}}
+                                <td><img src="{{ 'img-profile/' . $employe->photo }}" width="40px" height="40px"
+                                        alt="{{ 'img-profile/' . $employe->photo }}"></td>
                                 <td>{{ $employe->type }}</td>
                                 <td class="fix_width">
                                     <div class="modal fade" id="modifier_commande_{{ $employe->id }}" tabindex="-1">
@@ -149,31 +150,33 @@
                                                 @csrf
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title">Modifier un employe {{ $employe->id }}</h5>
+                                                        <h5 class="modal-title">Modifier un employe {{ $employe->id }}
+                                                        </h5>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                             aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
                                                         <div class="row mb-3">
-                                                            <label for="inputText"
-                                                                class="col-sm-2 col-form-label">Nom et prenom</label>
+                                                            <label for="inputText" class="col-sm-2 col-form-label">Nom et
+                                                                prenom</label>
                                                             <div class="col-sm-10">
-                                                                <input type="text" class="form-control" name="nom"
+                                                                <input type="text" class="form-control" name="name"
                                                                     value="{{ $employe->name }}">
                                                             </div>
                                                         </div>
                                                         <div class="row mb-3">
-                                                            <label for="inputText" class="col-sm-2 col-form-label">Nom utilisateur</label>
+                                                            <label for="inputText" class="col-sm-2 col-form-label">Nom
+                                                                utilisateur</label>
                                                             <div class="col-sm-10">
-                                                                <input type="text" class="form-control" name="prenom"
-                                                                    value="{{ $employe->username }}">
+                                                                <input type="text" class="form-control"
+                                                                    name="username" value="{{ $employe->username }}">
                                                             </div>
                                                         </div>
                                                         <div class="row mb-3">
                                                             <label for="inputText"
                                                                 class="col-sm-2 col-form-label">Email</label>
                                                             <div class="col-sm-10">
-                                                                <input type="text" class="form-control" name="ldn"
+                                                                <input type="text" class="form-control" name="email"
                                                                     value="{{ $employe->email }}">
                                                             </div>
                                                         </div>
@@ -181,7 +184,8 @@
                                                             <label for="inputText" class="col-sm-2 col-form-label">Numéro
                                                                 de téléphone</label>
                                                             <div class="col-sm-10">
-                                                                <input type="number" class="form-control" name="tel"
+                                                                <input type="text" class="form-control"
+                                                                    name="phone_number"
                                                                     value="{{ $employe->phone_number }}">
                                                             </div>
                                                         </div>
@@ -189,7 +193,7 @@
                                                             <label for="inputText"
                                                                 class="col-sm-2 col-form-label">Adresse</label>
                                                             <div class="col-sm-10">
-                                                                <input type="text" class="form-control" name="Adresse"
+                                                                <input type="text" class="form-control" name="adresse"
                                                                     value="{{ $employe->adresse }}">
                                                             </div>
                                                         </div>
@@ -197,25 +201,39 @@
                                                             <label for="inputText"
                                                                 class="col-sm-2 col-form-label">Photo</label>
                                                             <div class="col-sm-10">
-                                                                <input type="image" class="form-control" name="photo"
-                                                                    value="{{ $employe->photo }}">
+                                                                <input type="image" class="form-control"
+                                                                    name="photo">
                                                             </div>
                                                         </div>
                                                         <div class="row mb-3">
                                                             <label for="inputText"
                                                                 class="col-sm-2 col-form-label">Type</label>
                                                             <div class="col-sm-10">
-                                                                <select name="type" value="{{ $employe->type }}" class="form-control">
-                                                                    
+                                                                <select name="type" class="form-control">
+                                                                    <option value="gerant"
+                                                                        {{ $employe->type === 'gerant' ? 'selected' : '' }}>
+                                                                        Gerant</option>
+                                                                    <option value="superviseur"
+                                                                        {{ $employe->type === 'superviseur' ? 'selected' : '' }}>
+                                                                        Superviseur</option>
+                                                                    <option value="employe"
+                                                                        {{ $employe->type === 'employe' ? 'selected' : '' }}>
+                                                                        Employe</option>
                                                                 </select>
                                                             </div>
+
                                                         </div>
                                                         <div class="row mb-3">
                                                             <label for="inputText"
                                                                 class="col-sm-2 col-form-label">Societe</label>
                                                             <div class="col-sm-10">
-                                                                <select name="id_societe" value="{{ $employe->id_societe }}" class="form-control">
-                                                                    <option value="1">1</option>
+                                                                <select name="id_societe"
+                                                                    value="{{ empty($employe->societe->name) ? 'Null' : 'Null' }}"
+                                                                    class="form-control">
+                                                                    <option
+                                                                        value="{{ empty($employe->societe->id) ? 'Null' : 'Null' }}">
+                                                                        {{ empty($employe->societe->name) ? 'Null' : 'Null' }}
+                                                                    </option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -223,7 +241,8 @@
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-danger"
                                                             data-bs-dismiss="modal">Cancel</button>
-                                                        <button type="submit" class="btn btn-success">Modifier l'employe</button>
+                                                        <button type="submit" class="btn btn-success">Modifier
+                                                            l'employe</button>
                                                     </div>
                                                 </div>
                                             </form>

@@ -95,7 +95,7 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                Vous voulez supprimer cette commande.
+                                                Vous voulez supprimer cette Réclamation.
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -119,8 +119,6 @@
         </div>
     </div>
 </div>
-<h1>Complaintes</h1>
-<h2>Afficher la liste des réclamations avec leurs détails.</h2>
 @endsection
 
 @section('footer', '© 2023 Your Website')

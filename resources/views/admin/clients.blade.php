@@ -229,7 +229,7 @@
                                                     <h5 class="modal-title">Supresion client n° {{ $client->id }}</h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
-                                                <div class="modal-body">Vous voulez supprimer cette commande.</div>
+                                                <div class="modal-body">Vous voulez supprimer le client <strong>{{ $client->name }}</strong> </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                                                     <button type="submit" class="btn btn-danger">Supprimer</button>
@@ -250,9 +250,6 @@
         </div>
     </div>
 </div>
-<h1>Clients</h1>
-<h2>Ajouter/Modifier/Supprimer un client.</h2>
-<h2> Afficher la liste des clients avec leurs détails.</h2>
 @endsection
 
 @section('footer', '© 2023 Your Website')

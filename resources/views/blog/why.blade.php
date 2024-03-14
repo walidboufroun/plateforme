@@ -15,7 +15,7 @@
             <div class="why_container">
                 <div class="box">
                     <div class="img-box">
-                        <img src="{{ asset('images/w1.png') }}" alt="">
+                        <img src="images/w1.png" alt="">
                     </div>
                     <div class="detail-box">
                         <h5>
@@ -33,7 +33,7 @@
                 </div>
                 <div class="box">
                     <div class="img-box">
-                        <img src="{{ asset('images/w2.png') }}" alt="">
+                        <img src="images/w2.png" alt="">
                     </div>
                     <div class="detail-box">
                         <h5>
@@ -50,7 +50,7 @@
                 </div>
                 <div class="box">
                     <div class="img-box">
-                        <img src="{{ asset('images/w3.png') }}" alt="">
+                        <img src="images/w3.png" alt="">
                     </div>
                     <div class="detail-box">
                         <h5>
@@ -67,7 +67,7 @@
                 </div>
                 <div class="box">
                     <div class="img-box">
-                        <img src="{{ asset('images/w4.png') }}" alt="">
+                        <img src="images/w4.png" alt="">
                     </div>
                     <div class="detail-box">
                         <h5>
