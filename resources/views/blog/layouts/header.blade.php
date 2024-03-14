@@ -95,7 +95,7 @@
             <a href="#footer">
               <i class="fa fa-envelope" aria-hidden="true"></i>
               <span>
-                Email : gnov2023@gmail.com
+                Email : gnovstartup@gmail.com
               </span>
             </a>
             <a href="{{ route('ESPACE-CLIENT') }}" class="aflex"><i class="fa fa-user-circle" aria-hidden="true"></i><span>CLIENT</span></a>
