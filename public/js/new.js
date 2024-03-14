@@ -12,10 +12,7 @@ function showSection(event, sectionId) {
   var selectedSection = document.getElementById(sectionId);
   if (selectedSection) {
       selectedSection.style.display = 'flex';
-      selectedSection.style.flexDirection = 'row';
       selectedSection.style.flexWrap = 'wrap';
-      selectedSection.style.justifyContent = 'center';
-      selectedSection.style.alignItems = 'center';
       selectedSection.style.gap = '3vw';
   }
 }

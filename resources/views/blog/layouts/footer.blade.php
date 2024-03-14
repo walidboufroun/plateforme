@@ -89,7 +89,7 @@
     <div class="container">
       <p>
         &copy; <span id="displayYear"></span> All Rights Reserved By
-        <a href="https://html.design/">GNOV</a>
+        <a href="">GNOV</a>
       </p>
     </div>
   </section>
@@ -111,7 +111,11 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
   </script>
   <!-- End Google Map -->
+  <script type="text/javascript" src="{{ asset('js/new.js') }}"></script>
   <script type="text/javascript" src="js/new.js"></script>
+
+  <script type="text/javascript" src="{{ asset('js/produit.js') }}"></script>
+  <script type="text/javascript" src="js/produit.js"></script>
 
 </body>
 
