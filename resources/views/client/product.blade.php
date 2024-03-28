@@ -261,7 +261,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#voir_produit_">Voir</button>
+                            <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#voir_produit_">Détails</button>
                         
 
                             <div class="modal fade" id="modifier_réclamations_" tabindex="-1">
