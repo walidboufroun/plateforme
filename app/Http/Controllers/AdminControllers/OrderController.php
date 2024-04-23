@@ -21,6 +21,7 @@ class OrderController extends Controller
         
         $produits = Produit::all();
         $societes = Societe::all();
+        
         $clientsWithoutSociete = Client::whereNull('id_societe')->get();
        
         $commandes = Commande::with('Societe')->get();

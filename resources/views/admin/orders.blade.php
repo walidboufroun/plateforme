@@ -113,7 +113,7 @@
                     @foreach ($commandes as $commande)
                     <tr>
                         <td>{{ $commande->date }}</td>
-                        <td>{{ $commande->id_societe  }}</td>
+                        <td>{{ $commande->societe->name  }}</td>
                         <td>{{ $commande->produit->name }}</td>
                         <td>{{ $commande->number }}</td>
                         <td>{{ $commande->statut }}</td>

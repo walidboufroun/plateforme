@@ -16,7 +16,7 @@ class Commande extends Model
         'statut',
     ];
 
-    public function client()
+    public function societe()
     {
         return $this->belongsTo(Societe::class, 'id_societe');
     }

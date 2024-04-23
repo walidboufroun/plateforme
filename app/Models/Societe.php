@@ -23,6 +23,9 @@ class Societe extends Model
     {
         return $this->hasMany(Societe::class, 'id_societe');
     }
-
+    public function clients()
+    {
+        return $this->belongsTo(Commande::class, 'id_societe');
+    }
     // You can add mutators, accessors, and relationships as needed
 }
